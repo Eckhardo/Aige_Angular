@@ -1,3 +1,3 @@
 # Aige_Angular
 
-An Angular 5 Single Page Application  
+A Single Page Application based on Angular 5, Angular Material and Material Design Lite. 
