@@ -20,7 +20,7 @@ export class GeoScopeService {
   countryCodes: Array<CountryModel> = [];
 
 
-  private serverApi = ConfigService.get('tomcat');
+  readonly serverApi = 'http://localhost:8080/nre';
   private resource = '/';
 
   constructor(private http: HttpClient) {
@@ -38,9 +38,7 @@ export class GeoScopeService {
   filterVesselSystems(query: string): Observable<VesselSystemModel[]> {
     const search_params = new HttpParams().set('vs_code', query.toUpperCase());
     const URI = this.getUrl(EntityEnum.VESSEL_SYSTEMS) + 'filter/';
-    console.log('uri:' + URI);
-    console.log('params:' + search_params);
-    return this.http
+     return this.http
       .get<Array<VesselSystemModel>>(URI, {params: search_params})
       .catch(this._handleError);
   }

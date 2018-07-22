@@ -1,7 +1,7 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed,getTestBed,} from '@angular/core/testing';
 
 import {SearchIntermodalComponent} from './search-intermodal.component';
-import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppMaterialModule} from '../../app-material.module';
 import {EnumService} from '../../services/enum.service';
@@ -9,28 +9,79 @@ import {GeoScopeService} from '../../services/geoscope.service';
 import {IntermodalSearchService} from '../services/im.search.service';
 import {HttpClient, HttpHandler} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {By} from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 
 describe('SearchRoutesComponent', () => {
   let component: SearchIntermodalComponent;
   let fixture: ComponentFixture<SearchIntermodalComponent>;
+  let injector;
+  let service: IntermodalSearchService;
+  let httpMock: HttpTestingController;
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SearchIntermodalComponent],
-      providers: [ EnumService, GeoScopeService, IntermodalSearchService,HttpClient,HttpHandler ],
-      imports: [ RouterTestingModule,BrowserAnimationsModule, AppMaterialModule ],
+      providers: [EnumService, GeoScopeService, IntermodalSearchService, HttpClient, HttpHandler],
+      imports: [HttpClientTestingModule,RouterTestingModule, BrowserAnimationsModule, AppMaterialModule, FormsModule, ReactiveFormsModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
-    })
-      .compileComponents();
+    }).compileComponents();
+
+    injector = getTestBed();
+    service = injector.get(IntermodalSearchService);
+    httpMock = injector.get(HttpTestingController);
+
   }));
 
   beforeEach(() => {
+    // create component and test fixture
     fixture = TestBed.createComponent(SearchIntermodalComponent);
+    // get test component from the fixture
     component = fixture.componentInstance;
     fixture.detectChanges();
+    let includeImTariff =component.searchFormIntermodal.controls['includeImTariff'];
+    includeImTariff.setValue(true);
+
+    let geoScopeRadio =component.searchFormIntermodal.controls['inlandGeoScopeType'];
+    geoScopeRadio.setValue('L')
+    let preCarriageRadio =component.searchFormIntermodal.controls['preOnCarriage'];
+    preCarriageRadio.setValue(false);
+     let transportMode =component.searchFormIntermodal.controls['transportMode'];
+     transportMode.setValue('TRUCK');
+     let equipmentType = component.searchFormIntermodal.controls['equipmentType'];
+     equipmentType.setValue('REEFER');
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('empty form is invalid', () => {
+    expect(component.searchFormIntermodal.valid).toBeFalsy();
+  });
+  it('fill form till is valid', () => {
+    console.log("Bin ich valide ?");
+
+    let inland =component.searchFormIntermodal.controls['inlandLocation'];
+    inland.patchValue('DEDUS');
+
+    console.log(JSON.stringify(component.searchFormIntermodal.value));
+    expect(component.searchFormIntermodal.valid).toBeTruthy();
+    expect(component.isInvalid()).toBeFalsy();
+  });
+
+  it('filter key figures', () => {
+
+    let inland =component.searchFormIntermodal.controls['inlandLocation'];
+    inland.patchValue('DEDUS');
+    service.getKeyFigures(component.searchFormIntermodal);
+
+
+    expect(component.searchFormIntermodal.valid).toBeTruthy();
+    expect(component.isInvalid()).toBeFalsy();
+  });
+
 });

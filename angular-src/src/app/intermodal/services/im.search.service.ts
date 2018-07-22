@@ -14,7 +14,9 @@ import {KeyFigureModel} from "../models/keyfigure.model";
 
 @Injectable()
 export class IntermodalSearchService {
-  private serverApi = ConfigService.get('tomcat');
+
+  readonly serverApi = 'http://localhost:8080/nre';
+
   private resource = '/';
   private objectType = EntityEnum.INTERMODAL_RESULT;
 
@@ -32,6 +34,7 @@ export class IntermodalSearchService {
   }
 
   getKeyFigures(imSearchModel: object): Observable<Array<KeyFigureModel>> {
+    console.log('#filter key figures in service');
     const search_params: HttpParams = this.prepareSearchParams(imSearchModel);
     const URI = this.getUrl() + 'filter/';
     return this.http.get<Array<KeyFigureModel>>(URI, {params: search_params});
