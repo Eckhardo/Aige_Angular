@@ -68,7 +68,7 @@ export class GeoScopeService {
   }
 
   filterPorts(query: string): Observable<Array<GeoScopeModel>> {
-    const search_params = new HttpParams().set('locationCode', query.toUpperCase());
+    const search_params = new HttpParams().set('location_code', query.toUpperCase());
     const URI = this.getUrl(EntityEnum.PORTS) + 'filter/';
     console.log('uri:' + URI);
     console.log('params:' + search_params);

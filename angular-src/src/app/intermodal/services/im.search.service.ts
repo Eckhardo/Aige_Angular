@@ -32,11 +32,7 @@ export class IntermodalSearchService {
   }
 
   getKeyFigures(imSearchModel: object): Observable<Array<KeyFigureModel>> {
-    console.log('search model:' + JSON.stringify(imSearchModel));
-    console.log('typeof:' + typeof imSearchModel);
     const search_params: HttpParams = this.prepareSearchParams(imSearchModel);
-    console.log('search params inlandLocation:' + JSON.stringify(search_params.get('inlandLocation')));
-
     const URI = this.getUrl() + 'filter/';
     return this.http.get<Array<KeyFigureModel>>(URI, {params: search_params});
 

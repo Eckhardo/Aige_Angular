@@ -57,12 +57,8 @@
     <div style="border-width: 2px; border-color: #337DA8; border-style: solid; padding:5px; margin: 5px; ">
       <!--- Inland Location, Country Code, Geo Scope Type Transport Mode -->
       <mat-form-field style="width: 150px; margin-left: 20px; margin-right: 20px;  margin-bottom: 10px;">
-        <input matInput placeholder="Inland Location" formControlName="inlandLocation" [matAutocomplete]="autoFrom">
-        <mat-hint align="start">e.g. DEDUS</mat-hint>
-        <mat-error>
-        <span
-          *ngIf="!form.get('inlandLocation').valid && form.get('inlandLocation').touched">Please enter Inland Location !</span>
-        </mat-error>
+        <input matInput placeholder="Inland Location" [matAutocomplete]="autoFrom" formControlName="inlandLocation" >
+
         <mat-autocomplete #autoFrom="matAutocomplete">
           <mat-option *ngFor="let item of filteredInlandGeoScopes" [value]="item.locationCode"
                       style="height: 30px; line-height: 20px; background-color: #ecf4ff;">
@@ -215,5 +211,5 @@
   </div>
 </form>
 <div *ngIf="keyFigures.length > 0">
-  <app-result-intermodal [keyFigures]="keyFigures"></app-result-intermodal>
+  <app-result-intermodal [keyFigures]="keyFigures" ></app-result-intermodal>
 </div>
