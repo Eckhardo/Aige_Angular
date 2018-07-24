@@ -7,7 +7,6 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {ConfigService} from '../../services/config.service';
 import {EntityEnum} from '../../enums/app-enum';
 import {KeyFigureModel} from "../models/keyfigure.model";
 
@@ -36,12 +35,17 @@ export class IntermodalSearchService {
   getKeyFigures(imSearchModel: object): Observable<Array<KeyFigureModel>> {
     console.log('#filter key figures in service');
     const search_params: HttpParams = this.prepareSearchParams(imSearchModel);
+    console.log('#search params' + JSON.stringify(search_params));
+
     const URI = this.getUrl() + 'filter/';
     return this.http.get<Array<KeyFigureModel>>(URI, {params: search_params});
 
   }
 
   private prepareSearchParams(imSearchModel: Object) {
+    console.log('startDate...');
+    console.log('#: ' + JSON.stringify(imSearchModel['startDate']));
+    console.log('.....startDate');
     const search_params = new HttpParams()
       .set('isPreCarriage', imSearchModel['preOnCarriage'])
       .set('includeImTariff', imSearchModel['includeImTariff'])

@@ -1,8 +1,8 @@
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
-import { NgForm } from '@angular/forms';
+
 import {AppMaterialModule} from '../app-material.module';
 
 import {SearchIntermodalComponent} from './im.search/search-intermodal.component';
@@ -17,14 +17,16 @@ import {IntermodalSearchService} from './services/im.search.service';
 
 @NgModule({
 
+  declarations: [SearchIntermodalComponent, ResultIntermodalComponent],
+
   imports: [
     CommonModule,
-    AppMaterialModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
-    IntermodalRoutesRoutingModule
+    IntermodalRoutesRoutingModule,
+    AppMaterialModule
   ],
-  declarations: [SearchIntermodalComponent, ResultIntermodalComponent],
 
   providers: [GeoScopeService, IntermodalSearchService, EnumService,
 
@@ -33,12 +35,7 @@ import {IntermodalSearchService} from './services/im.search.service';
     },
     {
       provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS
-    },
-
-  ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA,
-    NO_ERRORS_SCHEMA
+    }
   ]
 
 })

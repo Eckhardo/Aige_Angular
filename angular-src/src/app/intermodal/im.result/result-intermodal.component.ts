@@ -3,7 +3,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import {KeyFigureModel} from '../models/keyfigure.model';
-import {MatPaginator, MatSort, MatTableDataSource, PageEvent} from '@angular/material';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 
 @Component({
@@ -15,7 +15,6 @@ export class ResultIntermodalComponent implements OnInit, OnChanges, AfterViewIn
 
   @Input()
   keyFigures: Array<KeyFigureModel> = [];
-
 
   displayedColumns = ['inland', 'via', 'port', 'transportmode', 'rate', 'eqsize', 'eqgroup', 'preferred'];
   dataSource: any;
@@ -36,12 +35,11 @@ export class ResultIntermodalComponent implements OnInit, OnChanges, AfterViewIn
   ngAfterViewInit() {
     console.log('after view init');
     this.dataSource.sort = this.sort;
-     this.dataSource.paginator = this.paginator;
-
+    this.dataSource.paginator = this.paginator;
   }
 
   ngOnInit() {
-    console.log('init result intermodal');
+    console.log('init');
 
   }
 
@@ -49,6 +47,5 @@ export class ResultIntermodalComponent implements OnInit, OnChanges, AfterViewIn
   ngOnChanges(changes: SimpleChanges): void {
     console.log('on changes' + JSON.stringify(changes));
     this.dataSource = new MatTableDataSource(this.keyFigures);
-
   }
 }

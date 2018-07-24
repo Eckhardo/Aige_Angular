@@ -1,9 +1,5 @@
-import { TestBed, getTestBed, inject } from '@angular/core/testing';
-import {
-  HttpClientTestingModule,
-  HttpTestingController
-} from '@angular/common/http/testing';
-import { HttpParams } from '@angular/common/http';
+import {getTestBed, TestBed} from '@angular/core/testing';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {GeoScopeService} from './geoscope.service';
 import {GeoScopeModel} from '../model/geoscope.model';
 import {ConfigService} from './config.service';
@@ -13,12 +9,11 @@ describe('GeoScopeService', () => {
   let injector;
   let service: GeoScopeService;
   let httpMock: HttpTestingController;
-  let API_URL='http://localhost:8080/nre';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [ConfigService,GeoScopeService]
+      providers: [ConfigService, GeoScopeService]
     });
 
     injector = getTestBed();

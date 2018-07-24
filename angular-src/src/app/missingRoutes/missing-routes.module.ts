@@ -12,47 +12,18 @@ import {EnumService} from '../services/enum.service';
 import {MissingRoutesResultComponent} from './missing-routes.result.component/masterdata-routes.component';
 import {RoutesSearchService} from './services/routes.search.service';
 
-import {CdkTableModule} from '@angular/cdk/table';
-import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatFormFieldModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatLineModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatOptionModule,
-  MatPaginatorModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatSortModule,
-  MatTableModule,
-  MatToolbarModule
-} from '@angular/material';
-
 @NgModule({
-
-  imports: [
-    CommonModule,
-    AppMaterialModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RoutesRoutingModule],
 
   declarations: [MissingRoutesResultComponent, SearchRoutesComponent],
 
-
-
-
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RoutesRoutingModule,
+    AppMaterialModule
+  ],
 
   providers: [RoutesSearchService, EnumService],
 

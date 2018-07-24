@@ -19,24 +19,16 @@ import {
   MatPaginatorModule,
   MatProgressSpinnerModule,
   MatRadioModule,
-  MatSpinner,
   MatSelectModule,
   MatSortModule,
   MatTableModule,
   MatToolbarModule
-
 } from '@angular/material';
-const modules = [
-  CdkTableModule, MatTableModule, MatSortModule, MatPaginatorModule,
-  MatGridListModule, MatAutocompleteModule, MatDialogModule, MatLineModule, MatListModule,
-  MatDatepickerModule, MatNativeDateModule, MatMenuModule, MatButtonModule, MatCheckboxModule,
-  MatInputModule, MatRadioModule, MatSelectModule, MatOptionModule, MatToolbarModule, MatIconModule,
-  MatCardModule, MatProgressSpinnerModule, MatFormFieldModule
-];
+
 @NgModule({
-  imports:[...modules],
-  exports:[...modules]
- })
+  imports: [CdkTableModule, MatTableModule, MatSortModule, MatPaginatorModule, MatGridListModule, MatAutocompleteModule, MatDialogModule, MatLineModule, MatListModule, MatDatepickerModule, MatNativeDateModule, MatMenuModule, MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatSelectModule, MatOptionModule, MatToolbarModule, MatIconModule, MatCardModule, MatProgressSpinnerModule, MatFormFieldModule],
+  exports: [CdkTableModule, MatTableModule, MatSortModule, MatPaginatorModule, MatGridListModule, MatAutocompleteModule, MatDialogModule, MatLineModule, MatListModule, MatDatepickerModule, MatNativeDateModule, MatMenuModule, MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatSelectModule, MatOptionModule, MatToolbarModule, MatIconModule, MatCardModule, MatProgressSpinnerModule, MatFormFieldModule]
+})
 
 export class AppMaterialModule {
 }

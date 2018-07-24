@@ -6,13 +6,9 @@ import {GeoScopeModel} from '../../model/geoscope.model';
 
 export class KeyFigureModel {
   private _from: GeoScopeModel;
-
-  private _fromLocationCode: String;
-
   private _via: GeoScopeModel;
 
   private _to: GeoScopeModel;
-  private _toLocationCode: String;
 
   private _imRouteKey: number;
 
@@ -47,7 +43,7 @@ export class KeyFigureModel {
   private _imScheduleInfo: Array<number>;
 
 
-  constructor(from: GeoScopeModel, via: GeoScopeModel, to: GeoScopeModel, imRouteKey: number, transportMode: string, isPreferred: boolean, equipmentSize: string, equipmentGroup: string, rate: number, currency: string, hsWeightClass: number, startDate: Date) {
+  constructor(from: GeoScopeModel, via: GeoScopeModel, to: GeoScopeModel, imRouteKey: number, transportMode: string, isPreferred: boolean, equipmentSize: string, equipmentGroup: string, rate: number, currency: string, hsWeightClass: number, startDate: Date, imTariffInfo: Array<number>, imScheduleInfo: Array<number>) {
     this._from = from;
     this._via = via;
     this._to = to;
@@ -60,22 +56,8 @@ export class KeyFigureModel {
     this._currency = currency;
     this._hsWeightClass = hsWeightClass;
     this._startDate = startDate;
-   }
-
-  get fromLocationCode(): String {
-    return this._fromLocationCode;
-  }
-
-  set fromLocationCode(value: String) {
-    this._fromLocationCode = value;
-  }
-
-  get toLocationCode(): String {
-    return this._toLocationCode;
-  }
-
-  set toLocationCode(value: String) {
-    this._toLocationCode = value;
+    this._imTariffInfo = imTariffInfo;
+    this._imScheduleInfo = imScheduleInfo;
   }
 
   get from(): GeoScopeModel {

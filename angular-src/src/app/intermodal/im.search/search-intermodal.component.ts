@@ -35,8 +35,6 @@ export class SearchIntermodalComponent implements OnInit, OnChanges {
   filteredPortGeoScopes: GeoScopeModel[] = [];
   filteredCountries: Array<CountryModel> = [];
   keyFigures: Array<KeyFigureModel> = [];
-  totalPages:number = 0;
-  totalElements:number = 0;
 
   constructor( private enumService: EnumService,
               private masterDataService: GeoScopeService, private searchService: IntermodalSearchService) {
@@ -204,11 +202,7 @@ export class SearchIntermodalComponent implements OnInit, OnChanges {
         this.keyFigures = result;
         this.toggle();
       }
-    },
-(error) => {
-  console.log(error.error);
-
-});
+    });
 
 
     setTimeout(() => {
@@ -374,7 +368,7 @@ export class SearchIntermodalComponent implements OnInit, OnChanges {
     this.includeImSchdeule.patchValue(false);
     this.eqSize20.patchValue(true);
     this.eqSize40.patchValue(true);
-    this.preOnCarriage.patchValue(true);
+    this.preOnCarriage.patchValue('true');
     this.eqType.patchValue('GENERAL');
     this.transportMode.patchValue('ALL');
     this.inlandLocation.patchValue('');
