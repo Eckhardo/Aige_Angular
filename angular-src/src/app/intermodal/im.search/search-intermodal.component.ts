@@ -11,6 +11,7 @@ import {GeoScopeModel} from '../../model/geoscope.model';
 import {CountryModel} from '../../model/country.model';
 import {IntermodalSearchService} from '../services/im.search.service';
 import {KeyFigureModel} from '../models/keyfigure.model';
+import {CountryService} from '../../services/country.service';
 
 
 @Component({
@@ -36,7 +37,7 @@ export class SearchIntermodalComponent implements OnInit, OnChanges {
   filteredCountries: Array<CountryModel> = [];
   keyFigures: Array<KeyFigureModel> = [];
 
-  constructor( private enumService: EnumService,
+  constructor(private enumService: EnumService, private countryService: CountryService,
               private masterDataService: GeoScopeService, private searchService: IntermodalSearchService) {
     console.log('constuctor');
 
@@ -272,7 +273,7 @@ export class SearchIntermodalComponent implements OnInit, OnChanges {
           this.countryCode.markAsPristine();
           return;
         }
-        this.masterDataService.filterCountries(data).subscribe(
+        this.countryService.filterCountries(data).subscribe(
           result => {
             console.log('result:' + JSON.stringify(result));
             if (result.length === 1) {

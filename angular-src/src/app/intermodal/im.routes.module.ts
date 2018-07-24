@@ -14,6 +14,7 @@ import {AppDateAdapter} from '../services/date.utils/date.adapter';
 import {APP_DATE_FORMATS} from '../services/date.utils/date.format';
 import {GeoScopeService} from '../services/geoscope.service';
 import {IntermodalSearchService} from './services/im.search.service';
+import {CountryService} from '../services/country.service';
 
 @NgModule({
 
@@ -28,7 +29,7 @@ import {IntermodalSearchService} from './services/im.search.service';
     AppMaterialModule
   ],
 
-  providers: [GeoScopeService, IntermodalSearchService, EnumService,
+  providers: [GeoScopeService, CountryService, IntermodalSearchService, EnumService,
 
     {
       provide: DateAdapter, useClass: AppDateAdapter

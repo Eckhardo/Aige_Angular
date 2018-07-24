@@ -12,6 +12,7 @@ import {TradeModel} from '../../model/trade.model';
 import {MissingRoutingModel} from '../models/missing-routing.model';
 import {ContractModel} from '../../model/contract.model';
 import {CountryModel} from '../../model/country.model';
+import {CountryService} from '../../services/country.service';
 
 
 @Component({
@@ -36,7 +37,7 @@ export class SearchRoutesComponent implements OnInit, OnChanges {
   possibleCountries: Array<CountryModel> = [];
 
 
-  constructor(private enumService: EnumService,
+  constructor(private enumService: EnumService, private countryService: CountryService,
               private masterDataService: GeoScopeService, private searchService: RoutesSearchService) {
     console.log('constructor');
 
@@ -227,7 +228,7 @@ export class SearchRoutesComponent implements OnInit, OnChanges {
           this.countryCode.markAsPristine();
           return;
         }
-        this.masterDataService.filterCountries(data).subscribe(
+        this.countryService.filterCountries(data).subscribe(
           result => {
             if (result.length === 1) {
               const singleRow: string = result[0].code;

@@ -6,13 +6,13 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
-import {ConfigService} from './config.service';
 import {EntityEnum} from '../enums/app-enum';
 import {GeoScopeModel} from '../model/geoscope.model';
-import {CountryModel} from '../model/country.model';
+
 import {VesselSystemModel} from '../model/vesselsystem.model';
 import {TradeModel} from '../model/trade.model';
 import {ContractModel} from '../model/contract.model';
+import {CountryModel} from '../model/country.model';
 
 @Injectable()
 export class GeoScopeService {
@@ -74,13 +74,22 @@ export class GeoScopeService {
       .get<Array<GeoScopeModel>>(URI, {params: search_params})
       .catch(this._handleError);
   }
-  private prepareGeoScopeSearchParams(query: string, geoScopeType: string, countryCode: string) {
+
+  prepareGeoScopeSearchParams(query: string, geoScopeType: string, countryCode: string) {
     const search_params = new HttpParams()
       .set('location_code', query.toUpperCase())
       .set('geo_scope_type', geoScopeType.toUpperCase())
       .set('country_code', countryCode);
     return search_params;
   }
+
+  sayHamburg(input: string) {
+    if (input.toLowerCase() === 'deham') {
+      return 'Hamburg';
+    }
+    return input;
+  }
+
 
   filterContracts(query: string): Observable<Array<ContractModel>> {
     const search_params: HttpParams = new HttpParams()
@@ -101,15 +110,7 @@ export class GeoScopeService {
       .get<Array<CountryModel>>(URI, {params: search_params})
       .catch(this._handleError);
   }
-  filterCountries(query: string): Observable<Array<CountryModel>> {
-    const search_params: HttpParams = new HttpParams()
-      .set('country_code', query.toUpperCase());
-    const URI = this.getUrl(EntityEnum.COUNTRY) + 'filter/';
 
-    return this.http
-      .get<Array<CountryModel>>(URI, {params: search_params})
-      .catch(this._handleError);
-  }
 
   filterTrades(query: string): Observable<Array<TradeModel>> {
     const search_params: HttpParams = new HttpParams()
@@ -153,17 +154,5 @@ export class GeoScopeService {
 
   }
 
-  filterCountryCode(query: string) {
-    if (this.countryCodes.length === 0) {
-      this.countryCodes.push(new CountryModel(1, 'BE', ''));
-      this.countryCodes.push(new CountryModel(1, 'DE', ''));
-      this.countryCodes.push(new CountryModel(1, 'FR', ''));
-      this.countryCodes.push(new CountryModel(1, 'NL', ''));
-      this.countryCodes.push(new CountryModel(1, 'SE', ''));
-      this.countryCodes.push(new CountryModel(1, 'NO', ''));
-      return this.countryCodes.filter((countryCode) => countryCode.code.toLowerCase().startsWith(query.toLowerCase()));
-
-    }
-  }
 
 }

@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {SearchIntermodalComponent} from './search-intermodal.component';
-import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
 
 import {AppMaterialModule} from '../../app-material.module';
 import {EnumService} from '../../services/enum.service';
@@ -12,16 +12,20 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AbstractControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {By} from '@angular/platform-browser';
+import {CountryService} from '../../services/country.service';
 
 describe('SearchRoutesComponent', () => {
   let component: SearchIntermodalComponent;
   let fixture: ComponentFixture<SearchIntermodalComponent>;
   let inland: AbstractControl;
-
+  let titleDomElement: DebugElement;
+  let titleHtmlElement: HTMLElement;
+  let service;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SearchIntermodalComponent],
-      providers: [EnumService, GeoScopeService, IntermodalSearchService, HttpClient, HttpHandler],
+      providers: [EnumService, CountryService, GeoScopeService, IntermodalSearchService, HttpClient, HttpHandler],
       imports: [HttpClientTestingModule, RouterTestingModule, BrowserAnimationsModule, AppMaterialModule, FormsModule, ReactiveFormsModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     }).compileComponents();
@@ -33,7 +37,11 @@ describe('SearchRoutesComponent', () => {
     fixture = TestBed.createComponent(SearchIntermodalComponent);
     // get test component from the fixture
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    service = fixture.debugElement.injector.get(GeoScopeService);
+    titleDomElement = fixture.debugElement.query(By.css('#im-search-form-title'));
+    titleHtmlElement = titleDomElement.nativeElement;
+
+
     const includeImTariff = component.searchFormIntermodal.controls['includeImTariff'];
     includeImTariff.setValue(true);
 
@@ -58,6 +66,17 @@ describe('SearchRoutesComponent', () => {
     expect(component).toBeTruthy();
   });
 
+
+  it('Service Should be Created', () => {
+    expect(service).toBeTruthy();
+  });
+
+
+  it('DIV Element for Title should be established', () => {
+    expect(titleDomElement).toBeTruthy();
+    expect(titleHtmlElement).toBeTruthy();
+    expect(titleHtmlElement.textContent).toContain('Intermodal Key Figure Analyzer');
+  });
 
   it('Inland Location Is Missing: Form Should be Invalid', () => {
 
