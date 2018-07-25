@@ -275,10 +275,8 @@ export class SearchIntermodalComponent implements OnInit, OnChanges {
         }
         this.countryService.filterCountries(data).subscribe(
           result => {
-            console.log('result:' + JSON.stringify(result));
             if (result.length === 1) {
-              const singleRow: string = result[0].code;
-              this.countryCode.patchValue(singleRow.toUpperCase());
+              this.countryCode.patchValue(result[0].code);
               this.filteredCountries = [];
             } else {
               this.filteredCountries = result;

@@ -4,12 +4,13 @@ import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/c
 import {EntityEnum} from '../enums/app-enum';
 import {CountryModel} from '../model/country.model';
 
+import {catchError, tap} from 'rxjs/operators';
+
 @Injectable()
 export class CountryService {
   countryCodes: Array<CountryModel> = [];
 
   readonly serverApi = 'http://localhost:8080/nre';
-  private resource = '/';
 
   constructor(private http: HttpClient) {
   }
@@ -19,26 +20,39 @@ export class CountryService {
   }
 
   private getUrl(objectType: EntityEnum): string {
-    return this.serverApi + this.resource + objectType + this.resource;
+    return `${this.serverApi}/${objectType}/`;
   }
 
-  filterCountries(query: string): Observable<Array<CountryModel>> {
+  filterCountriesOLD(query: string): Observable<Array<CountryModel>> {
     const search_params: HttpParams = new HttpParams()
       .set('country_code', query.toUpperCase());
-    const URI = this.getUrl(EntityEnum.COUNTRY) + 'filter/';
+    const URI = ` ${this.getUrl(EntityEnum.COUNTRY)}filter/`;
+    console.log('uri:' + URI);
+    console.log('params:' + search_params);
 
 
     return this.http
       .get<Array<CountryModel>>(URI, {params: search_params}).map(data => {
-
-        console.log(data);
+        this.log('Data: ' + JSON.stringify(data));
         return data;
       })
       .catch(this._handleError);
   }
 
+
+  filterCountries(query: string): Observable<Array<CountryModel>> {
+    const search_params: HttpParams = new HttpParams()
+      .set('country_code', query.toUpperCase());
+    const URI = ` ${this.getUrl(EntityEnum.COUNTRY)}filter/`;
+    return this.http
+      .get<Array<CountryModel>>(URI, {params: search_params}).pipe(
+        tap(data => this.log('Data: ' + JSON.stringify(data))),
+        catchError(this._handleError)
+      );
+  }
+
+
   private _handleError(error: HttpErrorResponse | any) {
-    console.log('#### SERVICE #_handleError()');
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);
@@ -56,8 +70,8 @@ export class CountryService {
 
   }
 
-  private log(message: string) {
-    console.log('HeroService: ' + message);
+  private log(message: any) {
+    console.log('CountryService: ' + message);
   }
 
   filterCountryCode(query: string) {
