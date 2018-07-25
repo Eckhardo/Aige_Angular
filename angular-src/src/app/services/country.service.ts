@@ -11,6 +11,7 @@ export class CountryService {
   countryCodes: Array<CountryModel> = [];
 
   readonly serverApi = 'http://localhost:8080/nre';
+  private resource = '/';
 
   constructor(private http: HttpClient) {
   }
@@ -19,14 +20,16 @@ export class CountryService {
     return new HttpHeaders().set('Content-Type', 'application/json');
   }
 
+
   private getUrl(objectType: EntityEnum): string {
-    return `${this.serverApi}/${objectType}/`;
+    return this.serverApi + this.resource + objectType + this.resource;
   }
+
 
   filterCountriesOLD(query: string): Observable<Array<CountryModel>> {
     const search_params: HttpParams = new HttpParams()
       .set('country_code', query.toUpperCase());
-    const URI = ` ${this.getUrl(EntityEnum.COUNTRY)}filter/`;
+    const URI = `${this.getUrl(EntityEnum.COUNTRY)}filter/`;
     console.log('uri:' + URI);
     console.log('params:' + search_params);
 
@@ -38,9 +41,18 @@ export class CountryService {
       })
       .catch(this._handleError);
   }
-
-
   filterCountries(query: string): Observable<Array<CountryModel>> {
+    const search_params: HttpParams = new HttpParams()
+      .set('country_code', query.toUpperCase());
+    const URI = this.getUrl(EntityEnum.COUNTRY) + 'filter/';
+
+    return this.http
+      .get<Array<CountryModel>>(URI, {params: search_params})
+      .catch(this._handleError);
+  }
+
+
+  filterCountriesNEW(query: string): Observable<Array<CountryModel>> {
     const search_params: HttpParams = new HttpParams()
       .set('country_code', query.toUpperCase());
     const URI = ` ${this.getUrl(EntityEnum.COUNTRY)}filter/`;
