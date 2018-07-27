@@ -1,7 +1,7 @@
 import {async, ComponentFixture, ComponentFixtureAutoDetect, TestBed} from '@angular/core/testing';
 
 import {SearchIntermodalComponent} from './search-intermodal.component';
-import {DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
+import {DebugElement} from '@angular/core';
 
 import {AppMaterialModule} from '../../app-material.module';
 import {EnumService} from '../../services/enum.service';
@@ -13,6 +13,9 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {By} from '@angular/platform-browser';
 import {CountryService} from '../../services/country.service';
+import {Observable} from 'rxjs/Observable';
+import {CountryModel} from '../../model/country.model';
+import {ResultIntermodalComponent} from '../im.result/result-intermodal.component';
 
 describe('SearchRoutesComponent', () => {
   let component: SearchIntermodalComponent;
@@ -21,15 +24,18 @@ describe('SearchRoutesComponent', () => {
   let titleDomElement: DebugElement;
   let titleHtmlElement: HTMLElement;
   let service;
+
+  const countryStub: Array<CountryModel> = [];
+  countryStub.push(new CountryModel(1, 'GERMANY', 'DE'));
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SearchIntermodalComponent],
+      declarations: [SearchIntermodalComponent, ResultIntermodalComponent],
       providers: [EnumService, CountryService, GeoScopeService, IntermodalSearchService,
-
         {provide: ComponentFixtureAutoDetect, useValue: true}],
       imports: [HttpClientTestingModule, RouterTestingModule, BrowserAnimationsModule, AppMaterialModule, ReactiveFormsModule],
       // add NO_ERRORS_SCHEMA to ignore <app-result-intermodal> tag
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: []
 
       // If you run tests in a non-CLI environment, compilationmight not have occured
     }).compileComponents();
@@ -45,6 +51,8 @@ describe('SearchRoutesComponent', () => {
     service = fixture.debugElement.injector.get(GeoScopeService);
     titleDomElement = fixture.debugElement.query(By.css('#im-search-form-title'));
     titleHtmlElement = titleDomElement.nativeElement;
+    const countryService = fixture.debugElement.injector.get(CountryService);
+    spyOn(countryService, 'filterCountries').and.returnValue(Observable.create(countryStub));
 
 
     const includeImTariff = component.searchFormIntermodal.controls['includeImTariff'];

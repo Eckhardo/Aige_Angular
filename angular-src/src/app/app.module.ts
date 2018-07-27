@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AppPrimengModule} from './app-primeng.module';
+
 import {AppMaterialModule} from './app-material.module';
 import {AppRoutingModule} from './app-routing.module';
 
@@ -10,7 +10,7 @@ import {NgModule} from '@angular/core';
 import {HomeComponent} from './home/home/home.component';
 import {ChangeDetectorPipe} from './pipes/change-detector-pipe';
 import {HttpClientModule} from '@angular/common/http';
-import {CommonModule} from '@angular/common';
+import {APP_BASE_HREF, CommonModule} from '@angular/common';
 import {IntermodalRoutesModule} from './intermodal/im.routes.module';
 import {EnumService} from './services/enum.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -32,7 +32,6 @@ import {NewRoutingEngineModule} from './newRoutingEngine/new-routing-engine.modu
     FormsModule,
     ReactiveFormsModule,
     AppMaterialModule,
-    AppPrimengModule,
     HttpClientModule,
     MissingRoutingsModule,
     IntermodalRoutesModule,
@@ -40,7 +39,9 @@ import {NewRoutingEngineModule} from './newRoutingEngine/new-routing-engine.modu
     AppRoutingModule
 
   ],
-  providers: [EnumService],
+  providers: [EnumService,
+
+    {provide: APP_BASE_HREF, useValue: window['_app_base'] || '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
