@@ -239,28 +239,31 @@ export class SearchIntermodalComponent implements OnInit, OnChanges {
           this.filteredPortGeoScopes = [];
           return;
         }
-
-        this.masterDataService.filterLocations(data, this.inlandGeoScopeType.value, this.countryCode.value).subscribe(
-          result => {
-
-            console.log('result:' + JSON.stringify(result));
-            if (result.length === 1) {
-              const singleRow: string = result[0].locationCode;
-              this.inlandLocation.patchValue(singleRow.toUpperCase());
-              this.filteredInlandGeoScopes = [];
-              this.filteredPortGeoScopes = [];
-              console.log('single:' + JSON.stringify(this.inlandLocation.value));
-              this.retrievePreferredPorts();
-            } else if (result.length <= 1) {
-              this.retrievePreferredPorts();
-            } else {
-              this.filteredInlandGeoScopes = result;
-
-            }
-          });
+        this.filterLocations(data, this.inlandGeoScopeType.value, this.countryCode.value);
 
       });
 
+  }
+
+  filterLocations(location: string, type: string, country: string): any {
+    this.masterDataService.filterLocations(location, type, country).subscribe(
+      result => {
+
+        console.log('result:' + JSON.stringify(result));
+        if (result.length === 1) {
+          const singleRow: string = result[0].locationCode;
+          this.inlandLocation.patchValue(singleRow.toUpperCase());
+          this.filteredInlandGeoScopes = [];
+          this.filteredPortGeoScopes = [];
+          console.log('single:' + JSON.stringify(this.inlandLocation.value));
+          this.retrievePreferredPorts();
+        } else if (result.length <= 1) {
+          this.retrievePreferredPorts();
+        } else {
+          this.filteredInlandGeoScopes = result;
+        }
+        return result;
+      });
   }
 
   private onCountryCodeChanges(control: AbstractControl) {
@@ -273,17 +276,26 @@ export class SearchIntermodalComponent implements OnInit, OnChanges {
           this.countryCode.markAsPristine();
           return;
         }
-        this.countryService.filterCountries(data).subscribe(
-          result => {
-            if (result.length === 1) {
-              this.countryCode.patchValue(result[0].code);
-              this.filteredCountries = [];
-            } else {
-              this.filteredCountries = result;
-            }
-          });
+        this.filterCountries(data);
       });
 
+  }
+
+  filterCountries(countryCode) {
+    this.countryService.filterCountries(countryCode).subscribe(
+      result => {
+        if (result.length === 1) {
+          this.countryCode.patchValue(result[0].code);
+          this.filteredCountries = [];
+        } else {
+          this.filteredCountries = result;
+        }
+      },
+      err =>
+        console.error('Observer got an error: ' + err),
+      () => console.log('Observer got a complete notification')
+    );
+    return this.filterCountries;
   }
 
   private onInlandGeoScopeChanges(control: AbstractControl) {

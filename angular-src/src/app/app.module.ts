@@ -1,38 +1,24 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
-import {AppMaterialModule} from './app-material.module';
-import {AppRoutingModule} from './app-routing.module';
+import {AppRoutingModule, routedComponents} from './app-routing.module';
 
 import {AppComponent} from './app.component';
 import {NgModule} from '@angular/core';
-
-import {HomeComponent} from './home/home/home.component';
-import {ChangeDetectorPipe} from './pipes/change-detector-pipe';
-import {HttpClientModule} from '@angular/common/http';
-import {APP_BASE_HREF, CommonModule} from '@angular/common';
+import {APP_BASE_HREF} from '@angular/common';
 import {IntermodalRoutesModule} from './intermodal/im.routes.module';
 import {EnumService} from './services/enum.service';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MissingRoutingsModule} from './missingRoutes/missing-routes.module';
 import {NewRoutingEngineModule} from './newRoutingEngine/new-routing-engine.module';
+import {SharedModule} from './shared/shared.module';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ChangeDetectorPipe,
-
-  ],
+  declarations: [routedComponents],
   imports: [
-    CommonModule,
+
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppMaterialModule,
-    HttpClientModule,
+    SharedModule,
     MissingRoutingsModule,
     IntermodalRoutesModule,
     NewRoutingEngineModule,

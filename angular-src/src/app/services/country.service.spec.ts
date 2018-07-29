@@ -5,7 +5,7 @@ import {CountryModel} from '../model/country.model';
 import {EntityEnum} from '../enums/app-enum';
 
 describe('CountryService', () => {
-  let service: CountryService;
+  let countryService: CountryService;
   let httpMock: HttpTestingController;
   const countryStub: Array<CountryModel> = [];
   countryStub.push(new CountryModel(1, 'GERMANY', 'DE'));
@@ -16,13 +16,12 @@ describe('CountryService', () => {
       providers: [CountryService]
     });
     // inject the service
-
-    service = TestBed.get(CountryService);
+    countryService = TestBed.get(CountryService);
     httpMock = TestBed.get(HttpTestingController);
   });
 
   beforeEach(inject([CountryService], s => {
-    service = s;
+    countryService = s;
   }));
 
   afterEach(() => {
@@ -32,16 +31,15 @@ describe('CountryService', () => {
 
   // specs
   it('should return Germany country', async(() => {
-    service.filterCountries('DE').subscribe(x => {
+    countryService.filterCountries('DE').subscribe(x => {
       // When observable resolves, result should match test data
       expect(x.length).toEqual(1);
       expect(x).toEqual(countryStub);
-
     });
     // The following `expectOne()` will match the request's URL.
     // If no requests or multiple requests matched that URL
     // `expectOne()` would throw.
-    const req = httpMock.expectOne(`${service.serverApi}/${EntityEnum.COUNTRY}/filter/?country_code=DE`);
+    const req = httpMock.expectOne(`${countryService.serverApi}/${EntityEnum.COUNTRY}/filter/?country_code=DE`);
 
     // Assert that the request is a GET.
     expect(req.request.method).toEqual('GET');
@@ -49,24 +47,17 @@ describe('CountryService', () => {
     // Respond with mock data, causing Observable to resolve.
     // Subscribe callback asserts that correct data was returned.
     req.flush(countryStub);
-
-
   }));
 
 
   describe('Only Check request on Servcie Side for service.filterCountries', () => {
     it('should return method,urlrepsonse type anmd params', () => {
-
-
-      service.filterCountries('DE').subscribe();
-      const call: TestRequest = httpMock.expectOne(`${service.serverApi}/${EntityEnum.COUNTRY}/filter/?country_code=DE`);
-
+      countryService.filterCountries('DE').subscribe();
+      const call: TestRequest = httpMock.expectOne(`${countryService.serverApi}/${EntityEnum.COUNTRY}/filter/?country_code=DE`);
       expect(call.request.method).toBe('GET');
-      expect(call.request.url).toBe(`${service.serverApi}/${EntityEnum.COUNTRY}/filter/`);
+      expect(call.request.url).toBe(`${countryService.serverApi}/${EntityEnum.COUNTRY}/filter/`);
       expect(call.request.responseType).toBe('json');
       expect(call.request.params.get('country_code')).toBe('DE');
     });
   });
-
-
 });

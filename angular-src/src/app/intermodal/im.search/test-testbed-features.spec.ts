@@ -13,7 +13,7 @@ import {CountryService} from '../../services/country.service';
 import {Observable} from 'rxjs/Observable';
 import {CountryModel} from '../../model/country.model';
 
-describe('SearchRoutesComponent', () => {
+describe('test script', () => {
   let component: SearchIntermodalComponent;
   let fixture: ComponentFixture<SearchIntermodalComponent>;
   let geoScopeService;
@@ -65,20 +65,4 @@ describe('SearchRoutesComponent', () => {
     expect(result).toBeTruthy();
   });
 
-  it('Service inject via inject()', inject([CountryService], service => {
-
-
-    service.filterCountries('D').subscribe(
-      result => {
-        if (result.length === 1) {
-          const model: CountryModel = result[0];
-          console.log('##:' + JSON.stringify(model));
-          expect(model).toEqual(countryStub[0]);
-        } else {
-          expect(result).toEqual(countryStub);
-        }
-        expect(result).toBeTruthy();
-      });
-
-  }));
 });

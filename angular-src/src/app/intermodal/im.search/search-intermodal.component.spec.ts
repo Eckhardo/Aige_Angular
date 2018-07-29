@@ -10,12 +10,12 @@ import {IntermodalSearchService} from '../services/im.search.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AbstractControl, ReactiveFormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {By} from '@angular/platform-browser';
 import {CountryService} from '../../services/country.service';
 import {Observable} from 'rxjs/Observable';
 import {CountryModel} from '../../model/country.model';
 import {ResultIntermodalComponent} from '../im.result/result-intermodal.component';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('SearchRoutesComponent', () => {
   let component: SearchIntermodalComponent;
@@ -33,7 +33,7 @@ describe('SearchRoutesComponent', () => {
       declarations: [SearchIntermodalComponent, ResultIntermodalComponent],
       providers: [EnumService, CountryService, GeoScopeService, IntermodalSearchService,
         {provide: ComponentFixtureAutoDetect, useValue: true}],
-      imports: [HttpClientTestingModule, RouterTestingModule, BrowserAnimationsModule, AppMaterialModule, ReactiveFormsModule],
+      imports: [HttpClientModule, RouterTestingModule, BrowserAnimationsModule, AppMaterialModule, ReactiveFormsModule],
       // add NO_ERRORS_SCHEMA to ignore <app-result-intermodal> tag
       schemas: []
 
