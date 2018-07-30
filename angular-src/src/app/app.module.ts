@@ -1,4 +1,3 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule, routedComponents} from './app-routing.module';
 
@@ -16,7 +15,7 @@ import {SharedModule} from './shared/shared.module';
   declarations: [routedComponents],
   imports: [
 
-    BrowserModule,
+
     BrowserAnimationsModule,
     SharedModule,
     MissingRoutingsModule,
@@ -26,8 +25,8 @@ import {SharedModule} from './shared/shared.module';
 
   ],
   providers: [EnumService,
-
     {provide: APP_BASE_HREF, useValue: window['_app_base'] || '/'}],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -41,14 +41,16 @@ export class CountryService {
       })
       .catch(this._handleError);
   }
-  filterCountries(query: string): Observable<Array<CountryModel>> {
-    const search_params: HttpParams = new HttpParams()
-      .set('country_code', query.toUpperCase());
-    const URI = this.getUrl(EntityEnum.COUNTRY) + 'filter/';
 
-    return this.http
+  filterCountries(query: string): Observable<Array<CountryModel>> {
+    const search_params: HttpParams = new HttpParams().set('country_code', query.toUpperCase());
+    const URI = this.getUrl(EntityEnum.COUNTRY) + 'filter/';
+    let result: Observable<Array<CountryModel>>;
+    result = this.http
       .get<Array<CountryModel>>(URI, {params: search_params})
       .catch(this._handleError);
+
+    return result;
   }
 
 
