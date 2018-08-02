@@ -13,7 +13,7 @@ import {IntermodalSearchService} from '../services/im.search.service';
 import {KeyFigureModel} from '../models/keyfigure.model';
 import {CountryService} from '../../services/country.service';
 import {IntermodalSearchReactiveForm} from './search-intermodal.component.form';
-
+import {debounceTime, distinctUntilChanged, filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-intermodal',
@@ -48,7 +48,6 @@ export class SearchIntermodalComponent {
     this.formClass = new IntermodalSearchReactiveForm();
     // set default values in form
     this.patchDefaultValues();
-    this.setEndDate(new Date(this.formClass.startDate.value));
 
     // event handler
     this.onInlandLocationChanges(this.formClass.inlandLocation);
@@ -122,7 +121,6 @@ export class SearchIntermodalComponent {
         if (theLength === 0) {
           this.filteredInlandGeoScopes = [];
           this.filteredPortGeoScopes = [];
-
           this.formClass.inlandLocation.markAsPristine();
           return;
         }
@@ -175,23 +173,20 @@ export class SearchIntermodalComponent {
    *
    * @param {AbstractControl} control
    */
-  private onCountryCodeChanges(control: AbstractControl) {
-    control.valueChanges
-      .debounceTime(400)
-      .distinctUntilChanged()
-      .subscribe(data => {
-        if (data.toString().trim().length === 0) {
-          this.filteredCountries = [];
-          this.formClass.countryCode.markAsPristine();
-          return;
-        }
-        this.filterCountries(data);
-      });
 
+  private onCountryCodeChanges(control: AbstractControl) {
+
+    control.valueChanges.pipe(
+      debounceTime<string>(400),
+      distinctUntilChanged(),
+      filter(data => data.toString().length > 0)
+    )
+      .subscribe(data => this.filterCountries(data)
+      );
   }
 
-  filterCountries(countryCode) {
 
+  filterCountries(countryCode) {
     const countryObserver = {
       next: result => {
         if (result.length === 1) {
@@ -202,6 +197,7 @@ export class SearchIntermodalComponent {
         }
       },
       error: err => console.error('Observer got an error: ' + err),
+      complete: () => console.log('finshed'),
     };
 
     this.countryService.filterCountries(countryCode).subscribe(countryObserver);
@@ -274,10 +270,7 @@ export class SearchIntermodalComponent {
       .distinctUntilChanged()
       .subscribe(data => {
         if (data) {
-          console.log('include all');
           this.retrievePreferredPorts();
-        } else {
-          console.log('include selected');
         }
       });
   }
@@ -310,6 +303,8 @@ export class SearchIntermodalComponent {
     this.formClass.inlandGeoScopeType.patchValue('L');
     this.formClass.includeAllPreferredPorts.patchValue(true);
     this.formClass.startDate.patchValue(new Date().toISOString());
+    this.setEndDate(new Date(this.formClass.startDate.value));
+
     this.formClass.includeKeyFigure.disable({onlySelf: true, emitEvent: false});
     this.formClass.weight20.patchValue('');
     this.formClass.weight40.patchValue('');

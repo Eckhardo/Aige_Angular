@@ -92,7 +92,6 @@ describe('Router tests', () => {
       })
     ));
 
-
   it('Should redirect unknown path (Banane) to /searchIntermodal',
     fakeAsync(inject([Router, Location], (router: Router, location: Location) => {
         TestBed.createComponent(SearchIntermodalComponent);

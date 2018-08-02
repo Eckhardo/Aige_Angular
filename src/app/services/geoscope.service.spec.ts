@@ -9,7 +9,7 @@ describe('GeoScopeService', () => {
   let injector;
   let geoScopeService: GeoScopeService;
   let httpMock: HttpTestingController;
-  const expectedGeoScopes: GeoScopeModel[] = [
+  const expectedPorts: GeoScopeModel[] = [
     new GeoScopeModel(2, 'DEHAM'),
     new GeoScopeModel(1, 'BEANR')
   ];
@@ -29,30 +29,30 @@ describe('GeoScopeService', () => {
     httpMock.verify();
   });
 
-  describe('#filterPorts', () => {
+  describe('Should call Service##filterPorts', () => {
     it('should return an Observable<GeoScopeModel[]>', () => {
 
 
       geoScopeService.filterPorts('DEHAM').subscribe(geoScopes => {
         expect(geoScopes.length).toBe(2);
-        expect(geoScopes).toEqual(expectedGeoScopes);
+        expect(geoScopes).toEqual(expectedPorts);
       });
 
       const req = httpMock.expectOne(`${geoScopeService.serverApi}/${EntityEnum.PORTS}/filter/?location_code=DEHAM`);
       expect(req.request.method).toBe('GET');
-      req.flush(expectedGeoScopes);
+      req.flush(expectedPorts);
     });
   });
 
-  describe('#filterLocations', () => {
+  describe('Should call Service#filterLocations', () => {
     it('should return an Observable<GeoScopeModel[]>', () => {
       geoScopeService.filterLocations('DEHAM', 'L', 'DE').subscribe(geoScopes => {
         expect(geoScopes.length).toBe(2);
-        expect(geoScopes).toEqual(expectedGeoScopes);
+        expect(geoScopes).toEqual(expectedPorts);
       });
       const req = httpMock.expectOne(`${geoScopeService.serverApi}/${EntityEnum.GEOSCOPE}/filter/?location_code=DEHAM&geo_scope_type=L&country_code=DE`);
       expect(req.request.method).toBe('GET');
-      req.flush(expectedGeoScopes);
+      req.flush(expectedPorts);
     });
 
   });
