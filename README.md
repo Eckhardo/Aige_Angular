@@ -1,27 +1,13 @@
-# AIGE
- npm install -g @angular/cli@1.6.7
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+This a Single Page Web Application (SPA) for the REST-based Retrieval of Shipment-related 
+data ( Intermodal Transports/Costs, Ocean Routing).
 
-## Development server
+The SPA is based on the Angular CLI/Angular 5 platfrom, using Angular Material and Material Design Light as 
+additional frameworks/technologies.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+For UI user input and their processing Angular Reactive Forms are used. REST calls via HttpClient are capsulated by
+ Services and processed asynchroneous via Observables.
+ 
+ The SPA is further separated by Modules with one Root module as the main entry point and three sub modules that encapsulate
+ distinct business processes.
+ 
+Automated tests for Modules, Components and Services refelct another important aspect (and are based on Karma and Jasmine).  
