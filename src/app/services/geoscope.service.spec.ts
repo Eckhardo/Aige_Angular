@@ -3,18 +3,15 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import {GeoScopeService} from './geoscope.service';
 import {GeoScopeModel} from '../model/geoscope.model';
 import {EntityEnum} from '../enums/app-enum';
-import {CountryModel} from '../model/country.model';
 
 describe('GeoScopeService', () => {
   let injector;
   let geoScopeService: GeoScopeService;
   let httpMock: HttpTestingController;
-  const expectedPorts: GeoScopeModel[] = [
+  const expectedData: GeoScopeModel[] = [
     new GeoScopeModel(2, 'DEHAM'),
     new GeoScopeModel(1, 'BEANR')
   ];
-  const expectedCountries: Array<CountryModel> = [];
-  expectedCountries.push(new CountryModel(1, 'GERMANY', 'DE'));
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -33,26 +30,26 @@ describe('GeoScopeService', () => {
     it('should return an Observable<GeoScopeModel[]>', () => {
 
 
-      geoScopeService.filterPorts('DEHAM').subscribe(geoScopes => {
-        expect(geoScopes.length).toBe(2);
-        expect(geoScopes).toEqual(expectedPorts);
+      geoScopeService.filterPorts('DEHAM').subscribe(data => {
+        expect(data.length).toBe(2);
+        expect(data).toEqual(expectedData);
       });
 
       const req = httpMock.expectOne(`${geoScopeService.serverApi}/${EntityEnum.PORTS}/filter/?location_code=DEHAM`);
       expect(req.request.method).toBe('GET');
-      req.flush(expectedPorts);
+      req.flush(expectedData);
     });
   });
 
   describe('Should call Service#filterLocations', () => {
     it('should return an Observable<GeoScopeModel[]>', () => {
-      geoScopeService.filterLocations('DEHAM', 'L', 'DE').subscribe(geoScopes => {
-        expect(geoScopes.length).toBe(2);
-        expect(geoScopes).toEqual(expectedPorts);
+      geoScopeService.filterLocations('DEHAM', 'L', 'DE').subscribe(data => {
+        expect(data.length).toBe(2);
+        expect(data).toEqual(expectedData);
       });
       const req = httpMock.expectOne(`${geoScopeService.serverApi}/${EntityEnum.GEOSCOPE}/filter/?location_code=DEHAM&geo_scope_type=L&country_code=DE`);
       expect(req.request.method).toBe('GET');
-      req.flush(expectedPorts);
+      req.flush(expectedData);
     });
 
   });

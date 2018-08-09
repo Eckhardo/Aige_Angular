@@ -123,6 +123,7 @@ export class GeoScopeService {
   }
 
   private _handleError(err: HttpErrorResponse | any) {
+    console.log('_handleError:' + err);
     const errorMsg = err.message || 'Error: Unable to complete request.';
     return Observable.throw(errorMsg);
   }

@@ -7,7 +7,7 @@ import {EntityEnum} from '../enums/app-enum';
 describe('CountryService', () => {
   let countryService: CountryService;
   let httpMock: HttpTestingController;
-  const countryStub: Array<CountryModel> = [new CountryModel(1, 'GERMANY', 'DE'), new CountryModel(2, 'FRANCE', 'FR')];
+  const testData: Array<CountryModel> = [new CountryModel(1, 'GERMANY', 'DE'), new CountryModel(2, 'FRANCE', 'FR')];
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -32,10 +32,10 @@ describe('CountryService', () => {
 
   // specs
   it('should return Germany country', async(() => {
-    countryService.filterCountries('DE').subscribe(x => {
+    countryService.filterCountries('DE').subscribe(data => {
       // When observable resolves, result should match test data
-      expect(x.length).toEqual(2);
-      expect(x).toEqual(countryStub);
+      expect(data.length).toEqual(2);
+      expect(data).toEqual(testData);
 
     });
     // The following `expectOne()` will match the request's URL.
@@ -48,7 +48,7 @@ describe('CountryService', () => {
 
     // Respond with mock data, causing Observable to resolve.
     // Subscribe callback asserts that correct data was returned.
-    req.flush(countryStub);
+    req.flush(testData);
   }));
 
   describe('Only Check request on Servcie Side for service.filterCountries', () => {

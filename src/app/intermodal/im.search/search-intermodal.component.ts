@@ -6,6 +6,8 @@ import {AbstractControl, Validators} from '@angular/forms';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
+import {debounceTime, distinctUntilChanged, filter} from 'rxjs/operators';
+
 import {GeoScopeService} from '../../services/geoscope.service';
 import {GeoScopeModel} from '../../model/geoscope.model';
 import {CountryModel} from '../../model/country.model';
@@ -13,7 +15,6 @@ import {IntermodalSearchService} from '../services/im.search.service';
 import {KeyFigureModel} from '../models/keyfigure.model';
 import {CountryService} from '../../services/country.service';
 import {IntermodalSearchReactiveForm} from './search-intermodal.component.form';
-import {debounceTime, distinctUntilChanged, filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-intermodal',
@@ -39,7 +40,6 @@ export class SearchIntermodalComponent {
 
   constructor(private enumService: EnumService, private countryService: CountryService,
               private masterDataService: GeoScopeService, private searchService: IntermodalSearchService) {
-    console.log('constuctor');
 
     this.equipmentSizes = this.enumService.getEnumValues(EquipmentSize);
     this.equipmentTypes = this.enumService.getEnumKeys(EquipmentGroup);
@@ -114,7 +114,7 @@ export class SearchIntermodalComponent {
    * @param {AbstractControl} control
    */
   private onInlandLocationChanges(control: AbstractControl) {
-
+    console.log('onInlandLocationChanges:' + control.value);
     const locationObserver = {
       next: data => {
         const theLength: number = data.toString().trim().length;
@@ -175,7 +175,7 @@ export class SearchIntermodalComponent {
    */
 
   private onCountryCodeChanges(control: AbstractControl) {
-
+    console.log('onCountryCodeChanges for value:', control.value);
     control.valueChanges.pipe(
       debounceTime<string>(400),
       distinctUntilChanged(),
@@ -187,17 +187,22 @@ export class SearchIntermodalComponent {
 
 
   filterCountries(countryCode) {
+    console.log('filterCountries for:', countryCode);
     const countryObserver = {
       next: result => {
         if (result.length === 1) {
           this.formClass.countryCode.patchValue(result[0].code);
           this.filteredCountries = [];
+          console.log('RESULT 1: filterCountries' + JSON.stringify(result));
         } else {
+          console.log('RESULT 2: filterCountries' + JSON.stringify(result));
+
           this.filteredCountries = result;
+          console.log('RESULT 3: filterCountries' + JSON.stringify(this.filteredCountries));
         }
       },
       error: err => console.error('Observer got an error: ' + err),
-      complete: () => console.log('finshed'),
+      complete: () => console.log('finished'),
     };
 
     this.countryService.filterCountries(countryCode).subscribe(countryObserver);
@@ -208,7 +213,7 @@ export class SearchIntermodalComponent {
    * @param {AbstractControl} control
    */
   private onInlandGeoScopeChanges(control: AbstractControl) {
-
+    console.log('onInlandGeoScopeChanges:' + control.value);
     const geoScopeObserver = {
       next: data => {
         if (data === 'T' || data === 'P') {

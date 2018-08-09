@@ -72,12 +72,13 @@
       </mat-form-field>
       <mat-form-field style="width: 120px; margin-left: 20px; margin-right: 20px;"
                       [ngClass]="{'isHidden': ! isCountryDisplayed()}">
-        <input matInput placeholder="Country Code" formControlName="countryCode" [matAutocomplete]="autoCountry">
+        <input id="countryCodeControl" matInput placeholder="Country Code" formControlName="countryCode"
+               [matAutocomplete]="autoCountry">
         <mat-error>
           <span *ngIf="!form.get('countryCode').valid && form.get('countryCode').touched">Enter e.g. DE, BR !</span>
         </mat-error>
         <mat-autocomplete #autoCountry="matAutocomplete">
-          <mat-option *ngFor="let country of filteredCountries" [value]="country.code"
+          <mat-option id="countryCodeOption" *ngFor="let country of filteredCountries" [value]="country.code"
                       style="height: 30px; line-height: 20px;">
             <span class="smallFont"> {{ country.code }}</span>
           </mat-option>

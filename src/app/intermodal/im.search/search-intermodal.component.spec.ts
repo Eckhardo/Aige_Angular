@@ -1,7 +1,7 @@
-import {async, ComponentFixture, ComponentFixtureAutoDetect, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {async, ComponentFixture, ComponentFixtureAutoDetect, TestBed} from '@angular/core/testing';
 
 import {SearchIntermodalComponent} from './search-intermodal.component';
-import {DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
 
 import {AppMaterialModule} from '../../app-material.module';
 import {EnumService} from '../../services/enum.service';
@@ -12,21 +12,21 @@ import {AbstractControl, ReactiveFormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
 import {By} from '@angular/platform-browser';
 import {CountryService} from '../../services/country.service';
-import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import {CountryModel} from '../../model/country.model';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {Observable} from 'rxjs/Observable';
 
 describe('SearchRoutesComponent', () => {
   let fixture: ComponentFixture<SearchIntermodalComponent>;
   let component: SearchIntermodalComponent;
+  let debugElement: DebugElement;
 
   let titleDomElement: DebugElement;
   let titleHtmlElement: HTMLElement;
   let inland: AbstractControl;
 
-
-  const countryStub: Array<CountryModel> = [new CountryModel(1, 'GERMANY', 'DE'), new CountryModel(2, 'FRANCE', 'FR')];
+  const expectedCountries: Array<CountryModel> = [new CountryModel(1, 'GERMANY', 'DE'), new CountryModel(2, 'DANMARK', 'DK')];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -35,7 +35,7 @@ describe('SearchRoutesComponent', () => {
       providers: [EnumService, CountryService, GeoScopeService, IntermodalSearchService,
         {provide: ComponentFixtureAutoDetect, useValue: true}],
       // add NO_ERRORS_SCHEMA to ignore <app-result-intermodal> tag
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 
       // If you run tests in a non-CLI environment, compilationmight not have occured
     }).compileComponents();
@@ -49,10 +49,13 @@ describe('SearchRoutesComponent', () => {
     fixture = TestBed.createComponent(SearchIntermodalComponent);
     // get test component from the fixture
     component = fixture.componentInstance;
+    debugElement = fixture.debugElement;
+    expect(component).toBeDefined();
     titleDomElement = fixture.debugElement.query(By.css('#im-search-form-title'));
     titleHtmlElement = titleDomElement.nativeElement;
     fillForm();
     inland = component.form.controls['inlandLocation'];
+
   });
 
   it('Component Should be Created', () => {
@@ -101,6 +104,44 @@ describe('SearchRoutesComponent', () => {
     expect(component.form.valid).toBeTruthy();
     expect(component.isInvalid()).toBeFalsy();
   });
+
+
+  it('#MOST complex Test: Fills countryCode autocomplete which triggers reactive form observable which triggers service call', async(() => {
+    const countryService: CountryService = debugElement.injector.get(CountryService);
+    const spyService = spyOn(countryService, 'filterCountries').and.returnValue(Observable.of(expectedCountries));
+
+
+    const geoScopeTypeControl = component.form.controls['inlandGeoScopeType'];
+    geoScopeTypeControl.setValue('T');
+    fixture.detectChanges();
+    const countryControl: AbstractControl = component.form.controls['countryCode'];
+    expect(countryControl).toBeDefined();
+    expect(countryControl).toBeTruthy();
+    expect(countryControl.value).toEqual('');
+
+    sendInput('D')
+      .then(() => {
+        expect(countryControl.value).toEqual('D');
+      });
+
+  }));
+
+
+  function sendInput(countryCode: string) {
+
+    let inputDomElement: DebugElement;
+    inputDomElement = fixture.debugElement.query(By.css('#countryCodeControl'));
+    let inputElement: HTMLInputElement;
+    inputElement = inputDomElement.nativeElement;
+    fixture.detectChanges();
+    inputElement.focus();
+    inputElement.value = countryCode;
+    inputElement.dispatchEvent(new Event('input'));
+
+    fixture.detectChanges();
+    return fixture.whenStable();
+  }
+
   const fillForm = function () {
     const includeImTariff = component.form.controls['includeImTariff'];
     includeImTariff.setValue(true);
@@ -118,71 +159,4 @@ describe('SearchRoutesComponent', () => {
     const endDate = component.form.controls['startDate'];
     endDate.setValue('2018-08-06T09:33:01.146Z');
   };
-});
-
-describe('SearchRoutesComponent: Simulate autocomplete for Country', () => {
-  let fixture: ComponentFixture<SearchIntermodalComponent>;
-  let component: SearchIntermodalComponent;
-
-  let countryService: CountryService;
-  const countryServiceStub = {
-    countryStub: [new CountryModel(1, 'GERMANY', 'DE'), new CountryModel(2, 'FRANCE', 'FR')],
-    filterCountries: async function (countries: CountryModel[]) {
-      component.filteredCountries = countries;
-    }
-  }
-  const countryStub: Array<CountryModel> = [];
-  countryStub.push(new CountryModel(1, 'GERMANY', 'DE'), new CountryModel(2, 'FRANCE', 'FR'));
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule, BrowserAnimationsModule, AppMaterialModule, ReactiveFormsModule],
-      declarations: [SearchIntermodalComponent],
-      providers: [EnumService, CountryService, GeoScopeService, IntermodalSearchService,
-        {provide: ComponentFixtureAutoDetect, useValue: true}],
-      // add NO_ERRORS_SCHEMA to ignore <app-result-intermodal> tag
-      schemas: [NO_ERRORS_SCHEMA]
-
-      // If you run tests in a non-CLI environment, compilationmight not have occured
-    }).compileComponents();
-
-  }));
-
-
-  beforeEach(() => {
-    // create component and test fixture
-    // createComponent() does not bind data: use  fixture.detectChanges() to trigger this
-    fixture = TestBed.createComponent(SearchIntermodalComponent);
-    // get test component from the fixture
-    component = fixture.componentInstance;
-    countryService = fixture.debugElement.injector.get(CountryService);
-  });
-  it('Call CountryService#filterCountries with Jasmine Spy & fakeAsync', fakeAsync(() => {
-    spyOn(countryService, 'filterCountries').and.returnValue(Observable.of(countryStub));
-
-    expect(countryService).toBeTruthy();
-    tick(1000);
-    fixture.detectChanges();
-    component.filterCountries('DE');
-    expect(countryService.filterCountries).toHaveBeenCalled();
-    expect(countryService.filterCountries).toHaveBeenCalledTimes(1);
-    expect(countryService.filterCountries).toHaveBeenCalledWith('DE');
-    expect(component.filteredCountries.length).toBe(2);
-    expect(component.filteredCountries).toEqual(countryStub);
-  }));
-
-  it('Call CountryService#filterCountries with Jasmine Spy and async', async(() => {
-    spyOn(countryService, 'filterCountries').and.returnValue(Observable.of(countryStub));
-
-    component.filterCountries('DE');
-    fixture.whenStable().then(() => {
-      fixture.detectChanges();
-      expect(countryService.filterCountries).toHaveBeenCalled();
-      expect(countryService.filterCountries).toHaveBeenCalledTimes(1);
-      expect(countryService.filterCountries).toHaveBeenCalledWith('DE');
-      expect(component.filteredCountries.length).toBe(2);
-      expect(component.filteredCountries).toEqual(countryStub);
-
-    });
-  }));
 });

@@ -4,8 +4,6 @@ import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/c
 import {EntityEnum} from '../enums/app-enum';
 import {CountryModel} from '../model/country.model';
 
-import {catchError, tap} from 'rxjs/operators';
-
 @Injectable()
 export class CountryService {
   countryCodes: Array<CountryModel> = [];
@@ -43,38 +41,18 @@ export class CountryService {
   }
 
   filterCountries(query: string): Observable<Array<CountryModel>> {
+    console.error('service:filter countries:', query);
     const search_params: HttpParams = new HttpParams().set('country_code', query.toUpperCase());
     const URI = this.getUrl(EntityEnum.COUNTRY) + 'filter/';
     let result: Observable<Array<CountryModel>>;
     result = this.http
       .get<Array<CountryModel>>(URI, {params: search_params})
       .catch(this._handleError);
-
-    return result;
-  }
-
-  filterCountriesTest(query: string): Observable<Array<CountryModel>> {
-    const search_params: HttpParams = new HttpParams().set('country_code', query.toUpperCase());
-    const URI = this.getUrl(EntityEnum.COUNTRY) + 'filter/';
-    let result: Observable<Array<CountryModel>>;
-    result = this.http
-      .get<Array<CountryModel>>(URI, {params: search_params})
-      .catch(this._handleError);
-
+    console.log('find Countries Result:');
     return result;
   }
 
 
-  filterCountriesNEW(query: string): Observable<Array<CountryModel>> {
-    const search_params: HttpParams = new HttpParams()
-      .set('country_code', query.toUpperCase());
-    const URI = ` ${this.getUrl(EntityEnum.COUNTRY)}filter/`;
-    return this.http
-      .get<Array<CountryModel>>(URI, {params: search_params}).pipe(
-        tap(data => this.log('Data: ' + JSON.stringify(data))),
-        catchError(this._handleError)
-      );
-  }
 
 
   private _handleError(error: HttpErrorResponse | any) {

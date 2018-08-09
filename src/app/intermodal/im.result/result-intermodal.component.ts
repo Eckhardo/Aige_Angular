@@ -1,4 +1,12 @@
-import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -9,9 +17,10 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 @Component({
   selector: 'app-result-intermodal',
   templateUrl: './result-intermodal.component.html',
-  styleUrls: ['./result-intermodal.component.css']
+  styleUrls: ['./result-intermodal.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ResultIntermodalComponent implements OnInit, OnChanges, AfterViewInit {
+export class ResultIntermodalComponent implements OnChanges, AfterViewInit {
 
   @Input()
   keyFigures: Array<KeyFigureModel> = [];
@@ -34,19 +43,11 @@ export class ResultIntermodalComponent implements OnInit, OnChanges, AfterViewIn
    * be able to query its view for the initialized sort.
    */
   ngAfterViewInit() {
-    console.log('after view init');
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  ngOnInit() {
-    console.log('init');
-
-  }
-
-
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('on changes' + JSON.stringify(changes));
     this.dataSource = new MatTableDataSource(this.keyFigures);
   }
 }
