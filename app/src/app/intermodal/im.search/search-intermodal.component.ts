@@ -112,7 +112,6 @@ export class SearchIntermodalComponent {
    * @param {AbstractControl} control
    */
   private onInlandLocationChanges(control: AbstractControl) {
-    console.log('onInlandLocationChanges:' + control.value);
     const locationObserver = {
       next: data => {
         const theLength: number = data.toString().trim().length;
