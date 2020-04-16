@@ -7,6 +7,6 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'Product Catalogue Analyzer';
+  title = 'Shipment Data Analyzer';
 
 }

@@ -20,8 +20,8 @@ export class GeoScopeService {
   locations: Array<GeoScopeModel> = [];
   prefPorts: Array<GeoScopeModel> = [];
 
-
-  readonly serverApi = `http://${location.host}/nre`;
+  readonly serverApi = 'http://localhost:8086/nre';
+ // readonly serverApi = `http://${location.host}/nre`;
   private resource = '/';
 
   constructor(private http: HttpClient) {

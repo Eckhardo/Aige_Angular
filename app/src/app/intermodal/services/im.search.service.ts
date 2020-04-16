@@ -12,8 +12,8 @@ import {keyfigures} from '../../testdata/keyfigure';
 
 @Injectable()
 export class IntermodalSearchService {
-
-  readonly serverApi = `http://${location.host}/nre`;
+  readonly serverApi = 'http://localhost:8086/nre';
+  // readonly serverApi = `http://${location.host}/nre`;
   private resource = '/';
   private objectType = EntityEnum.INTERMODAL_RESULT;
 
