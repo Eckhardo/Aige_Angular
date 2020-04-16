@@ -65,7 +65,7 @@
           <entry key="dummy" value="4" />
           <entry key="html" value="22" />
           <entry key="js" value="36" />
-          <entry key="json" value="22" />
+          <entry key="json" value="23" />
           <entry key="ts" value="130" />
           <entry key="txt" value="144" />
           <entry key="yaml" value="409" />
@@ -75,7 +75,7 @@
         <counts>
           <entry key="Dockerfile" value="38" />
           <entry key="HTML" value="22" />
-          <entry key="JSON" value="22" />
+          <entry key="JSON" value="23" />
           <entry key="JavaScript" value="36" />
           <entry key="PLAIN_TEXT" value="148" />
           <entry key="TypeScript" value="130" />
@@ -126,8 +126,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/package-lock.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="425" column="26" selection-start-line="425" selection-start-column="26" selection-end-line="425" selection-end-column="26" />
+            <state relative-caret-position="590">
+              <caret line="3969" column="18" selection-start-line="3969" selection-start-column="18" selection-end-line="3969" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -148,6 +148,7 @@
       <find>serverApi</find>
       <find>lodash.mergewith</find>
       <find>lodash</find>
+      <find>lodash&quot;:</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Dev\WebstormProjects\Aige_Angular\app\src</dir>
@@ -416,7 +417,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47492000" />
+    <option name="totallyTimeSpent" value="47732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -675,8 +676,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="425" column="26" selection-start-line="425" selection-start-column="26" selection-end-line="425" selection-end-column="26" />
+        <state relative-caret-position="590">
+          <caret line="3969" column="18" selection-start-line="3969" selection-start-column="18" selection-end-line="3969" selection-end-column="18" />
         </state>
       </provider>
     </entry>
