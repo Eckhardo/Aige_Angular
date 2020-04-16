@@ -241,7 +241,7 @@ export class SearchIntermodalComponent {
    *
    */
   private retrievePreferredPorts() {
-    this.masterDataService.filterPorts(this.formClass.inlandLocation.value).subscribe(
+    this.masterDataService.filterPreferredPorts(this.formClass.inlandLocation.value, this.formClass.inlandGeoScopeType.value, this.formClass.countryCode.value).subscribe(
       result => {
         console.log('result:' + JSON.stringify(result));
         if (result.length === 1) {

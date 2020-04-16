@@ -20,7 +20,7 @@ export class GeoScopeService {
   locations: Array<GeoScopeModel> = [];
   prefPorts: Array<GeoScopeModel> = [];
 
-  readonly serverApi = 'http://localhost:8086/nre';
+  readonly serverApi = 'http://localhost:5000/nre';
  // readonly serverApi = `http://${location.host}/nre`;
   private resource = '/';
 
@@ -58,7 +58,7 @@ export class GeoScopeService {
 
   filterPreferredPorts(query: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
     const search_params: HttpParams = this.prepareGeoScopeSearchParams(query, geoScopeType, countryCode);
-    const URI = this.getUrl(EntityEnum.PREFERRED_PORTS) + 'filter/';
+    const URI = this.getUrl(EntityEnum.GEOSCOPE) + 'preferredPort/';
     console.log('uri:' + URI);
     console.log('params:' + search_params);
     return this.http
@@ -69,7 +69,7 @@ export class GeoScopeService {
 
   filterPorts(query: string): Observable<Array<GeoScopeModel>> {
     const search_params = new HttpParams().set('location_code', query.toUpperCase());
-    const URI = this.getUrl(EntityEnum.PORTS) + 'filter/';
+    const URI = this.getUrl(EntityEnum.GEOSCOPE) + 'ports/';
     console.log('uri:' + URI);
     console.log('params:' + search_params);
     return this.http

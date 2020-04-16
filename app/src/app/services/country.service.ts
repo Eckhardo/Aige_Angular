@@ -9,7 +9,7 @@ import {catchError} from 'rxjs/operators';
 export class CountryService {
   countryCodes: Array<CountryModel> = [];
 
-  readonly serverApi = 'http://localhost:8086/nre';
+  readonly serverApi = 'http://localhost:5000/nre';
 //  readonly serverApi = `http://${location.host}/nre`;
   private resource = '/';
 

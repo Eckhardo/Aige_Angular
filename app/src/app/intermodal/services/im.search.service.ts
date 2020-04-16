@@ -12,10 +12,10 @@ import {keyfigures} from '../../testdata/keyfigure';
 
 @Injectable()
 export class IntermodalSearchService {
-  readonly serverApi = 'http://localhost:8086/nre';
+  readonly serverApi = 'http://localhost:5000/nre';
   // readonly serverApi = `http://${location.host}/nre`;
   private resource = '/';
-  private objectType = EntityEnum.INTERMODAL_RESULT;
+  private objectType = EntityEnum.INTERMODAL_ROUTE;
 
   constructor(private http: HttpClient) {
   }
@@ -35,7 +35,7 @@ export class IntermodalSearchService {
     const search_params: HttpParams = this.prepareSearchParams(imSearchModel);
     console.log('#search params' + JSON.stringify(search_params));
 
-    const URI = this.getUrl() + 'filter/';
+    const URI = this.getUrl() + 'keyfigure/filter/';
     return this.http.get<Array<KeyFigureModel>>(URI, {params: search_params});
 
   }
