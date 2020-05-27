@@ -1,6 +1,6 @@
 {
-  "name": "angular6docker",
-  "version": "0.0.0",
+  "name": "angular9docker",
+  "version": "0.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
