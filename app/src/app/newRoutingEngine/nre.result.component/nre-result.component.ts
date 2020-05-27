@@ -1,7 +1,8 @@
 import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
-
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import {NewRoutingModel} from '../models/nre.model';
+import {MatTableDataSource} from "@angular/material/table";
 
 
 @Component({
@@ -17,8 +18,8 @@ export class NewRoutingeEngineResultComponent implements OnInit, AfterViewInit, 
   displayedColumns = ['tt', 'pol', 'ts1', 'ts2', 'ts3', 'pod', 'prof-1', 'prof-2', 'prof-3', 'errorcode'];
   dataSource: any;
 
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true } as any) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true } as any) paginator: MatPaginator;
 
 
   applyFilter(filterValue: string) {

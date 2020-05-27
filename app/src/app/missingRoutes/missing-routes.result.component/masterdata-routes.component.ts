@@ -1,7 +1,9 @@
 import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {MissingRoutingModel} from '../models/missing-routing.model';
+import {MatSort} from "@angular/material/sort";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatTableDataSource} from "@angular/material/table";
 
 
 @Component({
@@ -17,8 +19,8 @@ export class MissingRoutesResultComponent implements OnInit, AfterViewInit, OnCh
   displayedColumns = ['trade', 'pol', 'pod', 'ts1', 'ts2', 'ts3', 'contractno', 'productno', 'partnercode', 'reasoncode'];
   dataSource: any;
 
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true } as any) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true } as any) paginator: MatPaginator;
 
 
   applyFilter(filterValue: string) {

@@ -1,10 +1,11 @@
+
+import {throwError as observableThrowError, of, Observable} from 'rxjs';
 /**
  * Created by ekirschning on 28.03.2017.
  */
 
 
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import {EntityEnum} from '../enums/app-enum';
@@ -124,7 +125,7 @@ export class GeoScopeService {
   private _handleError(err: HttpErrorResponse | any) {
     console.log('_handleError:' + err);
     const errorMsg = err.message || 'Error: Unable to complete request.';
-    return Observable.throw(errorMsg);
+    return observableThrowError(errorMsg);
   }
 
   // dummy methods

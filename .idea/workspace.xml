@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="529075ca-feda-4c00-9c04-56e82d57c7d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/app-material.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app-material.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.routes.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.routes.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.result.component/masterdata-routes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.result.component/masterdata-routes.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.result.component/nre-result.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.result.component/nre-result.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/services/date.utils/date.adapter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/services/date.utils/date.adapter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/tsconfig.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,19 +29,19 @@
     <session id="-1728466614">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="4" />
-          <entry key="project.open.time.7" value="4" />
-          <entry key="project.open.time.8" value="7" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="28" />
+          <entry key="project.open.time.7" value="5" />
+          <entry key="project.open.time.8" value="8" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -38,11 +50,11 @@
           <entry key="conf" value="2" />
           <entry key="css" value="1" />
           <entry key="dockerfile" value="1" />
-          <entry key="html" value="7" />
+          <entry key="html" value="8" />
           <entry key="js" value="3" />
-          <entry key="json" value="4" />
+          <entry key="json" value="10" />
           <entry key="md" value="2" />
-          <entry key="ts" value="41" />
+          <entry key="ts" value="57" />
           <entry key="yaml" value="8" />
         </counts>
       </usages-collector>
@@ -50,12 +62,12 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="Dockerfile" value="2" />
-          <entry key="HTML" value="7" />
-          <entry key="JSON" value="4" />
+          <entry key="HTML" value="8" />
+          <entry key="JSON" value="10" />
           <entry key="JavaScript" value="3" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="TypeScript" value="41" />
+          <entry key="TypeScript" value="57" />
           <entry key="YAML" value="8" />
         </counts>
       </usages-collector>
@@ -65,8 +77,8 @@
           <entry key="dummy" value="4" />
           <entry key="html" value="22" />
           <entry key="js" value="36" />
-          <entry key="json" value="23" />
-          <entry key="ts" value="130" />
+          <entry key="json" value="59" />
+          <entry key="ts" value="177" />
           <entry key="txt" value="144" />
           <entry key="yaml" value="409" />
         </counts>
@@ -75,16 +87,17 @@
         <counts>
           <entry key="Dockerfile" value="38" />
           <entry key="HTML" value="22" />
-          <entry key="JSON" value="23" />
+          <entry key="JSON" value="59" />
           <entry key="JavaScript" value="36" />
           <entry key="PLAIN_TEXT" value="148" />
-          <entry key="TypeScript" value="130" />
+          <entry key="TypeScript" value="177" />
           <entry key="YAML" value="409" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="Angular2LanguageService" value="11" />
+          <entry key="Angular2LanguageService" value="13" />
+          <entry key="TypeScriptServerServiceImpl" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.kubernetes.usages">
@@ -99,44 +112,85 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+            <state relative-caret-position="323">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts">
+        <entry file="file://$PROJECT_DIR$/app/src/app/services/date.utils/date.adapter.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            <state>
+              <folding>
+                <element signature="e#1#44#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/node_modules/@angular/common/http/src/client.d.ts">
+        <entry file="file://$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.result.component/nre-result.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state relative-caret-position="119">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#107#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.routes.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.result.component/masterdata-routes.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/app-material.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="401" selection-start-line="25" selection-start-column="401" selection-end-line="25" selection-end-column="401" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#124#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/package-lock.json">
+        <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="3969" column="18" selection-start-line="3969" selection-start-column="18" selection-end-line="3969" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app/enums/app-enum.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+            <state relative-caret-position="340">
+              <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+              <folding>
+                <element signature="n#style#0;n#mat-grid-list#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -149,10 +203,14 @@
       <find>lodash.mergewith</find>
       <find>lodash</find>
       <find>lodash&quot;:</find>
+      <find>rxjs-compat</find>
+      <find>65</find>
     </findStrings>
     <dirStrings>
-      <dir>C:\Dev\WebstormProjects\Aige_Angular\app\src</dir>
       <dir>C:\Dev\WebstormProjects\Aige_Angular</dir>
+      <dir>C:\Dev\WebstormProjects\Aige_Angular\app\src</dir>
+      <dir>C:\Dev\WebstormProjects\Aige_Angular\app\node_modules</dir>
+      <dir>C:\Dev\WebstormProjects\Aige_Angular\app\src\app\intermodal</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -169,17 +227,23 @@
         <option value="$PROJECT_DIR$/src/KubeTest.yaml" />
         <option value="$PROJECT_DIR$/src/Job.yaml" />
         <option value="$PROJECT_DIR$/karma.conf.js" />
-        <option value="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html" />
         <option value="$PROJECT_DIR$/app/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/app/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/app/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/app/src/app/services/country.service.ts" />
         <option value="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" />
         <option value="$PROJECT_DIR$/app/src/app/enums/app-enum.ts" />
         <option value="$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts" />
-        <option value="$PROJECT_DIR$/app/package.json" />
         <option value="$PROJECT_DIR$/app/package-lock.json" />
+        <option value="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" />
+        <option value="$PROJECT_DIR$/app/package.json" />
+        <option value="$PROJECT_DIR$/app/src/app/services/date.utils/date.adapter.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/intermodal/im.routes.module.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.result.component/nre-result.component.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.result.component/masterdata-routes.component.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/app-material.module.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html" />
       </list>
     </option>
   </component>
@@ -205,11 +269,14 @@
       <path value="$PROJECT_DIR$/app/package.json" />
     </packageJsonPaths>
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/app/package.json" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="498" />
-    <option name="y" value="12" />
+    <option name="x" value="495" />
+    <option name="y" value="10" />
     <option name="width" value="1400" />
-    <option name="height" value="777" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -229,6 +296,36 @@
               <item name="Aige_Angular" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Aige_Angular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aige_Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Aige_Angular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aige_Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Aige_Angular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aige_Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="intermodal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Aige_Angular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aige_Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="intermodal" type="462c0819:PsiDirectoryNode" />
+              <item name="im.result" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -239,7 +336,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Angular6Docker" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="C:\Dev\WebstormProjects\Aige_Angular\app\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -264,7 +361,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.test">
     <configuration name="build (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="run" />
@@ -275,18 +372,18 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="ng" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="run" />
       <scripts>
-        <script value="start" />
+        <script value="ng" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
+    <configuration name="start (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
@@ -316,19 +413,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.start" />
       <item itemvalue="npm.test" />
       <item itemvalue="npm.build (1)" />
       <item itemvalue="npm.start (1)" />
       <item itemvalue="npm.test (1)" />
+      <item itemvalue="npm.ng" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build (1)" />
         <item itemvalue="npm.start (1)" />
+        <item itemvalue="npm.build (1)" />
+        <item itemvalue="npm.ng" />
         <item itemvalue="npm.test (1)" />
         <item itemvalue="npm.test" />
-        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -370,6 +467,10 @@
       <workItem from="1562409914513" duration="1288000" />
       <workItem from="1562419513311" duration="215000" />
       <workItem from="1562419758141" duration="3772000" />
+      <workItem from="1590230008358" duration="3515000" />
+      <workItem from="1590479983013" duration="12579000" />
+      <workItem from="1590495154351" duration="607000" />
+      <workItem from="1590567262907" duration="6198000" />
     </task>
     <task id="LOCAL-00001" summary="added firefox as karma browser">
       <created>1537695606826</created>
@@ -417,27 +518,27 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47732000" />
+    <option name="totallyTimeSpent" value="71302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.72727275" visible="true" weight="0.2247191" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7172996" visible="true" weight="0.2247191" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info id="npm" order="3" sideWeight="0.27272728" side_tool="true" visible="true" weight="0.2247191" />
+      <window_info id="npm" order="3" sideWeight="0.28270042" side_tool="true" visible="true" weight="0.2247191" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4990086" weight="0.32907802" />
-      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.4937211" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.48578984" weight="0.32765958" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49834764" weight="0.32907802" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49306014" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.46926636" visible="true" weight="0.32765958" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" sideWeight="0.49743214" weight="0.32970452" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49107733" visible="true" weight="0.32907802" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5089227" side_tool="true" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.47124916" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.53073364" side_tool="true" visible="true" weight="0.32765958" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -447,6 +548,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/app/node_modules/karma/config.tpl.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -491,13 +597,7 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/app/enums/equipment.group.ts">
       <provider selected="true" editor-type-id="text-editor" />
@@ -510,11 +610,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/index.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app-material.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-296" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/app/shared/shared.module.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -567,16 +662,6 @@
     <entry file="file://$PROJECT_DIR$/nre-loadbalancer.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#mat-form-field#0;n#div#1;n#div#2;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -615,34 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/services/geoscope.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/node_modules/@angular/common/http/src/client.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="64" column="62" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/services/country.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="243" column="37" selection-start-line="243" selection-start-column="37" selection-end-line="243" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.routes.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        <state relative-caret-position="306">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -653,31 +714,125 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="-645">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/node_modules/@angular/common/http/src/client.d.ts">
+    <entry file="file://$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="149">
+          <caret line="253" column="31" selection-start-line="253" selection-start-column="31" selection-end-line="253" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3893">
+          <caret line="243" column="37" selection-start-line="243" selection-start-column="37" selection-end-line="243" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/services/geoscope.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/node_modules/rxjs/InnerSubscriber.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/services/country.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/services/geoscope.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2839">
+          <caret line="167" column="31" selection-start-line="167" selection-start-column="31" selection-end-line="167" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="3969" column="18" selection-start-line="3969" selection-start-column="18" selection-end-line="3969" selection-end-column="18" />
+        <state relative-caret-position="-68">
+          <caret line="1469" column="19" selection-start-line="1469" selection-start-column="19" selection-end-line="1469" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/services/date.utils/date.adapter.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#1#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.result.component/nre-result.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.result.component/masterdata-routes.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.routes.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/app-material.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="401" selection-start-line="25" selection-start-column="401" selection-end-line="25" selection-end-column="401" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#mat-grid-list#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
