@@ -11,7 +11,7 @@ export const appRoutes: Routes = [
 
 ];
 
-export const routedComponents = [AppComponent, HomeComponent, ChangeDetectorPipe];
+export const ROOT_COMPONENTS = [AppComponent, HomeComponent, ChangeDetectorPipe];
 
 @NgModule({
   imports: [

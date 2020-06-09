@@ -23,7 +23,7 @@ export class GeoScopeService {
 
   readonly serverApi = 'http://localhost:5000/nre';
  // readonly serverApi = `http://${location.host}/nre`;
-  private resource = '/';
+  private slash = '/';
 
   constructor(private http: HttpClient) {
   }
@@ -33,7 +33,7 @@ export class GeoScopeService {
   }
 
   private getUrl(objectType: EntityEnum): string {
-    return this.serverApi + this.resource + objectType + this.resource;
+    return this.serverApi + this.slash + objectType + this.slash;
   }
 
 
@@ -130,8 +130,37 @@ export class GeoScopeService {
 
   // dummy methods
 
+  findLocationsMock(): Observable<Array<GeoScopeModel>> {
+     return of(this.buildLocations());
+  }
+
+ private  buildLocations(geoScope?: GeoScopeModel){
+ let geoScopes : Array<GeoScopeModel> = [];
+    geoScopes.push(new GeoScopeModel(1, 'DEHAM', 'L', 'DE'));
+    geoScopes.push(new GeoScopeModel(2, 'DEBRV', 'L', 'DE'));
+    geoScopes.push(new GeoScopeModel(3, 'NLRTM', 'L', 'NL'));
+    geoScopes.push(new GeoScopeModel(4, 'BEANR', 'L', 'BE'));
+
+    geoScopes.push(new GeoScopeModel(5, 'DUSSELDORF', 'T', 'DE'));
+    geoScopes.push(new GeoScopeModel(6, 'DUSHEIM', 'T', 'DE'));
+    geoScopes.push(new GeoScopeModel(7, 'DUSENHAUSEN', 'T', 'DE'));
+    geoScopes.push(new GeoScopeModel(8, 'DEDUS', 'L', 'DE'));
+    geoScopes.push(new GeoScopeModel(9, 'DEDUI', 'L', 'DE'));
+   if (geoScope != undefined) {
+     geoScopes.push(geoScope);
+   }
+    return geoScopes;
+  }
+  saveLocationMock(geoScope: GeoScopeModel) {
+
+    console.log('saveLocationMock:' + JSON.stringify(geoScope));
+    this.buildLocations(geoScope);
+
+
+  }
+
   filterPortLocations(query: string): Observable<Array<GeoScopeModel>> {
-    console.log('service: filter port locations:' + query);
+    console.log('service: filter port GEOSCOPE_TEST_DATA:' + query);
     this.prefPorts = [];
     this.prefPorts.push(new GeoScopeModel(1, 'DEHAM', '', ''));
     this.prefPorts.push(new GeoScopeModel(2, 'DEBRV', '', ''));
@@ -141,7 +170,7 @@ export class GeoScopeService {
   }
 
   filterPodLocations(query: string): Observable<Array<GeoScopeModel>> {
-    console.log('service: filter port locations:' + query);
+    console.log('service: filter port GEOSCOPE_TEST_DATA:' + query);
     this.prefPorts = [];
     this.prefPorts.push(new GeoScopeModel(1, 'BRSSZ', '', ''));
     this.prefPorts.push(new GeoScopeModel(2, 'BRMAO', '', ''));
@@ -151,7 +180,7 @@ export class GeoScopeService {
   }
 
   filterImLocations(code: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
-    console.log('service: filter im locations:' + geoScopeType);
+    console.log('service: filter im GEOSCOPE_TEST_DATA:' + geoScopeType);
     this.locations = [];
 
     this.locations.push(new GeoScopeModel(1, 'DUSSELDORF', 'T', 'D'));

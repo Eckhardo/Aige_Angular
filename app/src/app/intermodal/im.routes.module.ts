@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {IntermodalRoutesRoutingModule, routedComponents} from './im.routes-routing.module';
+import {IntermodalRoutesRoutingModule, INTERMODAL_COMPONENTS} from './im.routes-routing.module';
 import {EnumService} from '../services/enum.service';
 
 import {AppDateAdapter} from '../services/date.utils/date.adapter';
@@ -11,7 +11,7 @@ import {CountryService} from '../services/country.service';
 import {DateAdapter, MAT_DATE_FORMATS} from "@angular/material/core";
 @NgModule({
 
-  declarations: [routedComponents],
+  declarations: [INTERMODAL_COMPONENTS],
 
   imports: [SharedModule, IntermodalRoutesRoutingModule],
 

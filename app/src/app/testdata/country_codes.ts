@@ -1,4 +1,4 @@
-let countries = [
+export let countries = [
   {'name': 'Afghanistan', 'code': 'AF'},
   {'name': 'Åland Islands', 'code': 'AX'},
   {'name': 'Albania', 'code': 'AL'},

@@ -1,0 +1,45 @@
+<div class="example-container mat-elevation-z8">
+  <h2>Locations List</h2>
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/add-location']"><mat-icon>add</mat-icon> Cases</a>
+  </div>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="data" class="example-table"
+           matSort matSortActive="name" matSortDisableClear matSortDirection="asc">
+      <!-- Location ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>id</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+      <!-- Location Code Column -->
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef>name</th>
+        <td mat-cell *matCellDef="let row">{{row.locationCode}}</td>
+      </ng-container>
+      <!-- Location Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>name</th>
+        <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      </ng-container>
+
+      <!-- Location Country Column -->
+      <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef>country</th>
+        <td mat-cell *matCellDef="let row">{{row.countryCode}}</td>
+      </ng-container>
+
+      <!-- Location Type Column -->
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>type</th>
+        <td mat-cell *matCellDef="let row">{{row.geoScopeType}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/location-details/', row.id]"></tr>
+    </table>
+  </div>
+</div>
