@@ -1,8 +1,8 @@
-import { Component, OnInit,ViewChild  } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {GeoScopeService} from "../../services/geoscope.service";
 
 import {MatTable} from "@angular/material/table";
-import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {MatDialog} from "@angular/material/dialog";
 import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
 import {GEOSCOPE_TEST_DATA} from "../../testdata/geoscopes";
 import {GeoScopeModel} from "../../model/geoscope.model";
@@ -47,20 +47,19 @@ export class GeoscopeListComponent implements OnInit {
   addRowData(row_obj){
     console.log('Transmitted  ADD Data' + JSON.stringify(row_obj));
 
-    this.dataSource.push(new GeoScopeModel(row_obj.id,row_obj.code, row_obj.type,row_obj.country));
+    this.dataSource.push(new GeoScopeModel(row_obj.id, row_obj.country, row_obj.code, row_obj.type, row_obj.name, row_obj.port));
     console.log('New Add data' + JSON.stringify(this.dataSource));
 
     this.table.renderRows();
 
   }
-  updateRowData(row_obj){
+
+  updateRowData(row_obj: GeoScopeModel) {
     console.log('Transmitted Data COMPONENT' + JSON.stringify(row_obj));
 
     this.dataSource = this.dataSource.filter((value,key)=>{
       if(value.id == row_obj.id){
-       value.locationCode=row_obj.code;
-        value.geoScopeType=row_obj.type;
-        value.countryCode=row_obj.country;
+        //   value=new  GeoScopeModel(row_obj.id, row_obj.countryCode, row_obj.locationCode, row_obj.geoScopeType, row_obj.name, row_obj.port);
       }
       return true;
     });

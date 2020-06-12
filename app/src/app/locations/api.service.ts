@@ -1,13 +1,21 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, of} from "rxjs";
 import {GeoScopeModel} from "../model/geoscope.model";
 import {catchError, tap} from "rxjs/operators";
 import {EntityEnum} from "../enums/app-enum";
 
+
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
+
+const httpOptionsResponse = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'}),
+  observe: 'response' as 'header'
+};
+
+let main_headers = {}
 const apiUrl = 'http://localhost:5000/nre';
 const  slash = '/';
 const object_type=EntityEnum.GEOSCOPE;
@@ -40,7 +48,6 @@ export class ApiService {
       catchError(this.handleError<GeoScopeModel>(`getGeoScopeModelById id=${id}`))
     );
   }
-
   addLocation(GeoScopeModel: GeoScopeModel): Observable<GeoScopeModel> {
     return this.http.post<GeoScopeModel>(this.getUrl(), GeoScopeModel, httpOptions).pipe(
       tap((c: GeoScopeModel) => console.log(`added GeoScopeModel w/ id=${c.id}`)),
@@ -48,11 +55,12 @@ export class ApiService {
     );
   }
 
+
   updateLocation(id: string, GeoScopeModel: GeoScopeModel): Observable<any> {
     const url = `${this.getUrl()}/${id}`;
     return this.http.put(url, GeoScopeModel, httpOptions).pipe(
       tap(_ => console.log(`updated GeoScopeModel id=${id}`)),
-      catchError(this.handleError<any>('updateGeoScopeModel'))
+      catchError(this.handleError<any>('updateLocation'))
     );
   }
 
@@ -60,7 +68,7 @@ export class ApiService {
     const url = `${this.getUrl()}/${id}`;
     return this.http.delete<GeoScopeModel>(url, httpOptions).pipe(
       tap(_ => console.log(`deleted GeoScopeModel id=${id}`)),
-      catchError(this.handleError<GeoScopeModel>('deleteGeoScopeModel'))
+      catchError(this.handleError<GeoScopeModel>('deleteLocation'))
     );
   }
   private handleError<T> (operation = 'operation', result?: T) {

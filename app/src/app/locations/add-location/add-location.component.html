@@ -1,1 +1,65 @@
-<p>add-location works!</p>
+<div class="mdl-color-text--light-blue-900" style="background: #ecf4ff;">
+  <h2>Add Location</h2>
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/locations']">
+      <mat-icon>list</mat-icon>
+    </a>
+  </div>
+  <mat-card class="form-style-9 mdl-color-text--light-blue-900" style="background: #ecf4ff;">
+
+    <form [formGroup]="locationForm" (ngSubmit)="onFormSubmit()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Country</mat-label>
+        <input matInput placeholder="Country" formControlName="countryCode"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!locationForm.get('countryCode').valid && locationForm.get('countryCode').touched">Please enter Country Code</span>
+        </mat-error>
+      </mat-form-field>
+      <!--  Location Code -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Code</mat-label>
+        <input matInput placeholder="Code" formControlName="locationCode"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!locationForm.get('locationCode').valid && locationForm.get('locationCode').touched">Please enter Code</span>
+        </mat-error>
+      </mat-form-field>
+      <!-- Geoscope Type -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="geoScopeType">
+          <mat-option *ngFor="let geo of geoScopeTypeList" [value]="geo">
+            {{geo}}
+          </mat-option>
+        </mat-select>
+        <mat-error>
+          <span *ngIf="!locationForm.get('geoScopeType').valid && locationForm.get('geoScopeType').touched">Please enter Type</span>
+        </mat-error>
+        <!--  Location Name -->
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!locationForm.get('name').valid && locationForm.get('name').touched">Please enter Name</span>
+        </mat-error>
+      </mat-form-field>
+      <!--  Location is a port -->
+
+      <mat-label style="width: 150px; margin-left: 20px; margin-right: 20px; ">Port:</mat-label>
+      <mat-checkbox placeholder="Port" formControlName="port"></mat-checkbox>
+
+      <div class="button-row">
+        <button type="submit" [disabled]="!locationForm.valid" mat-flat-button color="primary">
+          <mat-icon>save</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

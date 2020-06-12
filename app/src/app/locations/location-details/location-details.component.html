@@ -1,1 +1,42 @@
-<p>location-details works!</p>
+<div class="mdl-color-text--light-blue-900" style="background: #ecf4ff;">
+  <h3>Location Details</h3>
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <a mat-flat-button color="primary" [routerLink]="['/locations']">
+      <mat-icon>list</mat-icon>
+    </a>
+  </div>
+  <mat-card class="form-style-9 mdl-color-text--light-blue-900" style="background: #ecf4ff;">
+    <mat-card-header>
+      <mat-card-title><h3>Location: {{location.locationCode}}</h3></mat-card-title>
+      <mat-card-subtitle> from Country: {{location.countryCode}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <dl>
+        <dt>ID:</dt>
+        <dd>{{location.id}}</dd>
+        <dt>Country:</dt>
+        <dd>{{location.countryCode}}</dd>
+        <dt>Code:</dt>
+        <dd>{{location.locationCode}}</dd>
+        <dt>Type:</dt>
+        <dd>{{location.geoScopeType}}</dd>
+        <dt>Name:</dt>
+        <dd>{{location.name}}</dd>
+        <dt>Is Port:</dt>
+        <dd>{{location.port}}</dd>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-flat-button color="primary" [routerLink]="['/edit-location', location.id]">
+        <mat-icon>edit</mat-icon>
+        Edit</a>
+      <a mat-flat-button color="warn" (click)="deleteLocation(location.id)">
+        <mat-icon>delete</mat-icon>
+        Delete</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

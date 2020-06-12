@@ -1,10 +1,4 @@
-
-import {throwError as observableThrowError, of, Observable} from 'rxjs';
-/**
- * Created by ekirschning on 28.03.2017.
- */
-
-
+import {Observable, of, throwError as observableThrowError} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {catchError} from 'rxjs/operators';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
@@ -14,7 +8,10 @@ import {GeoScopeModel} from '../model/geoscope.model';
 import {VesselSystemModel} from '../model/vesselsystem.model';
 import {TradeModel} from '../model/trade.model';
 import {ContractModel} from '../model/contract.model';
-import {CountryModel} from '../model/country.model';
+
+/**
+ * Created by ekirschning on 28.03.2017.
+ */
 
 @Injectable()
 export class GeoScopeService {
@@ -122,7 +119,7 @@ export class GeoScopeService {
         catchError(this._handleError));
   }
 
-  private _handleError(err: HttpErrorResponse | any) {
+  private static _handleError(err: HttpErrorResponse | any) {
     console.log('_handleError:' + err);
     const errorMsg = err.message || 'Error: Unable to complete request.';
     return observableThrowError(errorMsg);
@@ -134,18 +131,18 @@ export class GeoScopeService {
      return of(this.buildLocations());
   }
 
- private  buildLocations(geoScope?: GeoScopeModel){
+  private static buildLocations(geoScope?: GeoScopeModel) {
  let geoScopes : Array<GeoScopeModel> = [];
-    geoScopes.push(new GeoScopeModel(1, 'DEHAM', 'L', 'DE'));
-    geoScopes.push(new GeoScopeModel(2, 'DEBRV', 'L', 'DE'));
-    geoScopes.push(new GeoScopeModel(3, 'NLRTM', 'L', 'NL'));
-    geoScopes.push(new GeoScopeModel(4, 'BEANR', 'L', 'BE'));
+    geoScopes.push(new GeoScopeModel('1', 'DE', 'DEHAM', 'L'));
+    geoScopes.push(new GeoScopeModel('2', 'DE', 'DEBRV', 'L'));
+    geoScopes.push(new GeoScopeModel('3', 'NL', 'NLRTM', 'L'));
+    geoScopes.push(new GeoScopeModel('4', 'BE', 'BEANR', 'L'));
 
-    geoScopes.push(new GeoScopeModel(5, 'DUSSELDORF', 'T', 'DE'));
-    geoScopes.push(new GeoScopeModel(6, 'DUSHEIM', 'T', 'DE'));
-    geoScopes.push(new GeoScopeModel(7, 'DUSENHAUSEN', 'T', 'DE'));
-    geoScopes.push(new GeoScopeModel(8, 'DEDUS', 'L', 'DE'));
-    geoScopes.push(new GeoScopeModel(9, 'DEDUI', 'L', 'DE'));
+    geoScopes.push(new GeoScopeModel('5', 'DE', 'DUSSELDORF', 'T'));
+    geoScopes.push(new GeoScopeModel('6', 'DE', 'DUSHEIM', 'T'));
+    geoScopes.push(new GeoScopeModel('7', 'DE', 'DUSENHAUSEN', 'T'));
+    geoScopes.push(new GeoScopeModel('8', 'DE', 'DEDUS', 'L'));
+    geoScopes.push(new GeoScopeModel('9', 'DE', 'DEDUI', 'L'));
    if (geoScope != undefined) {
      geoScopes.push(geoScope);
    }
@@ -162,36 +159,25 @@ export class GeoScopeService {
   filterPortLocations(query: string): Observable<Array<GeoScopeModel>> {
     console.log('service: filter port GEOSCOPE_TEST_DATA:' + query);
     this.prefPorts = [];
-    this.prefPorts.push(new GeoScopeModel(1, 'DEHAM', '', ''));
-    this.prefPorts.push(new GeoScopeModel(2, 'DEBRV', '', ''));
-    this.prefPorts.push(new GeoScopeModel(3, 'NLRTM', '', ''));
-    this.prefPorts.push(new GeoScopeModel(4, 'BEANR', '', ''));
+    this.prefPorts.push(new GeoScopeModel('1', 'DE', 'DEHAM', 'L'));
+    this.prefPorts.push(new GeoScopeModel('2', 'DE', 'DEBRV', 'L'));
+    this.prefPorts.push(new GeoScopeModel('3', 'NL', 'NLRTM', 'L'));
+    this.prefPorts.push(new GeoScopeModel('4', 'BE', 'BEANR', 'L'));
+
     return of(this.prefPorts);
   }
 
   filterPodLocations(query: string): Observable<Array<GeoScopeModel>> {
     console.log('service: filter port GEOSCOPE_TEST_DATA:' + query);
     this.prefPorts = [];
-    this.prefPorts.push(new GeoScopeModel(1, 'BRSSZ', '', ''));
-    this.prefPorts.push(new GeoScopeModel(2, 'BRMAO', '', ''));
-    this.prefPorts.push(new GeoScopeModel(3, 'BRSUA', '', ''));
-    this.prefPorts.push(new GeoScopeModel(4, 'BRITA', '', ''));
+    this.prefPorts.push(new GeoScopeModel('1', '', 'BRSSZ', ''));
+    this.prefPorts.push(new GeoScopeModel('2', '', 'BRMAO', ''));
+    this.prefPorts.push(new GeoScopeModel('3', '', 'BRSUA', ''));
+    this.prefPorts.push(new GeoScopeModel('4', '', 'BRITA', ''));
     return of(this.prefPorts);
   }
 
-  filterImLocations(code: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
-    console.log('service: filter im GEOSCOPE_TEST_DATA:' + geoScopeType);
-    this.locations = [];
 
-    this.locations.push(new GeoScopeModel(1, 'DUSSELDORF', 'T', 'D'));
-    this.locations.push(new GeoScopeModel(2, 'DUSHEIM', 'T', 'D'));
-    this.locations.push(new GeoScopeModel(3, 'DUSENHAUSEN', 'T', 'D'));
-    this.locations.push(new GeoScopeModel(4, 'DEDUS', '', ''));
-    this.locations.push(new GeoScopeModel(5, 'DEDUI', '', ''));
-
-    const result: GeoScopeModel[] = this.locations.filter((imLocation) => imLocation.locationCode.toLowerCase().startsWith(code.toLowerCase()));
-    return of(result);
-  }
 
 
   filterVS(query: string): Observable<VesselSystemModel[]> {

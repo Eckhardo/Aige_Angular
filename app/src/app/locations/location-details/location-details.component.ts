@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../api.service";
 import {GeoScopeModel} from "../../model/geoscope.model";
@@ -12,7 +12,7 @@ export class LocationDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
 
-  location: GeoScopeModel = new GeoScopeModel(0,'', '', '');
+  location: GeoScopeModel = new GeoScopeModel('', '', '', '');
   isLoadingResults = true;
   ngOnInit(): void {
     this.getLocationDetails(this.route.snapshot.params.id);
