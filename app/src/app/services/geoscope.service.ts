@@ -119,7 +119,7 @@ export class GeoScopeService {
         catchError(this._handleError));
   }
 
-  private static _handleError(err: HttpErrorResponse | any) {
+  private _handleError(err: HttpErrorResponse | any) {
     console.log('_handleError:' + err);
     const errorMsg = err.message || 'Error: Unable to complete request.';
     return observableThrowError(errorMsg);
@@ -131,7 +131,7 @@ export class GeoScopeService {
      return of(this.buildLocations());
   }
 
-  private static buildLocations(geoScope?: GeoScopeModel) {
+  private buildLocations(geoScope?: GeoScopeModel) {
  let geoScopes : Array<GeoScopeModel> = [];
     geoScopes.push(new GeoScopeModel('1', 'DE', 'DEHAM', 'L'));
     geoScopes.push(new GeoScopeModel('2', 'DE', 'DEBRV', 'L'));
