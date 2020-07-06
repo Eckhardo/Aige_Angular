@@ -59,7 +59,7 @@ describe('SearchImComponent: Simulate autocomplete for Country', () => {
       expect(countryService.filterCountryCode).toHaveBeenCalled();
       expect(countryService.filterCountryCode).toHaveBeenCalledTimes(2);
       expect(countryService.filterCountryCode).toHaveBeenCalledWith('D');
-      const countryCode = component.form.controls['countryCode'];
+      const countryCode = component.form.controls['country_code'];
       expect(countryCode.value).toEqual('DE');
 
     });
@@ -74,7 +74,7 @@ describe('SearchImComponent: Simulate autocomplete for Country', () => {
       expect(countryService.filterCountryCode).toHaveBeenCalled();
       expect(countryService.filterCountryCode).toHaveBeenCalledTimes(1);
       expect(countryService.filterCountryCode).toHaveBeenCalledWith('D');
-      const countryCode = component.form.controls['countryCode'];
+      const countryCode = component.form.controls['country_code'];
       expect(countryCode.value).toEqual('DE');
 
     });

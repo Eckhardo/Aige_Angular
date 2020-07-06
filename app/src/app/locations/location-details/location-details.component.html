@@ -11,30 +11,30 @@
   </div>
   <mat-card class="form-style-9 mdl-color-text--light-blue-900" style="background: #ecf4ff;">
     <mat-card-header>
-      <mat-card-title><h3>Location: {{location.locationCode}}</h3></mat-card-title>
-      <mat-card-subtitle> from Country: {{location.countryCode}}</mat-card-subtitle>
+      <mat-card-title><h3>Location: {{location.location_code}}</h3></mat-card-title>
+      <mat-card-subtitle> from Country: {{location.country_code}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <dl>
         <dt>ID:</dt>
-        <dd>{{location.id}}</dd>
+        <dd>{{location.geoscope_id}}</dd>
         <dt>Country:</dt>
-        <dd>{{location.countryCode}}</dd>
+        <dd>{{location.country_code}}</dd>
         <dt>Code:</dt>
-        <dd>{{location.locationCode}}</dd>
+        <dd>{{location.location_code}}</dd>
         <dt>Type:</dt>
-        <dd>{{location.geoScopeType}}</dd>
+        <dd>{{location.geoscope_type}}</dd>
         <dt>Name:</dt>
-        <dd>{{location.name}}</dd>
+        <dd>{{location.location_name}}</dd>
         <dt>Is Port:</dt>
-        <dd>{{location.port}}</dd>
+        <dd>{{location.is_port}}</dd>
       </dl>
     </mat-card-content>
     <mat-card-actions>
-      <a mat-flat-button color="primary" [routerLink]="['/edit-location', location.id]">
+      <a mat-flat-button color="primary" [routerLink]="['/edit-location', location.location_code]">
         <mat-icon>edit</mat-icon>
         Edit</a>
-      <a mat-flat-button color="warn" (click)="deleteLocation(location.id)">
+      <a mat-flat-button color="warn" (click)="deleteLocation(location.location_code)">
         <mat-icon>delete</mat-icon>
         Delete</a>
     </mat-card-actions>

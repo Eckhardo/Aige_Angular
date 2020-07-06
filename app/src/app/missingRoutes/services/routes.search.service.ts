@@ -45,7 +45,7 @@ export class RoutesSearchService {
       .set('trade', imSearchModel['trade'])
       .set('contract', imSearchModel['contract'])
       .set('contractgroup', imSearchModel['contractGroup'])
-      .set('country', imSearchModel['countryCode'])
+      .set('country', imSearchModel['country_code'])
     return search_params;
   }
 }

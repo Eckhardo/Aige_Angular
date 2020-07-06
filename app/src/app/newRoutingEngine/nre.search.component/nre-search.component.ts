@@ -216,7 +216,7 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
               this.portOfLoading.markAsTouched();
 
             } else if (result.length === 1) {
-              const singleRow: string = result[0].locationCode;
+              const singleRow: string = result[0].location_code;
               this.portOfLoading.patchValue(singleRow.toUpperCase());
               console.log('single:' + JSON.stringify(this.portOfLoading.value));
               this.portOfLoading.markAsUntouched();
@@ -259,7 +259,7 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
               this.portOfDestination.markAsTouched();
 
             } else if (result.length === 1) {
-              const singleRow: string = result[0].locationCode;
+              const singleRow: string = result[0].location_code;
               this.portOfDestination.patchValue(singleRow.toUpperCase());
               console.log('single:' + JSON.stringify(this.portOfLoading.value));
               this.portOfDestination.markAsUntouched();
@@ -307,7 +307,7 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
 
             console.log('result:' + JSON.stringify(result));
             if (result.length === 1) {
-              const singleRow: string = result[0].locationCode;
+              const singleRow: string = result[0].location_code;
               switch (num) {
                 case 1: {
                   this.ts_1.patchValue(singleRow.toUpperCase());

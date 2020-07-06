@@ -58,15 +58,15 @@
       <!--- Inland Location, Country Code, Geo Scope Type Transport Mode -->
       <mat-form-field style="width: 150px; margin-left: 20px; margin-right: 20px;  margin-bottom: 10px;">
         <input matInput placeholder="Inland Location" formControlName="inlandLocation" [matAutocomplete]="autoFrom">
-        <mat-hint align="start">e.g. DEDUS</mat-hint>
+        <mat-hint align="start">{{ form.get('inlandGeoScopeType').value === 'L' ? "e.g. DEDUS" : "e.g. DUSSELDORF"}}</mat-hint>
         <mat-error>
         <span
           *ngIf="!form.get('inlandLocation').valid && form.get('inlandLocation').touched">Please enter Inland Location !</span>
         </mat-error>
         <mat-autocomplete #autoFrom="matAutocomplete">
-          <mat-option *ngFor="let item of filteredInlandGeoScopes" [value]="item.locationCode"
+          <mat-option *ngFor="let item of filteredInlandGeoScopes" [value]=" form.get('inlandGeoScopeType').value === 'L' ? item.location_code : item.location_name"
                       style="height: 30px; line-height: 20px; background-color: #ecf4ff;">
-            <span class="smallFont"> {{ item.locationCode }}</span>
+            <span class="smallFont"> {{ form.get('inlandGeoScopeType').value === 'L' ? item.location_code : item.location_name}}</span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -78,9 +78,9 @@
           <span *ngIf="!form.get('countryCode').valid && form.get('countryCode').touched">Enter e.g. DE, BR !</span>
         </mat-error>
         <mat-autocomplete #autoCountry="matAutocomplete">
-          <mat-option id="countryCodeOption" *ngFor="let country of filteredCountries" [value]="country.code"
+          <mat-option id="countryCodeOption" *ngFor="let country of filteredCountries" [value]="country.country_code"
                       style="height: 30px; line-height: 20px;">
-            <span class="smallFont"> {{ country.code }}</span>
+            <span class="smallFont"> {{ country.country_code }}</span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -103,29 +103,32 @@
         </label>
       </div>
       <div style="margin-top: 5px;  margin-left: 20px;">TP Mode:
+        <span *ngIf="transportModes.length > 0">
         <select placeholder="transport mode" formControlName="transportMode"
                 class="mdl-color-text--light-blue-900">
           <option *ngFor="let t of transportModes" [value]="t">{{t}}
           </option>
         </select>
+        </span>
       </div>
     </div>
     <!--- Preferred Port: Location, GeoSocope Types -->
     <div style="border-width: 2px; border-color: #337DA8; border-style: solid; padding:5px; margin: 5px; ">
       <div *ngIf="allPortsSelected()">
         <span style="margin-top: 5px;  margin-left: 20px;">Preferred Ports: </span>
-
-        <span class="mat-small" *ngFor="let item of filteredPortGeoScopes; let isLast =last"
+        <span *ngIf="filteredPortGeoScopes.length > 0">
+        <span class="mat-small"  *ngFor="let item of filteredPortGeoScopes; let isLast =last"
               style="margin-top: 5px;  margin-left: 20px;">
-          {{ item.locationCode}} {{isLast ? '' : ', '}}
+          {{ item.location_code}} {{isLast ? '' : ', '}}
+        </span>
         </span>
       </div>
       <div *ngIf="! allPortsSelected()">
 
         <mat-form-field style="width: 150px; margin-left: 20px; margin-right: 20px;">
           <mat-select placeholder="Preferred Ports" formControlName="prefPort">
-            <mat-option *ngFor="let port of filteredPortGeoScopes" [value]="port.locationCode">
-              {{port.locationCode}}
+            <mat-option *ngFor="let port of filteredPortGeoScopes" [value]="port.location_code">
+              {{port.location_code}}
             </mat-option>
           </mat-select>
         </mat-form-field>

@@ -28,7 +28,7 @@ export class SearchIntermodalComponent {
   isActive = false;
   equipmentSizes: Array<string>;
   equipmentTypes: Array<string>;
-  transportModes: Array<string>;
+  transportModes: Array<string> = [];
   geoScopeTypes: Array<string>;
   formClass: IntermodalSearchReactiveForm;
   filteredInlandGeoScopes: GeoScopeModel[] = [];
@@ -43,6 +43,7 @@ export class SearchIntermodalComponent {
     this.equipmentTypes = this.enumService.getEnumKeys(EquipmentGroup);
     this.geoScopeTypes = this.enumService.getEnumValues(GeoScopeType);
     this.transportModes = this.enumService.getEnumValues(IntermodalMode);
+
     this.formClass = new IntermodalSearchReactiveForm();
     // set default values in form
     this.patchDefaultValues();
@@ -148,9 +149,11 @@ export class SearchIntermodalComponent {
    */
   filterLocations(location: string, type: string, country: string): any {
     this.masterDataService.filterLocations(location, type, country).subscribe(
-      result => {
-        if (result.length === 1) {
-          const singleRow: string = result[0].locationCode;
+      data => {
+        let result = this.masterDataService.convertToModel(data);
+        if (result.length === 1) {  console.log("type:", type);
+          const singleRow: string = type === 'L' ? result[0].location_code : result[0].location_name;
+          console.log("patch location:", singleRow);
           this.formClass.inlandLocation.patchValue(singleRow.toUpperCase());
           this.filteredInlandGeoScopes = [];
           this.filteredPortGeoScopes = [];
@@ -170,7 +173,7 @@ export class SearchIntermodalComponent {
    */
 
   private onCountryCodeChanges(control: AbstractControl) {
-  this.logit('onCountryCodeChanges for value:' + control.value);
+    this.logit('onCountryCodeChanges for value:' + control.value);
     control.valueChanges
       .pipe(debounceTime<string>(400), distinctUntilChanged(), filter(data => data.toString().length > 0))
       .subscribe(data => this.filterCountries(data));
@@ -183,16 +186,17 @@ export class SearchIntermodalComponent {
    */
   filterCountries(countryCode) {
     const countryObserver = {
-      next: result => {
-        if (result.length === 1) {
-          this.formClass.countryCode.patchValue(result[0].code);
+      next: response => {
+        let data = this.countryService.convertToModel(response);
+        if (data.length === 1) {
+          this.formClass.countryCode.patchValue(data[0].country_code);
           this.filteredCountries = [];
         } else {
-           this.filteredCountries = result;
+          this.filteredCountries = data;
         }
+
       },
       error: err => console.error('Observer got an error: ' + err),
-      complete: () => console.log('finished'),
     };
 
     this.countryService.filterCountries(countryCode).subscribe(countryObserver);
@@ -242,10 +246,10 @@ export class SearchIntermodalComponent {
    */
   private retrievePreferredPorts() {
     this.masterDataService.filterPreferredPorts(this.formClass.inlandLocation.value, this.formClass.inlandGeoScopeType.value, this.formClass.countryCode.value).subscribe(
-      result => {
-        console.log('result:' + JSON.stringify(result));
+      data => {
+        let result = this.masterDataService.convertToModel(data);
         if (result.length === 1) {
-          const singleRow: string = result[0].locationCode;
+          const singleRow: string = result[0].location_code;
           this.formClass.prefPort.patchValue(singleRow.toUpperCase());
           this.filteredPortGeoScopes = [];
         } else {
@@ -276,7 +280,7 @@ export class SearchIntermodalComponent {
   }
 
   private setEndDate(date: Date) {
-    const newDay: number = ( date.getDate() + 14);
+    const newDay: number = (date.getDate() + 14);
     const newDate: Date = new Date();
     newDate.setDate(newDay);
     this.formClass.endDate.patchValue(newDate.toISOString());
@@ -329,7 +333,7 @@ export class SearchIntermodalComponent {
     return length;
   }
 
-  private logit (logInfo:string){
+  private logit(logInfo: string) {
     console.log(logInfo);
   }
 }

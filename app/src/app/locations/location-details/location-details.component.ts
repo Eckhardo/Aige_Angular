@@ -15,14 +15,13 @@ export class LocationDetailsComponent implements OnInit {
   location: GeoScopeModel = new GeoScopeModel('', '', '', '');
   isLoadingResults = true;
   ngOnInit(): void {
-    this.getLocationDetails(this.route.snapshot.params.id);
+    this.getLocationDetails(this.route.snapshot.params.location_code);
   }
-  getLocationDetails(id: string) {
-    this.api.getLocationById(id)
+  getLocationDetails(code: string) {
+    this.api.getLocationByCode(code)
       .subscribe((data: any) => {
         this.location = data;
-        console.log(this.location);
-        this.isLoadingResults = false;
+         this.isLoadingResults = false;
       });
   }
 

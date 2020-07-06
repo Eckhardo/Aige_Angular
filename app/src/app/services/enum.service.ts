@@ -10,7 +10,7 @@ export class EnumService {
     return Object.keys(_enum);
   }
 
-  public getEnumValues(_enum: any): Array<string> {
+  public getEnumValues(_enum: any): string[] {
     return Object.values(_enum);
   }
 

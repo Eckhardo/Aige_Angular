@@ -24,7 +24,7 @@ export class EditLocationComponent implements OnInit {
   locationForm: FormGroup;
   id = '';
   countryCode = '';
-  locationCode: '';
+  location_code: '';
   geoScopeType: '';
   geoScopeTypeList: Array<string>;
   name = '';
@@ -36,29 +36,32 @@ export class EditLocationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getLocationById(this.route.snapshot.params.id);
+    this.getLocationByCode(this.route.snapshot.params.location_code);
     this.geoScopeTypeList = this.enumService.getEnumValues(GeoScopeType);
     console.log('Types ' + JSON.stringify(this.geoScopeTypeList));
     this.locationForm = this.formBuilder.group({
-      id: [null],
-      countryCode: [null, Validators.required],
-      locationCode: [null, Validators.required],
-      geoScopeType: [null, Validators.required],
-      name: [null, Validators.required],
-      port: [null, Validators.required]
+      geoscope_id: [null],
+      country_code: [null, Validators.required],
+      location_code: [null, Validators.required],
+      geoscope_type: [null, Validators.required],
+      location_name: [null, Validators.required],
+      is_port: [null, Validators.required]
     });
   }
 
-  getLocationById(id: any) {
-    this.api.getLocationById(id).subscribe((data: GeoScopeModel) => {
-      this.id = data.id;
+  getLocationByCode(code: any) {
+
+    console.log("code:", code);
+    this.api.getLocationByCode(code).subscribe((data: GeoScopeModel) => {
+      console.log("geoscope:", JSON.stringify(data));
+      this.id = data.geoscope_id;
       this.locationForm.setValue({
-        id: data.id,
-        countryCode: data.countryCode,
-        locationCode: data.locationCode,
-        geoScopeType: data.geoScopeType,
-        name: data.name,
-        port: data.port
+        geoscope_id: data.geoscope_id,
+        country_code: data.country_code,
+        location_code: data.location_code,
+        geoscope_type: data.geoscope_type,
+        location_name: data.location_name,
+        is_port: data.is_port
       });
     });
   }
@@ -66,11 +69,11 @@ export class EditLocationComponent implements OnInit {
 
   onFormSubmit() {
     this.isLoadingResults = true;
-    this.api.updateLocation(this.id, this.locationForm.value)
-      .subscribe((res: GeoScopeModel) => {
-          const id = res.id;
+    this.api.updateLocation(this.locationForm.get('location_code').value, this.locationForm.value)
+      .subscribe((res: any) => {
+        console.log("RESP: ",JSON.stringify(res));
           this.isLoadingResults = false;
-          this.router.navigate(['/location-details', id]);
+          this.router.navigate(['/location-details', this.locationForm.get('location_code').value]);
         }, (err: any) => {
           console.log(err);
           this.isLoadingResults = false;
@@ -80,6 +83,6 @@ export class EditLocationComponent implements OnInit {
 
 
   locationDetails() {
-    this.router.navigate(['/location-details', this.id]);
+    this.router.navigate(['/location-details', this.locationForm.get('location_code').value]);
   }
 }

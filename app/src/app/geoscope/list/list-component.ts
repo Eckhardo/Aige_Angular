@@ -24,7 +24,7 @@ export class GeoscopeListComponent implements OnInit {
 
    console.log( JSON.stringify(this.dataSource));
   }
- 
+
 
   openDialog(action,obj) {
     obj.action = action;
@@ -58,15 +58,15 @@ export class GeoscopeListComponent implements OnInit {
     console.log('Transmitted Data COMPONENT' + JSON.stringify(row_obj));
 
     this.dataSource = this.dataSource.filter((value,key)=>{
-      if(value.id == row_obj.id){
-        //   value=new  GeoScopeModel(row_obj.id, row_obj.countryCode, row_obj.locationCode, row_obj.geoScopeType, row_obj.name, row_obj.port);
+      if(value.geoscope_id == row_obj.geoscope_id){
+        //   value=new  GeoScopeModel(row_obj.geoscope_id, row_obj.country_code, row_obj.location_code, row_obj.geoscope_type, row_obj.location_name, row_obj.is_port);
       }
       return true;
     });
   }
   deleteRowData(row_obj){
     this.dataSource = this.dataSource.filter((value,key)=>{
-      return value.id != row_obj.id;
+      return value.geoscope_id != row_obj.id;
     });
   }
 

@@ -105,7 +105,7 @@ describe('SearchImComponent', () => {
   });
 
 
-  it('#MOST complex Test: Fills countryCode autocomplete which triggers reactive form observable which triggers service call', async(() => {
+  it('#MOST complex Test: Fills country_code autocomplete which triggers reactive form observable which triggers service call', async(() => {
     const countryService: CountryService = debugElement.injector.get(CountryService);
     const spyService = spyOn(countryService, 'filterCountryCode').and.returnValue(of(expectedCountries));
 
@@ -113,7 +113,7 @@ describe('SearchImComponent', () => {
     const geoScopeTypeControl = component.form.controls['inlandGeoScopeType'];
     geoScopeTypeControl.setValue('T');
     fixture.detectChanges();
-    const countryControl: AbstractControl = component.form.controls['countryCode'];
+    const countryControl: AbstractControl = component.form.controls['country_code'];
     expect(countryControl).toBeDefined();
     expect(countryControl).toBeTruthy();
     expect(countryControl.value).toEqual('');

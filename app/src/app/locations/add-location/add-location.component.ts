@@ -21,13 +21,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class AddLocationComponent implements OnInit {
   locationForm: FormGroup;
-  id = '';
-  countryCode = '';
-  locationCode: '';
-  geoScopeType: '';
   geoScopeTypeList: Array<string>;
-  name = '';
-  port = false;
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
 
@@ -36,14 +30,13 @@ export class AddLocationComponent implements OnInit {
 
   ngOnInit(): void {
     this.geoScopeTypeList = this.enumService.getEnumValues(GeoScopeType);
-    console.log('Types ' + JSON.stringify(this.geoScopeTypeList));
     this.locationForm = this.formBuilder.group({
-      id: [null,],
-      countryCode: [null, Validators.required],
-      locationCode: [null, Validators.required],
-      geoScopeType: [null, Validators.required],
-      name: [null, Validators.required],
-      port: [null, Validators.required]
+      geoscope_id: [null,],
+      country_code: [null, Validators.required],
+      location_code: [null, Validators.required],
+      geoscope_type: [null, Validators.required],
+      location_name: [null, Validators.required],
+      is_port: [null, Validators.required]
     });
   }
 
@@ -51,9 +44,8 @@ export class AddLocationComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.addLocation(this.locationForm.value)
       .subscribe((res: any) => {
-        const id = res.id;
-        this.isLoadingResults = false;
-        this.router.navigate(['/location-details', id]);
+         this.isLoadingResults = false;
+        this.router.navigate(['/location-details', this.locationForm.get('location_code').value]);
       }, (err: any) => {
         console.log(err);
         this.isLoadingResults = false;

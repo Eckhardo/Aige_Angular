@@ -203,7 +203,7 @@ export class SearchRoutesComponent implements OnInit, OnChanges {
               this.portOfLoading.markAsTouched();
 
             } else if (result.length === 1) {
-              const singleRow: string = result[0].locationCode;
+              const singleRow: string = result[0].location_code;
               this.portOfLoading.patchValue(singleRow.toUpperCase().substr(0, 3));
               console.log('single:' + JSON.stringify(this.portOfLoading.value));
               this.portOfLoading.markAsUntouched();
@@ -235,7 +235,7 @@ export class SearchRoutesComponent implements OnInit, OnChanges {
         this.countryService.filterCountries(data).subscribe(
           result => {
             if (result.length === 1) {
-              this.countryCode.patchValue(result[0].code);
+              this.countryCode.patchValue(result[0].country_code);
               this.possibleCountries = [];
             } else {
               this.possibleCountries = result;

@@ -27,9 +27,9 @@
           *ngIf="!portOfLoading.valid && portOfLoading.touched">Invalid entry !</span>
         </mat-error>
         <mat-autocomplete #autoFrom="matAutocomplete">
-          <mat-option *ngFor="let item of possiblePOLs" [value]="item.locationCode"
+          <mat-option *ngFor="let item of possiblePOLs" [value]="item.location_code"
                       style="height: 30px; line-height: 20px; background-color: #ecf4ff;">
-            <span class="smallFont"> {{ item.locationCode }}</span>
+            <span class="smallFont"> {{ item.location_code }}</span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -42,9 +42,9 @@
           *ngIf="!portOfDestination.valid && portOfDestination.touched">Invalid entry !</span>
         </mat-error>
         <mat-autocomplete #autoTo="matAutocomplete">
-          <mat-option *ngFor="let item of possiblePODs" [value]="item.locationCode"
+          <mat-option *ngFor="let item of possiblePODs" [value]="item.location_code"
                       style="height: 30px; line-height: 20px; background-color: #ecf4ff;">
-            <span class="smallFont"> {{ item.locationCode }}</span>
+            <span class="smallFont"> {{ item.location_code }}</span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -67,9 +67,9 @@
       <mat-form-field style="width: 150px; margin-left: 20px; margin-right: 20px;">
         <input matInput placeholder="T/S-Port 1" formControlName="ts_1" [matAutocomplete]="ts1">
         <mat-autocomplete #ts1="matAutocomplete">
-          <mat-option *ngFor="let item of possibleTS_1s" [value]="item.locationCode"
+          <mat-option *ngFor="let item of possibleTS_1s" [value]="item.location_code"
                       style="height: 30px; line-height: 20px; background-color: #ecf4ff;">
-            <span class="smallFont"> {{ item.locationCode }}</span>
+            <span class="smallFont"> {{ item.location_code }}</span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -87,9 +87,9 @@
       <mat-form-field style="width: 150px; margin-left: 20px; margin-right: 20px;">
         <input matInput placeholder="T/S-Port 2" formControlName="ts_2" [matAutocomplete]="ts2">
         <mat-autocomplete #ts2="matAutocomplete">
-          <mat-option *ngFor="let item of possibleTS_2s" [value]="item.locationCode"
+          <mat-option *ngFor="let item of possibleTS_2s" [value]="item.location_code"
                       style="height: 30px; line-height: 20px; background-color: #ecf4ff;">
-            <span class="smallFont"> {{ item.locationCode }}</span>
+            <span class="smallFont"> {{ item.location_code }}</span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -107,9 +107,9 @@
       <mat-form-field style="width: 150px; margin-left: 20px; margin-right: 20px;">
         <input matInput placeholder="T/S-Port 3" formControlName="ts_3" [matAutocomplete]="ts3">
         <mat-autocomplete #ts3="matAutocomplete">
-          <mat-option *ngFor="let item of possibleTS_3s" [value]="item.locationCode"
+          <mat-option *ngFor="let item of possibleTS_3s" [value]="item.location_code"
                       style="height: 30px; line-height: 20px; background-color: #ecf4ff;">
-            <span class="smallFont"> {{ item.locationCode }}</span>
+            <span class="smallFont"> {{ item.location_code }}</span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>

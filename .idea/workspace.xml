@@ -3,267 +3,43 @@
   <component name="ChangeListManager">
     <list default="true" id="529075ca-feda-4c00-9c04-56e82d57c7d1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/geoscope/list/list-component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/geoscope/list/list-component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.routes-routing.module.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.routes-routing.module.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component-withSpies.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component-withSpies.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/locations/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/locations/locations-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/locations-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.search.component/search-routes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.search.component/search-routes.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.search.component/search-routes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.search.component/search-routes.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/missingRoutes/services/routes.search.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/missingRoutes/services/routes.search.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/model/country.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/model/country.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/model/geoscope.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/model/geoscope.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/services/country.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/services/country.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/services/enum.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/services/enum.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1728466614">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="38" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="3" />
-          <entry key="project.open.time.10" value="4" />
-          <entry key="project.open.time.11" value="4" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="4" />
-          <entry key="project.open.time.7" value="5" />
-          <entry key="project.open.time.8" value="10" />
-          <entry key="project.open.time.9" value="8" />
-          <entry key="project.opened" value="46" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="Dockerfile" value="2" />
-          <entry key="conf" value="2" />
-          <entry key="css" value="18" />
-          <entry key="dockerfile" value="1" />
-          <entry key="html" value="46" />
-          <entry key="js" value="4" />
-          <entry key="json" value="17" />
-          <entry key="md" value="5" />
-          <entry key="scss" value="3" />
-          <entry key="ts" value="199" />
-          <entry key="yaml" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="18" />
-          <entry key="Dockerfile" value="2" />
-          <entry key="HTML" value="46" />
-          <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="4" />
-          <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="SCSS" value="3" />
-          <entry key="TypeScript" value="199" />
-          <entry key="YAML" value="8" />
-          <entry key="tsconfig" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="Dockerfile" value="38" />
-          <entry key="css" value="5" />
-          <entry key="dummy" value="41" />
-          <entry key="html" value="1418" />
-          <entry key="js" value="36" />
-          <entry key="json" value="61" />
-          <entry key="md" value="75" />
-          <entry key="ts" value="3808" />
-          <entry key="txt" value="228" />
-          <entry key="yaml" value="409" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="5" />
-          <entry key="Dockerfile" value="38" />
-          <entry key="HTML" value="1418" />
-          <entry key="JSON" value="61" />
-          <entry key="JavaScript" value="36" />
-          <entry key="Markdown" value="75" />
-          <entry key="PLAIN_TEXT" value="269" />
-          <entry key="TypeScript" value="3808" />
-          <entry key="YAML" value="409" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts">
-        <counts>
-          <entry key="Angular2LanguageService" value="13" />
-          <entry key="TypeScriptServerServiceImpl" value="15" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.kubernetes.usages">
-        <counts>
-          <entry key="completion.label.key" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#mat-label#0;n#form#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app/locations/locations/locations.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3281">
-              <caret line="193" column="84" selection-start-line="193" selection-start-column="22" selection-end-line="193" selection-end-column="84" />
-              <folding>
-                <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#mat-grid-list#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#mat-form-field#0;n#div#1;n#div#2;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#mat-form-field#1;n#div#1;n#div#2;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#mat-form-field#0;n#div#5;n#div#2;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#5;n#div#2;n#form#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/app/services/geoscope.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="121" column="10" selection-start-line="121" selection-start-column="10" selection-end-line="121" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#72#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>serverApi</find>
-      <find>lodash.mergewith</find>
-      <find>lodash</find>
-      <find>lodash&quot;:</find>
-      <find>rxjs-compat</find>
-      <find>65</find>
-      <find>geo_scope_id</find>
-      <find>this.prefPorts</find>
-      <find>Cases</find>
-      <find>casesForm</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>_id</replace>
-      <replace>geoScopes</replace>
-      <replace>GeoScopeModel</replace>
-      <replace>locationForm</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Dev\WebstormProjects\Aige_Angular</dir>
-      <dir>C:\Dev\WebstormProjects\Aige_Angular\app\src</dir>
-      <dir>C:\Dev\WebstormProjects\Aige_Angular\app\node_modules</dir>
-      <dir>C:\Dev\WebstormProjects\Aige_Angular\app\src\app\intermodal</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/karma.conf.js" />
-        <option value="$PROJECT_DIR$/app/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/services/country.service.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/enums/app-enum.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts" />
-        <option value="$PROJECT_DIR$/app/package-lock.json" />
-        <option value="$PROJECT_DIR$/app/src/app/services/date.utils/date.adapter.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.result.component/nre-result.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.result.component/masterdata-routes.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/app-material.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html" />
-        <option value="$PROJECT_DIR$/app/src/app/geoscope/geoscope.list.component/geoscope.list.component.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/geoscope/geoscope.list.component/geoscope.list.component.component.spec.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/geoscope/geoscope.list.component/geoscope.list.component.component.html" />
-        <option value="$PROJECT_DIR$/app/src/app/testdata/country_codes.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.html" />
-        <option value="$PROJECT_DIR$/app/package.json" />
-        <option value="$PROJECT_DIR$/app/src/app/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/intermodal/im.routes.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/intermodal/im.routes-routing.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/geoscope/geoscope-routing.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/geoscope/geoscope.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/geoscope/list/list-component.html" />
-        <option value="$PROJECT_DIR$/app/src/app/geoscope/dialog-box/dialog-box.component.html" />
-        <option value="$PROJECT_DIR$/app/src/app/geoscope/dialog-box/dialog-box.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/cli_commands.md" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/locations.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/locations-routing.module.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/geoscope/list/list-component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.scss" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.scss" />
-        <option value="$PROJECT_DIR$/app/src/styles.css" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/api.service.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/model/geoscope.model.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/testdata/geoscopes.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.css" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.ts" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.html" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.css" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.css" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.html" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.html" />
-        <option value="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.html" />
-        <option value="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
-    <package-json value="$PROJECT_DIR$/app/package.json" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -271,80 +47,23 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/app/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/app/package.json" />
-    </packageJsonPaths>
-  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/app/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="495" />
-    <option name="y" value="10" />
-    <option name="width" value="1400" />
-    <option name="height" value="780" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Aige_Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Aige_Angular" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aige_Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Aige_Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aige_Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Aige_Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aige_Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Aige_Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aige_Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Aige_Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectId" id="1dUbrndaMZr3ii4fYkwjJrIOyET" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/app/locations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Serverless-1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Dev\WebstormProjects\Aige_Angular\app\node_modules\typescript\lib" />
+    <property name="ts.rename.search.for.dynamic.occurrences" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -358,20 +77,8 @@
       <recent name="C:\Dev\WebstormProjects\Aige_Angular" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="npm.start (1)">
-    <configuration name="build (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="build (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="run" />
       <scripts>
@@ -381,7 +88,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="ng" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="ng" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="run" />
       <scripts>
@@ -391,7 +98,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="run" />
       <scripts>
@@ -401,7 +108,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="test (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="test (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="run" />
       <scripts>
@@ -411,7 +118,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -430,10 +137,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build (1)" />
         <item itemvalue="npm.start (1)" />
-        <item itemvalue="npm.ng" />
+        <item itemvalue="npm.build (1)" />
         <item itemvalue="npm.test (1)" />
+        <item itemvalue="npm.ng" />
         <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
@@ -493,7 +200,17 @@
       <workItem from="1591784937492" duration="12976000" />
       <workItem from="1591851709610" duration="19377000" />
       <workItem from="1591946754816" duration="4853000" />
-      <workItem from="1592203565485" duration="1720000" />
+      <workItem from="1592203565485" duration="3722000" />
+      <workItem from="1592482822911" duration="680000" />
+      <workItem from="1592734588857" duration="647000" />
+      <workItem from="1593017599815" duration="693000" />
+      <workItem from="1593603920928" duration="9926000" />
+      <workItem from="1593710309051" duration="5138000" />
+      <workItem from="1593748601817" duration="11072000" />
+      <workItem from="1593864449860" duration="16152000" />
+      <workItem from="1593936482690" duration="1769000" />
+      <workItem from="1593956525645" duration="619000" />
+      <workItem from="1594010906592" duration="2943000" />
     </task>
     <task id="LOCAL-00001" summary="added firefox as karma browser">
       <created>1537695606826</created>
@@ -565,68 +282,18 @@
       <option name="project" value="LOCAL" />
       <updated>1591963821633</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add new Feature Module for CRUD Locations">
+      <created>1592205642003</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1592205642003</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183843000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6877637" visible="true" weight="0.37276933" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info id="npm" order="3" sideWeight="0.31223628" side_tool="true" visible="true" weight="0.37276933" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4957039" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4633179" visible="true" weight="0.32765958" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49306014" weight="0.32907802" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Docker" order="8" sideWeight="0.49743214" weight="0.32970452" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.46728355" weight="0.32907802" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.53668207" side_tool="true" weight="0.32765958" />
-      <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32907802" />
-      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32907802" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6962025" visible="true" weight="0.37276933" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" id="npm" order="3" sideWeight="0.30379745" side_tool="true" visible="true" weight="0.37276933" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4957039" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4633179" visible="true" weight="0.32765958" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49306014" weight="0.32907802" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Docker" order="8" sideWeight="0.49743214" weight="0.32970452" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.46728355" weight="0.32907802" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.53668207" side_tool="true" weight="0.32765958" />
-      <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/app/node_modules/karma/config.tpl.js" />
-      </list>
-    </option>
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -637,9 +304,6 @@
         <option value="1" />
       </list>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added firefox as karma browser" />
@@ -653,351 +317,42 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/app/model/trade.model.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/node_modules/@angular/core/core.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52020">
-          <caret line="3062" column="8" selection-start-line="3062" selection-start-column="8" selection-end-line="3062" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/location.service.ts" />
-    <entry file="file://$PROJECT_DIR$/app/src/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/geoscope/geoscope.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/geoscope/geoscope-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="88" lean-forward="true" selection-start-line="6" selection-end-line="6" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/edit-location/edit-locations.component.ts" />
-    <entry file="file://$PROJECT_DIR$/cli_commands.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="102">
-            <caret line="6" column="11" selection-start-line="6" selection-end-line="6" selection-end-column="28" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.routes-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="36" selection-start-line="8" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/shared/shared.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.routes.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/locations.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/services/config.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/locations-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/home/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="66" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/newRoutingEngine/services/new-routing-engine.search.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/geoscope/list/list-component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/enums/geoscope.type.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/services/enum.service.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="18" column="14" lean-forward="true" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/locations/locations.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="16" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16794" selection-start-column="16794" selection-end-column="16794" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/locations/locations.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/node_modules/rxjs/src/internal/operators/tap.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/services/country.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/node_modules/@angular/common/http/http.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-922">
-          <caret line="2449" column="4" selection-start-line="2449" selection-start-column="4" selection-end-line="2449" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/model/geoscope.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="52" selection-start-line="4" selection-end-line="4" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/api.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/testdata/geoscopes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/locations/locations.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="71" selection-start-column="71" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="14" selection-start-line="5" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="6" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" lean-forward="true" selection-start-line="29" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#mat-label#0;n#form#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/locations/locations.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3281">
-          <caret line="193" column="84" selection-start-line="193" selection-start-column="22" selection-end-line="193" selection-end-column="84" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#mat-grid-list#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#mat-form-field#0;n#div#1;n#div#2;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#mat-form-field#1;n#div#1;n#div#2;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#mat-form-field#0;n#div#5;n#div#2;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#5;n#div#2;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app/services/geoscope.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="121" column="10" selection-start-line="121" selection-start-column="10" selection-end-line="121" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="654" y="275" key="#Notifications" timestamp="1593864475730">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="654" y="275" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1593864475730" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1593874846114">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593874846114" />
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1594012735727">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594012735727" />
+    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1594012735727">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594012735727" />
+    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1594012735726">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594012735726" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1594012735727">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594012735727" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593773676204">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1593773676204" />
+    <state x="478" y="145" width="579" height="534" key="find.popup" timestamp="1593879219473">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1593879219473" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1593606481265">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1593606481265" />
   </component>
 </project>

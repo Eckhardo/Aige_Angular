@@ -54,7 +54,7 @@ export class IntermodalSearchService {
       .set('includeImSchedule', imSearchModel['includeImSchedule'])
       .set('inlandLocation', imSearchModel['inlandLocation'])
       .set('inlandGeoScopeType', imSearchModel['inlandGeoScopeType'])
-      .set('countryCode', imSearchModel['countryCode'])
+      .set('countryCode', imSearchModel['country_code'])
       .set('portLocation', imSearchModel['prefPort'])
       .set('includeAllPrefPorts', imSearchModel['includeAllPreferredPorts'])
       .set('transportMode', imSearchModel['transportMode'])

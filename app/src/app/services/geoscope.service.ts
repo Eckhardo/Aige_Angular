@@ -9,6 +9,10 @@ import {VesselSystemModel} from '../model/vesselsystem.model';
 import {TradeModel} from '../model/trade.model';
 import {ContractModel} from '../model/contract.model';
 
+const object_type = EntityEnum.GEOSCOPE;
+const slash = '/';
+const serverApi = 'http://localhost:3000/prod';
+
 /**
  * Created by ekirschning on 28.03.2017.
  */
@@ -17,8 +21,6 @@ import {ContractModel} from '../model/contract.model';
 export class GeoScopeService {
   locations: Array<GeoScopeModel> = [];
   prefPorts: Array<GeoScopeModel> = [];
-
-  readonly serverApi = 'http://localhost:5000/nre';
  // readonly serverApi = `http://${location.host}/nre`;
   private slash = '/';
 
@@ -29,57 +31,46 @@ export class GeoScopeService {
     return new HttpHeaders().set('Content-Type', 'application/json');
   }
 
-  private getUrl(objectType: EntityEnum): string {
-    return this.serverApi + this.slash + objectType + this.slash;
+  private getUrl(): string {
+    return `${serverApi}${slash}${object_type}${slash}`;
   }
 
 
-  filterVesselSystems(query: string): Observable<VesselSystemModel[]> {
-    const search_params = new HttpParams().set('vs_code', query.toUpperCase());
-    const URI = this.getUrl(EntityEnum.VESSEL_SYSTEMS) + 'filter/';
-    return this.http
-      .get<Array<VesselSystemModel>>(URI, {params: search_params}).pipe(
-        catchError(this._handleError));
+  private getUrlWithType(object_type:string): string {
+    return `${serverApi}${slash}${object_type}${slash}`;
   }
 
-
-  filterLocations(query: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
-    const search_params: HttpParams = this.prepareGeoScopeSearchParams(query, geoScopeType, countryCode);
-    const URI = this.getUrl(EntityEnum.GEOSCOPE) + 'filter/';
-    console.log('uri:' + URI);
-    console.log('params:' + search_params);
+  filterLocations(locationCode: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
+    const search_params: HttpParams = this.prepareGeoScopeSearchParams(locationCode, geoScopeType, countryCode);
+    const URI =  `${this.getUrl()}filter`;
     return this.http
       .get<Array<GeoScopeModel>>(URI, {params: search_params}).pipe(
         catchError(this._handleError));
   }
 
 
-  filterPreferredPorts(query: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
-    const search_params: HttpParams = this.prepareGeoScopeSearchParams(query, geoScopeType, countryCode);
-    const URI = this.getUrl(EntityEnum.GEOSCOPE) + 'preferredPort/';
-    console.log('uri:' + URI);
-    console.log('params:' + search_params);
+  filterPreferredPorts(code: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
+    const search_params: HttpParams = this.prepareGeoScopeSearchParams(code, geoScopeType, countryCode);
+    const URI =  `${this.getUrl()}preferredPorts`;
     return this.http
       .get<Array<GeoScopeModel>>(URI, {params: search_params})
       .pipe(
         catchError(this._handleError));
   }
 
-  filterPorts(query: string): Observable<Array<GeoScopeModel>> {
-    const search_params = new HttpParams().set('location_code', query.toUpperCase());
-    const URI = this.getUrl(EntityEnum.GEOSCOPE) + 'ports/';
-    console.log('uri:' + URI);
-    console.log('params:' + search_params);
-    return this.http
+  filterPorts(code: string): Observable<Array<GeoScopeModel>> {
+    const search_params = new HttpParams().set('location_code', code.toUpperCase());
+    const URI =  `${this.getUrl()}ports`;
+   return this.http
       .get<Array<GeoScopeModel>>(URI, {params: search_params})
       .pipe(
         catchError(this._handleError));
   }
 
-  prepareGeoScopeSearchParams(query: string, geoScopeType: string, countryCode: string) {
+  prepareGeoScopeSearchParams(code: string, geoScopeType: string, countryCode: string) {
     const search_params = new HttpParams()
-      .set('location_code', query.toUpperCase())
-      .set('geo_scope_type', geoScopeType.toUpperCase())
+      .set('location_code', code.toUpperCase())
+      .set('geoscope_type', geoScopeType.toUpperCase())
       .set('country_code', countryCode);
     return search_params;
   }
@@ -88,7 +79,7 @@ export class GeoScopeService {
   filterContracts(query: string): Observable<Array<ContractModel>> {
     const search_params: HttpParams = new HttpParams()
       .set('contract_no', query.toUpperCase());
-    const URI = this.getUrl(EntityEnum.CONTRACT) + 'filter/';
+    const URI = this.getUrlWithType(EntityEnum.CONTRACT) + 'filter/';
 
     return this.http
       .get<Array<ContractModel>>(URI, {params: search_params})
@@ -99,7 +90,7 @@ export class GeoScopeService {
   filterContractGroups(query: string): Observable<Array<ContractModel>> {
     const search_params: HttpParams = new HttpParams()
       .set('contract_no', query.toUpperCase());
-    const URI = this.getUrl(EntityEnum.CONTRACT_GROUP) + 'filter/';
+    const URI = this.getUrlWithType(EntityEnum.CONTRACT_GROUP) + 'filter/';
 
     return this.http
       .get<Array<ContractModel>>(URI, {params: search_params})
@@ -111,7 +102,7 @@ export class GeoScopeService {
   filterTrades(query: string): Observable<Array<TradeModel>> {
     const search_params: HttpParams = new HttpParams()
       .set('trade_code', query.toUpperCase());
-    const URI = this.getUrl(EntityEnum.TRADE) + 'filter/';
+    const URI = this.getUrlWithType(EntityEnum.TRADE) + 'filter/';
 
     return this.http
       .get<Array<TradeModel>>(URI, {params: search_params})
@@ -119,9 +110,19 @@ export class GeoScopeService {
         catchError(this._handleError));
   }
 
+  convertToModel(data: any[]) {
+    let result: GeoScopeModel[] = [];
+    data.forEach((value => {
+      const {geoscope_id, location_name, location_code, geoscope_type, country_code, is_port} = value;
+      result.push(new GeoScopeModel(geoscope_id, country_code, location_code, geoscope_type, location_name, is_port));
+    }))
+
+
+    return result;
+  }
+
   private _handleError(err: HttpErrorResponse | any) {
-    console.log('_handleError:' + err);
-    const errorMsg = err.message || 'Error: Unable to complete request.';
+     const errorMsg = err.message || 'Error: Unable to complete request.';
     return observableThrowError(errorMsg);
   }
 
@@ -149,15 +150,13 @@ export class GeoScopeService {
     return geoScopes;
   }
   saveLocationMock(geoScope: GeoScopeModel) {
-
-    console.log('saveLocationMock:' + JSON.stringify(geoScope));
-    this.buildLocations(geoScope);
+   this.buildLocations(geoScope);
 
 
   }
 
   filterPortLocations(query: string): Observable<Array<GeoScopeModel>> {
-    console.log('service: filter port GEOSCOPE_TEST_DATA:' + query);
+    console.log('service: filter is_port GEOSCOPE_TEST_DATA:' + query);
     this.prefPorts = [];
     this.prefPorts.push(new GeoScopeModel('1', 'DE', 'DEHAM', 'L'));
     this.prefPorts.push(new GeoScopeModel('2', 'DE', 'DEBRV', 'L'));
@@ -168,7 +167,7 @@ export class GeoScopeService {
   }
 
   filterPodLocations(query: string): Observable<Array<GeoScopeModel>> {
-    console.log('service: filter port GEOSCOPE_TEST_DATA:' + query);
+    console.log('service: filter is_port GEOSCOPE_TEST_DATA:' + query);
     this.prefPorts = [];
     this.prefPorts.push(new GeoScopeModel('1', '', 'BRSSZ', ''));
     this.prefPorts.push(new GeoScopeModel('2', '', 'BRMAO', ''));

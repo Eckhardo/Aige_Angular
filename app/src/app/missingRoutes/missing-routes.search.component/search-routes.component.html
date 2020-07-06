@@ -81,9 +81,9 @@
           <mat-hint align="end">{{polMessage.value.length}} / 3</mat-hint>
 
           <mat-autocomplete #autoFrom="matAutocomplete">
-            <mat-option *ngFor="let item of possiblePOLs" [value]="item.locationCode"
+            <mat-option *ngFor="let item of possiblePOLs" [value]="item.location_code"
                         style="height: 30px; line-height: 20px; background-color: #ecf4ff;">
-              <span class="smallFont"> {{ item.locationCode }}</span>
+              <span class="smallFont"> {{ item.location_code }}</span>
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>

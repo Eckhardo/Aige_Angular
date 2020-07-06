@@ -13,7 +13,7 @@ const routes: Routes = [
     data: { title: 'List of Locations' }
   },
   {
-    path: 'location-details/:id',
+    path: 'location-details/:location_code',
     component: LocationDetailsComponent,
     data: { title: 'Location Details' }
   },
@@ -23,7 +23,7 @@ const routes: Routes = [
     data: { title: 'Add Location' }
   },
   {
-    path: 'edit-location/:id',
+    path: 'edit-location/:location_code',
     component: EditLocationComponent,
     data: { title: 'Edit Location' }
   },

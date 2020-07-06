@@ -3,7 +3,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {Router} from '@angular/router';
 
 import {APP_BASE_HREF, Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import {intermodalRoutes, IntermodalRoutesRoutingModule} from './im.routes-routing.module';
+import {INTERMODAL_ROUTES, IntermodalRoutesRoutingModule} from './im.routes-routing.module';
 import {SearchIntermodalComponent} from './im.search/search-intermodal.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AppMaterialModule} from '../app-material.module';
@@ -33,7 +33,7 @@ describe('Router tests', () => {
     TestBed.configureTestingModule({
       declarations: [SearchIntermodalComponent, AppComponent, HomeComponent],
       imports: [
-        RouterTestingModule.withRoutes(intermodalRoutes),
+        RouterTestingModule.withRoutes(INTERMODAL_ROUTES),
         RouterTestingModule.withRoutes(appRoutes), BrowserAnimationsModule,
         IntermodalRoutesRoutingModule, ReactiveFormsModule, AppMaterialModule, HttpClientTestingModule
       ],
