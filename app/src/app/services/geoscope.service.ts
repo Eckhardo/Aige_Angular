@@ -50,6 +50,7 @@ export class GeoScopeService {
 
 
   filterPreferredPorts(code: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
+    console.log("filterPreferredPorts:: start");
     const search_params: HttpParams = this.prepareGeoScopeSearchParams(code, geoScopeType, countryCode);
     const URI =  `${this.getUrl()}preferredPorts`;
     return this.http
@@ -112,6 +113,10 @@ export class GeoScopeService {
 
   convertToModel(data: any[]) {
     let result: GeoScopeModel[] = [];
+    if (data == undefined || data.length == 0) {
+      return result;
+    }
+
     data.forEach((value => {
       const {geoscope_id, location_name, location_code, geoscope_type, country_code, is_port} = value;
       result.push(new GeoScopeModel(geoscope_id, country_code, location_code, geoscope_type, location_name, is_port));

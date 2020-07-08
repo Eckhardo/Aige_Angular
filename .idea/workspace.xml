@@ -3,33 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="529075ca-feda-4c00-9c04-56e82d57c7d1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/geoscope/list/list-component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/geoscope/list/list-component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.routes-routing.module.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.routes-routing.module.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component-withSpies.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component-withSpies.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/enums/app-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/enums/app-enum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/models/keyfigure.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/models/keyfigure.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/add-location/add-location.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/locations/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/edit-location/edit-location.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/location-details/location-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/locations/locations-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/locations-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/locations/locations/locations.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.search.component/search-routes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.search.component/search-routes.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.search.component/search-routes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/missingRoutes/missing-routes.search.component/search-routes.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/missingRoutes/services/routes.search.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/missingRoutes/services/routes.search.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/model/country.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/model/country.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/model/geoscope.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/model/geoscope.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/services/country.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/services/country.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/services/enum.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/services/enum.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +56,10 @@
       <recent name="C:\Dev\WebstormProjects\Aige_Angular" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start (1)">
+  <component name="RunManager" selected="JavaScript Debug.MyDebugger">
+    <configuration name="MyDebugger" type="JavascriptDebugType" uri="http://localhost:4200/">
+      <method v="2" />
+    </configuration>
     <configuration name="build (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="run" />
@@ -129,6 +111,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.MyDebugger" />
       <item itemvalue="npm.test" />
       <item itemvalue="npm.build (1)" />
       <item itemvalue="npm.start (1)" />
@@ -210,7 +193,9 @@
       <workItem from="1593864449860" duration="16152000" />
       <workItem from="1593936482690" duration="1769000" />
       <workItem from="1593956525645" duration="619000" />
-      <workItem from="1594010906592" duration="2943000" />
+      <workItem from="1594010906592" duration="5765000" />
+      <workItem from="1594110515775" duration="9788000" />
+      <workItem from="1594190485103" duration="3414000" />
     </task>
     <task id="LOCAL-00001" summary="added firefox as karma browser">
       <created>1537695606826</created>
@@ -322,37 +307,100 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="654" y="275" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1593864475730" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594116490697">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594116490697" />
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1593874846114">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593874846114" />
-    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1594012735727">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1594212700327">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594012735727" />
-    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1594012735727">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594212700327" />
+    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1594212700327">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594012735727" />
-    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1594012735726">
+    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594212700327" />
+    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1594212700326">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594012735726" />
-    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1594012735727">
+    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594212700326" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1594212700327">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594012735727" />
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593773676204">
+    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594212700327" />
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1594134491977">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1593773676204" />
-    <state x="478" y="145" width="579" height="534" key="find.popup" timestamp="1593879219473">
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594134491977" />
+    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1594134491977">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1593879219473" />
+    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594134491977" />
+    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1594134491977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594134491977" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1594134491977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594134491977" />
+    <state width="1515" height="261" key="GridCell.Tab.2.bottom" timestamp="1594134491978">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594134491978" />
+    <state width="1515" height="261" key="GridCell.Tab.2.center" timestamp="1594134491978">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594134491978" />
+    <state width="1515" height="261" key="GridCell.Tab.2.left" timestamp="1594134491977">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594134491977" />
+    <state width="1515" height="261" key="GridCell.Tab.2.right" timestamp="1594134491978">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594134491978" />
+    <state width="1515" height="261" key="GridCell.Tab.3.bottom" timestamp="1594134491971">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594134491971" />
+    <state width="1515" height="261" key="GridCell.Tab.3.center" timestamp="1594134491971">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1594134491971" />
+    <state width="1515" height="261" key="GridCell.Tab.3.left" timestamp="1594134491971">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1594134491971" />
+    <state width="1515" height="261" key="GridCell.Tab.3.right" timestamp="1594134491971">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1594134491971" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1594115490835">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1594115490835" />
+    <state x="478" y="145" width="579" height="534" key="find.popup" timestamp="1594112912327">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1594112912327" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1593606481265">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1593606481265" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts</url>
+          <line>211</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

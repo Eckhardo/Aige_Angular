@@ -51,10 +51,8 @@ export class SearchIntermodalComponent {
     // event handler
     this.onInlandLocationChanges(this.formClass.inlandLocation);
     this.onCountryCodeChanges(this.formClass.countryCode);
-    this.onPortLocationChanges(this.formClass.prefPort);
     this.onStartDateChanges(this.formClass.startDate);
     this.onInlandGeoScopeChanges(this.formClass.inlandGeoScopeType);
-    this.onIncludeAllPreferredPorts(this.formClass.includeAllPreferredPorts);
   }
 
   get form() {
@@ -94,7 +92,9 @@ export class SearchIntermodalComponent {
   filterKeyFigures() {
     this.searchService.getKeyFigures(this.form.value).subscribe(result => {
       if (result && result.length > 0) {
-        this.keyFigures = result;
+     let model:KeyFigureModel[]=   this.searchService.convertToModel(result);
+        this.keyFigures = model;
+        console.log("Key Figure:", model);
         this.toggle();
       }
     });
@@ -115,6 +115,7 @@ export class SearchIntermodalComponent {
   private onInlandLocationChanges(control: AbstractControl) {
     const locationObserver = {
       next: data => {
+        console.log("onLocationCodeChanges");
         const theLength: number = data.toString().trim().length;
         if (theLength === 0) {
           this.filteredInlandGeoScopes = [];
@@ -151,9 +152,9 @@ export class SearchIntermodalComponent {
     this.masterDataService.filterLocations(location, type, country).subscribe(
       data => {
         let result = this.masterDataService.convertToModel(data);
-        if (result.length === 1) {  console.log("type:", type);
+        if (result.length === 1) {
           const singleRow: string = type === 'L' ? result[0].location_code : result[0].location_name;
-          console.log("patch location:", singleRow);
+          console.log("patch location..");
           this.formClass.inlandLocation.patchValue(singleRow.toUpperCase());
           this.filteredInlandGeoScopes = [];
           this.filteredPortGeoScopes = [];
@@ -173,7 +174,7 @@ export class SearchIntermodalComponent {
    */
 
   private onCountryCodeChanges(control: AbstractControl) {
-    this.logit('onCountryCodeChanges for value:' + control.value);
+    console.log("onCountryCodeChanges.");
     control.valueChanges
       .pipe(debounceTime<string>(400), distinctUntilChanged(), filter(data => data.toString().length > 0))
       .subscribe(data => this.filterCountries(data));
@@ -189,6 +190,7 @@ export class SearchIntermodalComponent {
       next: response => {
         let data = this.countryService.convertToModel(response);
         if (data.length === 1) {
+          console.log("patch country..")
           this.formClass.countryCode.patchValue(data[0].country_code);
           this.filteredCountries = [];
         } else {
@@ -229,17 +231,6 @@ export class SearchIntermodalComponent {
 
   }
 
-  /**
-   *
-   * @param {AbstractControl} control
-   */
-  private onPortLocationChanges(control: AbstractControl) {
-    control.valueChanges
-      .subscribe(data => {
-        this.filteredPortGeoScopes = [];
-        this.retrievePreferredPorts();
-      });
-  }
 
   /**
    *
@@ -247,30 +238,23 @@ export class SearchIntermodalComponent {
   private retrievePreferredPorts() {
     this.masterDataService.filterPreferredPorts(this.formClass.inlandLocation.value, this.formClass.inlandGeoScopeType.value, this.formClass.countryCode.value).subscribe(
       data => {
-        let result = this.masterDataService.convertToModel(data);
+        let result: GeoScopeModel[] = this.masterDataService.convertToModel(data);
         if (result.length === 1) {
           const singleRow: string = result[0].location_code;
           this.formClass.prefPort.patchValue(singleRow.toUpperCase());
           this.filteredPortGeoScopes = [];
         } else {
           this.filteredPortGeoScopes = result;
+          let ports = [];
+          result.forEach((item) => {
+            ports.push(item.location_code.toUpperCase());
+            this.formClass.prefPort.patchValue(ports);
+          })
+
         }
       });
   }
 
-  /**
-   *
-   * @param {AbstractControl} control
-   */
-  private onIncludeAllPreferredPorts(control: AbstractControl) {
-    control.valueChanges
-      .pipe(distinctUntilChanged())
-      .subscribe(data => {
-        if (data) {
-          this.retrievePreferredPorts();
-        }
-      });
-  }
 
   private onStartDateChanges(control: AbstractControl | any) {
     control.valueChanges.pipe(distinctUntilChanged()).subscribe(data => {

@@ -27,8 +27,7 @@ export class GeoScopeModel {
   }
 
   get location_code(): string {
-    console.log("location_code call");
-    return this._location_code;
+     return this._location_code;
   }
 
   get geoscope_type(): string {

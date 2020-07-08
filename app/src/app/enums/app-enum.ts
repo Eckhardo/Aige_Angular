@@ -3,7 +3,7 @@ export enum EntityEnum {
   CONTRACT = 'contract',
   CONTRACT_GROUP = 'contractgroup',
   GEOSCOPE = 'geoscope',
-  INTERMODAL_ROUTE = 'intermodalroute',
+  INTERMODAL_ROUTE = 'imroute',
   LOCATIONS = 'locations',
   MEMBER = 'member',
   MISSING_ROUTINGS = 'missingroutings',

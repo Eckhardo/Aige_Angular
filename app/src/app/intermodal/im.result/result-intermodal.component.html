@@ -10,24 +10,24 @@
     <!-- Inland Column -->
     <ng-container matColumnDef="inland">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Inland</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.from.locationCode}}</mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.from}}</mat-cell>
     </ng-container>
 
     <!-- Via Column -->
     <ng-container matColumnDef="via">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Via</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.via ? element.via.locationCode : ""}}</mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.via}}</mat-cell>
     </ng-container>
 
     <!-- Port Column -->
     <ng-container matColumnDef="port">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Port</mat-header-cell>
-      <mat-cell *matCellDef="let element "> {{element.to.locationCode}}</mat-cell>
+      <mat-cell *matCellDef="let element "> {{element.to}}</mat-cell>
     </ng-container>
     <!-- Transport Mode Column -->
     <ng-container matColumnDef="transportmode">
       <mat-header-cell *matHeaderCellDef mat-sort-header>TransportMode</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.transportMode}}</mat-cell>
+      <mat-cell *matCellDef="let element"> {{ element.transportMode ? element.transportMode :""}}</mat-cell>
     </ng-container>
 
     <!-- Rate Column -->

@@ -8,14 +8,14 @@ import {EntityEnum} from '../../enums/app-enum';
 import {KeyFigureModel} from '../models/keyfigure.model';
 import {Observable, of} from 'rxjs';
 import {keyfigures} from '../../testdata/keyfigure';
+import {GeoScopeModel} from "../../model/geoscope.model";
 
+const object_type = EntityEnum.INTERMODAL_ROUTE;
+const slash = '/';
+const serverApi = 'http://localhost:3000/prod';
 
 @Injectable()
 export class IntermodalSearchService {
-  readonly serverApi = 'http://localhost:5000/nre';
-  // readonly serverApi = `http://${location.host}/nre`;
-  private resource = '/';
-  private objectType = EntityEnum.INTERMODAL_ROUTE;
 
   constructor(private http: HttpClient) {
   }
@@ -25,20 +25,21 @@ export class IntermodalSearchService {
     return new HttpHeaders().set('Content-Type', 'application/json');
   }
 
-
   private getUrl(): string {
-    return this.serverApi + this.resource + this.objectType + this.resource;
+    return `${serverApi}${slash}${object_type}${slash}`;
   }
 
-  getKeyFigures(imSearchModel: object): Observable<Array<KeyFigureModel>> {
+
+  getKeyFigures(imSearchModel: object): Observable<Array<any>> {
     console.log('#filter key figures in service');
     const search_params: HttpParams = this.prepareSearchParams(imSearchModel);
     console.log('#search params' + JSON.stringify(search_params));
 
-    const URI = this.getUrl() + 'keyfigure/filter/';
-    return this.http.get<Array<KeyFigureModel>>(URI, {params: search_params});
+    const URI = `${this.getUrl()}filter`;
+    return this.http.get<Array<any>>(URI, {params: search_params});
 
   }
+
   getTestKeyFigures(imSearchModel: object): Observable<Array<any>> {
 
     return of(keyfigures);
@@ -68,6 +69,21 @@ export class IntermodalSearchService {
       .set('startDate', imSearchModel['startDate'].toString().substring(0, 10))
       .set('endDate', imSearchModel['endDate'].toString().substring(0, 10));
     return search_params;
+  }
+
+  convertToModel(data: any[]) {
+    let result: KeyFigureModel[] = [];
+    if (data == undefined || data.length == 0) {
+      return result;
+    }
+
+    data.forEach((value => {
+      const {from_id, to_id, via_id, tpmode, rate, currency, eq_type, eq_size, preferred, start_date} = value;
+      result.push(new KeyFigureModel(from_id, via_id, to_id, tpmode, preferred, eq_size, eq_type, rate, currency, start_date));
+    }))
+
+
+    return result;
   }
 
 
