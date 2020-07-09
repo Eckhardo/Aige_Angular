@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit, Optional} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {GeoScopeModel} from "../../model/geoscope.model";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {GeoScopeModel} from '../../model/geoscope.model';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-dialog-box',
@@ -11,13 +11,13 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class DialogBoxComponent implements OnInit {
   action: string;
   local_data: any;
-  description:' My Dialog'
+  description: 'My Dialog';
 
   dialogForm: FormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<DialogBoxComponent>,
-    //@Optional() is used to prevent error if no data is passed
+    // @Optional() is used to prevent error if no data is passed
     @Optional() @Inject(MAT_DIALOG_DATA) public data: GeoScopeModel) {
     console.log('Dialog Data' + JSON.stringify(data));
     this.local_data = {...data};
@@ -28,7 +28,7 @@ export class DialogBoxComponent implements OnInit {
       type: new FormControl(this.local_data._geoScopeType, Validators.required),
       country: new FormControl(this.local_data._countryCode, Validators.required)
 
-    })
+    });
   }
 
   ngOnInit(): void {

@@ -14,7 +14,7 @@ import {By} from '@angular/platform-browser';
 import {CountryService} from '../../services/country.service';
 import {CountryModel} from '../../model/country.model';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {Observable, of} from 'rxjs';
+import {of} from 'rxjs';
 
 
 describe('SearchImComponent', () => {
@@ -26,7 +26,7 @@ describe('SearchImComponent', () => {
   let titleHtmlElement: HTMLElement;
   let inland: AbstractControl;
 
-  const expectedCountries: Array<CountryModel> = [new CountryModel(1, 'GERMANY', 'DE'), new CountryModel(2, 'DANMARK', 'DK')];
+  const expectedCountries: Array<CountryModel> = [new CountryModel('1', 'GERMANY', 'DE'), new CountryModel('2', 'DANMARK', 'DK')];
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, RouterTestingModule, BrowserAnimationsModule, AppMaterialModule, ReactiveFormsModule],
@@ -117,15 +117,14 @@ describe('SearchImComponent', () => {
     expect(countryControl).toBeDefined();
     expect(countryControl).toBeTruthy();
     expect(countryControl.value).toEqual('');
-    console.log('#MOST complex Test: 1' );
+    console.log('#MOST complex Test: 1');
 
     sendInput('D')
       .then(value => {
         console.log('resolved', value);
         expect(countryControl.value).toEqual('D');
 
-      }).
-    catch(error => {
+      }).catch(error => {
       console.log('rejected', error);
     });
 
@@ -133,7 +132,7 @@ describe('SearchImComponent', () => {
 
 
   function sendInput(countryCode: string): Promise<any> {
-    console.log('#send input: 1' );
+    console.log('#send input: 1');
 
     let inputDomElement: DebugElement;
     inputDomElement = fixture.debugElement.query(By.css('#countryCodeControl'));
@@ -143,11 +142,11 @@ describe('SearchImComponent', () => {
     inputElement.focus();
     inputElement.value = countryCode;
     inputElement.dispatchEvent(new Event('input'));
-    console.log('#send input: 2' );
+    console.log('#send input: 2');
 
     fixture.detectChanges();
-  const promise:  Promise<any> = fixture.whenStable();
-    console.log('#send input: 3' + JSON.stringify(promise) );
+    const promise: Promise<any> = fixture.whenStable();
+    console.log('#send input: 3' + JSON.stringify(promise));
 
     return promise;
   }
@@ -157,7 +156,7 @@ describe('SearchImComponent', () => {
     includeImTariff.setValue(true);
 
     const geoScopeRadio = component.form.controls['inlandGeoScopeType'];
-    geoScopeRadio.setValue('L')
+    geoScopeRadio.setValue('L');
     const preCarriageRadio = component.form.controls['preOnCarriage'];
     preCarriageRadio.setValue(false);
     const transportMode = component.form.controls['transportMode'];

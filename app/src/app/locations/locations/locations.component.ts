@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from "../api.service";
-import {GeoScopeModel} from "../../model/geoscope.model";
+import {ApiService} from '../api.service';
+import {GeoScopeModel} from '../../model/geoscope.model';
 
 @Component({
   selector: 'app-locations',

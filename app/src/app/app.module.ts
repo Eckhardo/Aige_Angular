@@ -11,9 +11,8 @@ import {EnumService} from './services/enum.service';
 import {MissingRoutingsModule} from './missingRoutes/missing-routes.module';
 import {NewRoutingEngineModule} from './newRoutingEngine/new-routing-engine.module';
 import {SharedModule} from './shared/shared.module';
-import {GeoscopeModule} from "./geoscope/geoscope.module";
-import {DialogBoxComponent} from "./geoscope/dialog-box/dialog-box.component";
-import {LocationsModule} from "./locations/locations.module";
+import {GeoscopeModule} from './geoscope/geoscope.module';
+import {LocationsModule} from './locations/locations.module';
 
 
 @NgModule({

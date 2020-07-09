@@ -23,7 +23,7 @@ describe('Router tests', () => {
   // specs
   it('can navigate to home (async)', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    TestBed.get(Router)
+    TestBed.inject(Router)
       .navigate(['/home'])
       .then(() => {
         expect(location.pathname.endsWith('/home')).toBe(true);
@@ -32,7 +32,7 @@ describe('Router tests', () => {
 
   it('can navigate to home (fakeAsync/tick)', fakeAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    TestBed.get(Router).navigate(['/home']);
+    TestBed.inject(Router).navigate(['/home']);
     fixture.detectChanges();
     // execute all pending asynchronous calls
     tick();
@@ -41,7 +41,7 @@ describe('Router tests', () => {
 
   it('can navigate to home (done)', done => {
     const fixture = TestBed.createComponent(AppComponent);
-    TestBed.get(Router)
+    TestBed.inject(Router)
       .navigate(['/home'])
       .then(() => {
         expect(location.pathname.endsWith('/home')).toBe(true);
@@ -51,7 +51,7 @@ describe('Router tests', () => {
 
   it('can navigate with navigate([/])', done => {
     const fixture = TestBed.createComponent(AppComponent);
-    TestBed.get(Router)
+    TestBed.inject(Router)
       .navigate(['/'])
       .then(() => {
         expect(location.pathname.endsWith('/home')).toBe(true);

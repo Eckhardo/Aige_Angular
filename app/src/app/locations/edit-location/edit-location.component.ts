@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
-import {ApiService} from "../api.service";
-import {EnumService} from "../../services/enum.service";
-import {GeoScopeType} from "../../enums/geoscope.type";
+import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ApiService} from '../api.service';
+import {EnumService} from '../../services/enum.service';
+import {GeoScopeType} from '../../enums/geoscope.type';
 
-import {GeoScopeModel} from "../../model/geoscope.model";
-import {ErrorStateMatcher} from "@angular/material/core";
+import {GeoScopeModel} from '../../model/geoscope.model';
+import {ErrorStateMatcher} from '@angular/material/core';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -51,9 +51,7 @@ export class EditLocationComponent implements OnInit {
 
   getLocationByCode(code: any) {
 
-    console.log("code:", code);
     this.api.getLocationByCode(code).subscribe((data: GeoScopeModel) => {
-      console.log("geoscope:", JSON.stringify(data));
       this.id = data.geoscope_id;
       this.locationForm.setValue({
         geoscope_id: data.geoscope_id,
@@ -71,7 +69,6 @@ export class EditLocationComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.updateLocation(this.locationForm.get('location_code').value, this.locationForm.value)
       .subscribe((res: any) => {
-        console.log("RESP: ",JSON.stringify(res));
           this.isLoadingResults = false;
           this.router.navigate(['/location-details', this.locationForm.get('location_code').value]);
         }, (err: any) => {

@@ -48,7 +48,7 @@ describe('Router tests', () => {
   // specs
   it('can navigate to searchIntermodal (async)', async(() => {
     const fixture = TestBed.createComponent(SearchIntermodalComponent);
-    TestBed.get(Router)
+    TestBed.inject(Router)
       .navigate(['/searchIntermodal'])
       .then(() => {
         expect(location.pathname.endsWith('/searchIntermodal')).toBe(true);
@@ -57,7 +57,7 @@ describe('Router tests', () => {
 
   it('can navigate to searchIntermodal (fakeAsync/tick)', fakeAsync(() => {
     const fixture = TestBed.createComponent(SearchIntermodalComponent);
-    TestBed.get(Router).navigate(['/searchIntermodal']);
+    TestBed.inject(Router).navigate(['/searchIntermodal']);
     fixture.detectChanges();
     // execute all pending asynchronous calls
     tick();
@@ -66,7 +66,7 @@ describe('Router tests', () => {
 
   it('can navigate to searchIntermodal (done)', done => {
     const fixture = TestBed.createComponent(SearchIntermodalComponent);
-    TestBed.get(Router)
+    TestBed.inject(Router)
       .navigate(['/searchIntermodal'])
       .then(() => {
         expect(location.pathname.endsWith('/searchIntermodal')).toBe(true);
@@ -76,7 +76,7 @@ describe('Router tests', () => {
 
   it('can navigate with navigate([/])', done => {
     const fixture = TestBed.createComponent(SearchIntermodalComponent);
-    TestBed.get(Router)
+    TestBed.inject(Router)
       .navigate(['/searchIntermodal'])
       .then(() => {
         expect(location.pathname.endsWith('/searchIntermodal')).toBe(true);

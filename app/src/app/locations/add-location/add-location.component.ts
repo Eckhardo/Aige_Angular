@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {ApiService} from "../api.service";
-import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from "@angular/forms";
-import {ErrorStateMatcher} from "@angular/material/core";
-import {GeoScopeType} from "../../enums/geoscope.type";
-import {EnumService} from "../../services/enum.service";
+import {Router} from '@angular/router';
+import {ApiService} from '../api.service';
+import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
+import {GeoScopeType} from '../../enums/geoscope.type';
+import {EnumService} from '../../services/enum.service';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */

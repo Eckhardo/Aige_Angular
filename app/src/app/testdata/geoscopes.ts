@@ -1,6 +1,6 @@
-import {GeoScopeModel} from "../model/geoscope.model";
+import {GeoScopeModel} from '../model/geoscope.model';
 
-export const GEOSCOPE_TEST_DATA:Array<GeoScopeModel> = [
+export const GEOSCOPE_TEST_DATA: Array<GeoScopeModel> = [
 
   new GeoScopeModel('1', 'D', 'DUSSELDORF', 'T', '', false),
   new GeoScopeModel('2', 'DE', 'DUSHEIM', 'T', '', false),

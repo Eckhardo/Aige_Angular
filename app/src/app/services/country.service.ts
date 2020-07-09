@@ -4,7 +4,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/c
 import {EntityEnum} from '../enums/app-enum';
 import {CountryModel} from '../model/country.model';
 import {catchError} from 'rxjs/operators';
-import {GeoScopeModel} from "../model/geoscope.model";
+import {GeoScopeModel} from '../model/geoscope.model';
 
 const object_type = EntityEnum.COUNTRY;
 const slash = '/';
@@ -44,11 +44,11 @@ export class CountryService {
     if (!data || data === undefined) {
       return data;
     }
-    let result: CountryModel[] = [];
+    const result: CountryModel[] = [];
     data.forEach((value => {
       const {country_id, country_name, country_code} = value;
       result.push(new CountryModel(country_id, country_name, country_code));
-    }))
+    }));
     return result;
   }
 
@@ -78,10 +78,10 @@ export class CountryService {
   filterCountryCode(query: string): Observable<Array<CountryModel>> {
     this.log('filter country code:' + query);
     this.countryCodes = [];
-    this.countryCodes.push(new CountryModel("1", 'DK', 'DK'));
-    this.countryCodes.push(new CountryModel("2", 'DE', 'DE'));
-    this.countryCodes.push(new CountryModel("3", 'FR', 'FR'));
-    this.countryCodes.push(new CountryModel("1", 'NL', 'NL'));
+    this.countryCodes.push(new CountryModel('1', 'DK', 'DK'));
+    this.countryCodes.push(new CountryModel('2', 'DE', 'DE'));
+    this.countryCodes.push(new CountryModel('3', 'FR', 'FR'));
+    this.countryCodes.push(new CountryModel('1', 'NL', 'NL'));
     this.countryCodes.push(new CountryModel('1', 'SE', 'SE'));
     this.countryCodes.push(new CountryModel('1', 'NO', 'NO'));
     const result: CountryModel[] = this.countryCodes.filter((countryCode) => countryCode.country_code.toLowerCase().startsWith(query.toLowerCase()));

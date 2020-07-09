@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable, of} from "rxjs";
-import {GeoScopeModel} from "../model/geoscope.model";
-import {catchError, tap} from "rxjs/operators";
-import {EntityEnum} from "../enums/app-enum";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable, of} from 'rxjs';
+import {GeoScopeModel} from '../model/geoscope.model';
+import {catchError, tap} from 'rxjs/operators';
+import {EntityEnum} from '../enums/app-enum';
 
 
 const httpOptions = {
@@ -15,7 +15,7 @@ const httpOptionsResponse = {
   observe: 'response' as 'header'
 };
 
-let main_headers = {}
+const main_headers = {};
 const apiUrl = 'http://localhost:3000/prod';
 const slash = '/';
 const object_type = EntityEnum.GEOSCOPE;
@@ -46,7 +46,7 @@ export class ApiService {
   }
 
   getLocationByCode(code: string): Observable<GeoScopeModel> {
-    console.log("api get by code:", code);
+    console.log('api get by code:', code);
     const url = `${this.getUrl()}${code}`;
     return this.http.get<GeoScopeModel>(url).pipe(
       tap(_ => console.log(`fetched GeoScopeModel code=${_}`)),
@@ -63,8 +63,7 @@ export class ApiService {
 
 
   updateLocation(code: string, geoscope: GeoScopeModel): Observable<any> {
-    console.log("api update::");
-    return this.http.put<GeoScopeModel>(this.getUrl(), geoscope, httpOptions).pipe(
+     return this.http.put<GeoScopeModel>(this.getUrl(), geoscope, httpOptions).pipe(
       tap(_ => console.log(`updated GeoScopeModel id=${code}`)),
       catchError(this.handleError<any>('updateLocation'))
     );
@@ -91,11 +90,11 @@ export class ApiService {
 
 
   convertToModel(data: any[]) {
-    let result: GeoScopeModel[] = [];
+    const result: GeoScopeModel[] = [];
     data.forEach((value => {
       const {geoscope_id, location_name, location_code, geoscope_type, country_code, is_port} = value;
       result.push(new GeoScopeModel(geoscope_id, country_code, location_code, geoscope_type, location_name, is_port));
-    }))
+    }));
 
 
     return result;

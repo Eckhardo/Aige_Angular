@@ -23,7 +23,7 @@ export class SearchIntermodalComponent {
 
   title = 'Search Key Figures';
   isCollapsed = true;
-  button_name = 'Hide Form'
+  button_name = 'Hide Form';
   showSpinner = false;
   isActive = false;
   equipmentSizes: Array<string>;
@@ -92,9 +92,9 @@ export class SearchIntermodalComponent {
   filterKeyFigures() {
     this.searchService.getKeyFigures(this.form.value).subscribe(result => {
       if (result && result.length > 0) {
-     let model:KeyFigureModel[]=   this.searchService.convertToModel(result);
+        const model: KeyFigureModel[] = this.searchService.convertToModel(result);
         this.keyFigures = model;
-        console.log("Key Figure:", model);
+        console.log('Key Figure:', model);
         this.toggle();
       }
     });
@@ -108,14 +108,9 @@ export class SearchIntermodalComponent {
 
   }
 
-  /**
-   *
-   * @param {AbstractControl} control
-   */
   private onInlandLocationChanges(control: AbstractControl) {
     const locationObserver = {
       next: data => {
-        console.log("onLocationCodeChanges");
         const theLength: number = data.toString().trim().length;
         if (theLength === 0) {
           this.filteredInlandGeoScopes = [];
@@ -141,20 +136,13 @@ export class SearchIntermodalComponent {
       .subscribe(locationObserver);
   }
 
-  /**
-   *
-   * @param {string} location
-   * @param {string} type
-   * @param {string} country
-   * @returns {any}
-   */
+
   filterLocations(location: string, type: string, country: string): any {
     this.masterDataService.filterLocations(location, type, country).subscribe(
       data => {
-        let result = this.masterDataService.convertToModel(data);
+        const result = this.masterDataService.convertToModel(data);
         if (result.length === 1) {
           const singleRow: string = type === 'L' ? result[0].location_code : result[0].location_name;
-          console.log("patch location..");
           this.formClass.inlandLocation.patchValue(singleRow.toUpperCase());
           this.filteredInlandGeoScopes = [];
           this.filteredPortGeoScopes = [];
@@ -168,29 +156,18 @@ export class SearchIntermodalComponent {
       });
   }
 
-  /**
-   *
-   * @param {AbstractControl} control
-   */
-
   private onCountryCodeChanges(control: AbstractControl) {
-    console.log("onCountryCodeChanges.");
     control.valueChanges
       .pipe(debounceTime<string>(400), distinctUntilChanged(), filter(data => data.toString().length > 0))
       .subscribe(data => this.filterCountries(data));
   }
 
-  /**
-   * Search for Countries
-   *
-   * @param countryCode
-   */
+
   filterCountries(countryCode) {
     const countryObserver = {
       next: response => {
-        let data = this.countryService.convertToModel(response);
+        const data = this.countryService.convertToModel(response);
         if (data.length === 1) {
-          console.log("patch country..")
           this.formClass.countryCode.patchValue(data[0].country_code);
           this.filteredCountries = [];
         } else {
@@ -204,10 +181,6 @@ export class SearchIntermodalComponent {
     this.countryService.filterCountries(countryCode).subscribe(countryObserver);
   }
 
-  /**
-   *
-   * @param {AbstractControl} control
-   */
   private onInlandGeoScopeChanges(control: AbstractControl) {
     const geoScopeObserver = {
       next: data => {
@@ -238,18 +211,18 @@ export class SearchIntermodalComponent {
   private retrievePreferredPorts() {
     this.masterDataService.filterPreferredPorts(this.formClass.inlandLocation.value, this.formClass.inlandGeoScopeType.value, this.formClass.countryCode.value).subscribe(
       data => {
-        let result: GeoScopeModel[] = this.masterDataService.convertToModel(data);
+        const result: GeoScopeModel[] = this.masterDataService.convertToModel(data);
         if (result.length === 1) {
           const singleRow: string = result[0].location_code;
           this.formClass.prefPort.patchValue(singleRow.toUpperCase());
           this.filteredPortGeoScopes = [];
         } else {
           this.filteredPortGeoScopes = result;
-          let ports = [];
+          const ports = [];
           result.forEach((item) => {
             ports.push(item.location_code.toUpperCase());
             this.formClass.prefPort.patchValue(ports);
-          })
+          });
 
         }
       });

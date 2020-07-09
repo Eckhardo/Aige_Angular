@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {LocationsComponent} from "./locations/locations.component";
-import {LocationDetailsComponent} from "./location-details/location-details.component";
-import {AddLocationComponent} from "./add-location/add-location.component";
-import {EditLocationComponent} from "./edit-location/edit-location.component";
+import {LocationsComponent} from './locations/locations.component';
+import {LocationDetailsComponent} from './location-details/location-details.component';
+import {AddLocationComponent} from './add-location/add-location.component';
+import {EditLocationComponent} from './edit-location/edit-location.component';
 export const LOCATION_COMPONENTS = [LocationsComponent, LocationDetailsComponent, AddLocationComponent, EditLocationComponent];
 
 const routes: Routes = [

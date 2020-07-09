@@ -58,15 +58,18 @@
       <!--- Inland Location, Country Code, Geo Scope Type Transport Mode -->
       <mat-form-field style="width: 150px; margin-left: 20px; margin-right: 20px;  margin-bottom: 10px;">
         <input matInput placeholder="Inland Location" formControlName="inlandLocation" [matAutocomplete]="autoFrom">
-        <mat-hint align="start">{{ form.get('inlandGeoScopeType').value === 'L' ? "e.g. DEDUS" : "e.g. DUSSELDORF"}}</mat-hint>
+        <mat-hint
+          align="start">{{ form.get('inlandGeoScopeType').value === 'L' ? "e.g. DEDUS" : "e.g. DUSSELDORF"}}</mat-hint>
         <mat-error>
         <span
           *ngIf="!form.get('inlandLocation').valid && form.get('inlandLocation').touched">Please enter Inland Location !</span>
         </mat-error>
         <mat-autocomplete #autoFrom="matAutocomplete">
-          <mat-option *ngFor="let item of filteredInlandGeoScopes" [value]=" form.get('inlandGeoScopeType').value === 'L' ? item.location_code : item.location_name"
+          <mat-option *ngFor="let item of filteredInlandGeoScopes"
+                      [value]=" form.get('inlandGeoScopeType').value === 'L' ? item.location_code : item.location_name"
                       style="height: 30px; line-height: 20px; background-color: #ecf4ff;">
-            <span class="smallFont"> {{ form.get('inlandGeoScopeType').value === 'L' ? item.location_code : item.location_name}}</span>
+            <span
+              class="smallFont"> {{ form.get('inlandGeoScopeType').value === 'L' ? item.location_code : item.location_name}}</span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -117,7 +120,7 @@
       <div *ngIf="allPortsSelected()">
         <span style="margin-top: 5px;  margin-left: 20px;">Preferred Ports: </span>
         <span *ngIf="filteredPortGeoScopes.length > 0">
-        <span class="mat-small"  *ngFor="let item of filteredPortGeoScopes; let isLast =last"
+        <span class="mat-small" *ngFor="let item of filteredPortGeoScopes; let isLast =last"
               style="margin-top: 5px;  margin-left: 20px;">
           {{ item.location_code}} {{isLast ? '' : ', '}}
         </span>

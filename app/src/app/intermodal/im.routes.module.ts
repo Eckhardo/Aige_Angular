@@ -8,7 +8,7 @@ import {GeoScopeService} from '../services/geoscope.service';
 import {IntermodalSearchService} from './services/im.search.service';
 import {SharedModule} from '../shared/shared.module';
 import {CountryService} from '../services/country.service';
-import {DateAdapter, MAT_DATE_FORMATS} from "@angular/material/core";
+import {DateAdapter, MAT_DATE_FORMATS} from '@angular/material/core';
 @NgModule({
 
   declarations: [INTERMODAL_COMPONENTS],

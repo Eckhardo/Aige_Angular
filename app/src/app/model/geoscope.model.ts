@@ -13,10 +13,10 @@ export class GeoScopeModel {
 
 
   constructor(location_id: string, country_code: string, location_code: string, geoscope_type: string, location_name: string = '', port: boolean = false) {
-  this._geoscope_id=location_id;
+    this._geoscope_id = location_id;
     this._location_code = location_code;
-    this._geoscope_type =geoscope_type;
-    this._country_code =country_code;
+    this._geoscope_type = geoscope_type;
+    this._country_code = country_code;
     this._location_name = location_name;
     this._is_port = port;
   }
@@ -27,7 +27,7 @@ export class GeoScopeModel {
   }
 
   get location_code(): string {
-     return this._location_code;
+    return this._location_code;
   }
 
   get geoscope_type(): string {
@@ -49,11 +49,13 @@ export class GeoScopeModel {
   set geoscope_id(value: string) {
     this._geoscope_id = value;
   }
+
   set geoscope_type(value: string) {
     this._geoscope_type = value;
   }
-  set location_code(value:string) {
-    this._location_code=value;
+
+  set location_code(value: string) {
+    this._location_code = value;
 
   }
 
@@ -61,12 +63,13 @@ export class GeoScopeModel {
     this._is_port = value;
   }
 
-  set location_name(value:string) {
-    this._location_name=value;
+  set location_name(value: string) {
+    this._location_name = value;
 
   }
-  set country_code(value:string) {
-    this._country_code=value;
+
+  set country_code(value: string) {
+    this._country_code = value;
 
   }
 }

@@ -21,7 +21,7 @@ const serverApi = 'http://localhost:3000/prod';
 export class GeoScopeService {
   locations: Array<GeoScopeModel> = [];
   prefPorts: Array<GeoScopeModel> = [];
- // readonly serverApi = `http://${location.host}/nre`;
+  // readonly serverApi = `http://${location.host}/nre`;
   private slash = '/';
 
   constructor(private http: HttpClient) {
@@ -36,13 +36,13 @@ export class GeoScopeService {
   }
 
 
-  private getUrlWithType(object_type:string): string {
+  private getUrlWithType(object_type: string): string {
     return `${serverApi}${slash}${object_type}${slash}`;
   }
 
   filterLocations(locationCode: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
     const search_params: HttpParams = this.prepareGeoScopeSearchParams(locationCode, geoScopeType, countryCode);
-    const URI =  `${this.getUrl()}filter`;
+    const URI = `${this.getUrl()}filter`;
     return this.http
       .get<Array<GeoScopeModel>>(URI, {params: search_params}).pipe(
         catchError(this._handleError));
@@ -50,9 +50,9 @@ export class GeoScopeService {
 
 
   filterPreferredPorts(code: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
-    console.log("filterPreferredPorts:: start");
+    console.log('filterPreferredPorts:: start');
     const search_params: HttpParams = this.prepareGeoScopeSearchParams(code, geoScopeType, countryCode);
-    const URI =  `${this.getUrl()}preferredPorts`;
+    const URI = `${this.getUrl()}preferredPorts`;
     return this.http
       .get<Array<GeoScopeModel>>(URI, {params: search_params})
       .pipe(
@@ -61,8 +61,8 @@ export class GeoScopeService {
 
   filterPorts(code: string): Observable<Array<GeoScopeModel>> {
     const search_params = new HttpParams().set('location_code', code.toUpperCase());
-    const URI =  `${this.getUrl()}ports`;
-   return this.http
+    const URI = `${this.getUrl()}ports`;
+    return this.http
       .get<Array<GeoScopeModel>>(URI, {params: search_params})
       .pipe(
         catchError(this._handleError));
@@ -112,33 +112,32 @@ export class GeoScopeService {
   }
 
   convertToModel(data: any[]) {
-    let result: GeoScopeModel[] = [];
-    if (data == undefined || data.length == 0) {
+    const result: GeoScopeModel[] = [];
+    if (data === undefined || data.length === 0) {
       return result;
     }
 
     data.forEach((value => {
       const {geoscope_id, location_name, location_code, geoscope_type, country_code, is_port} = value;
       result.push(new GeoScopeModel(geoscope_id, country_code, location_code, geoscope_type, location_name, is_port));
-    }))
-
+    }));
 
     return result;
   }
 
   private _handleError(err: HttpErrorResponse | any) {
-     const errorMsg = err.message || 'Error: Unable to complete request.';
+    const errorMsg = err.message || 'Error: Unable to complete request.';
     return observableThrowError(errorMsg);
   }
 
   // dummy methods
 
   findLocationsMock(): Observable<Array<GeoScopeModel>> {
-     return of(this.buildLocations());
+    return of(this.buildLocations());
   }
 
   private buildLocations(geoScope?: GeoScopeModel) {
- let geoScopes : Array<GeoScopeModel> = [];
+    const geoScopes: Array<GeoScopeModel> = [];
     geoScopes.push(new GeoScopeModel('1', 'DE', 'DEHAM', 'L'));
     geoScopes.push(new GeoScopeModel('2', 'DE', 'DEBRV', 'L'));
     geoScopes.push(new GeoScopeModel('3', 'NL', 'NLRTM', 'L'));
@@ -149,13 +148,14 @@ export class GeoScopeService {
     geoScopes.push(new GeoScopeModel('7', 'DE', 'DUSENHAUSEN', 'T'));
     geoScopes.push(new GeoScopeModel('8', 'DE', 'DEDUS', 'L'));
     geoScopes.push(new GeoScopeModel('9', 'DE', 'DEDUI', 'L'));
-   if (geoScope != undefined) {
-     geoScopes.push(geoScope);
-   }
+    if (geoScope !== undefined) {
+      geoScopes.push(geoScope);
+    }
     return geoScopes;
   }
+
   saveLocationMock(geoScope: GeoScopeModel) {
-   this.buildLocations(geoScope);
+    this.buildLocations(geoScope);
 
 
   }
@@ -182,10 +182,8 @@ export class GeoScopeService {
   }
 
 
-
-
   filterVS(query: string): Observable<VesselSystemModel[]> {
-    const vs:Array<VesselSystemModel> = [];
+    const vs: Array<VesselSystemModel> = [];
     return of(vs);
   }
 

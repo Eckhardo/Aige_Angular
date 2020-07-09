@@ -1,9 +1,9 @@
 import {AfterViewInit, ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 
 import {KeyFigureModel} from '../models/keyfigure.model';
-import {MatSort} from "@angular/material/sort";
-import {MatPaginator} from "@angular/material/paginator";
-import {MatTableDataSource} from "@angular/material/table";
+import {MatSort} from '@angular/material/sort';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 
 @Component({
