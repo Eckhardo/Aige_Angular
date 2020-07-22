@@ -12,7 +12,7 @@ import {keyfigures} from '../../testdata/keyfigure';
 const object_type = EntityEnum.INTERMODAL_ROUTE;
 const slash = '/';
 // const serverApi = 'http://localhost:3000/prod';
-const serverApi= 'https://ihklqdkyme.execute-api.eu-central-1.amazonaws.com/dev';
+const serverApi= 'https://14025z5k64.execute-api.eu-central-1.amazonaws.com/dev';
 @Injectable()
 export class IntermodalSearchService {
 

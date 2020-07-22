@@ -8,8 +8,9 @@ import {GeoScopeModel} from '../model/geoscope.model';
 
 const object_type = EntityEnum.COUNTRY;
 const slash = '/';
-// const serverApi = 'http://localhost:3000/prod';
- const serverApi= 'https://ihklqdkyme.execute-api.eu-central-1.amazonaws.com/dev';
+// const serverApi = 'http://localhost:3000/prod';const
+const serverApi= 'https://14025z5k64.execute-api.eu-central-1.amazonaws.com/dev';
+
 @Injectable()
 export class CountryService {
   countryCodes: Array<CountryModel> = [];
