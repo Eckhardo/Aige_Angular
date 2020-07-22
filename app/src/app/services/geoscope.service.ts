@@ -21,7 +21,7 @@ const serverApi = 'https://14025z5k64.execute-api.eu-central-1.amazonaws.com/dev
 export class GeoScopeService {
   locations: Array<GeoScopeModel> = [];
   prefPorts: Array<GeoScopeModel> = [];
-  // readonly serverApi = `http://${location.host}/nre`;
+ readonly serverApi = `http://${location.host}/nre`;
   private slash = '/';
 
   constructor(private http: HttpClient) {
