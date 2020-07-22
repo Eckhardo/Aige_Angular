@@ -175,7 +175,7 @@ export class SearchIntermodalComponent {
         }
 
       },
-      error: err => console.error('Observer got an error: ' + err),
+      error: err => console.error('Observer got an error: ' + err)
     };
 
     this.countryService.filterCountries(countryCode).subscribe(countryObserver);
