@@ -32,7 +32,8 @@ export class EditLocationComponent implements OnInit {
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
 
-  constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private enumService: EnumService, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private route: ActivatedRoute, private api: ApiService,
+              private enumService: EnumService, private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {

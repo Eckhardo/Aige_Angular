@@ -31,7 +31,7 @@ export class AddLocationComponent implements OnInit {
   ngOnInit(): void {
     this.geoScopeTypeList = this.enumService.getEnumValues(GeoScopeType);
     this.locationForm = this.formBuilder.group({
-      geoscope_id: [null,],
+      geoscope_id: [null],
       country_code: [null, Validators.required],
       location_code: [null, Validators.required],
       geoscope_type: [null, Validators.required],

@@ -9,8 +9,8 @@ describe('GeoScopeService', () => {
   let geoScopeService: GeoScopeService;
   let httpMock: HttpTestingController;
   const expectedData: GeoScopeModel[] = [
-    new GeoScopeModel(2, '', 'DEHAM', ''),
-    new GeoScopeModel(1, '', 'BEANR', '')
+    new GeoScopeModel('2', '', 'DEHAM', ''),
+    new GeoScopeModel('1', '', 'BEANR', '')
   ];
 
   beforeEach(() => {

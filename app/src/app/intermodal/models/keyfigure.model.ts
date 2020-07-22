@@ -25,7 +25,8 @@ export class KeyFigureModel {
   private _startDate: Date;
 
 
-  constructor(from: GeoScopeModel, via: GeoScopeModel, to: GeoScopeModel, transportMode: string, isPreferred: boolean, equipmentSize: string, equipmentGroup: string, rate: number, currency: string, startDate: Date) {
+  constructor(from: GeoScopeModel, via: GeoScopeModel, to: GeoScopeModel, transportMode: string, isPreferred: boolean,
+              equipmentSize: string, equipmentGroup: string, rate: number, currency: string, startDate: Date) {
     this._from = from;
     this._via = via;
     this._to = to;

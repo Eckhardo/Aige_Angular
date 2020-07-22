@@ -17,13 +17,13 @@ describe('EnumService', () => {
 
 
   it('should read geo scope type LOCATION', inject([EnumService], (service: EnumService) => {
-    let geoScopeType: string = service.getKeyByValue(GeoScopeType, 'L');
+    const geoScopeType: string = service.getKeyByValue(GeoScopeType, 'L');
     expect(geoScopeType).toEqual('LOCATION');
   }));
 
 
   it('should read transport mode type BARGE/ROAD', inject([EnumService], (service: EnumService) => {
-    let tpMode: string = service.getValueByKey(IntermodalMode, 'BARGE_ROAD');
+    const tpMode: string = service.getValueByKey(IntermodalMode, 'BARGE_ROAD');
     expect(tpMode).toEqual('BARGE/ROAD');
   }));
 });

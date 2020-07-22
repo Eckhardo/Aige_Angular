@@ -9,14 +9,14 @@ import {GeoScopeModel} from '../model/geoscope.model';
 const object_type = EntityEnum.COUNTRY;
 const slash = '/';
 // const serverApi = 'http://localhost:3000/prod';const
-const serverApi= 'https://14025z5k64.execute-api.eu-central-1.amazonaws.com/dev';
+const serverApi = 'https://14025z5k64.execute-api.eu-central-1.amazonaws.com/dev';
 
 @Injectable()
 export class CountryService {
   countryCodes: Array<CountryModel> = [];
 
 
-//  readonly serverApi = `http://${location.host}/nre`;
+  readonly serverApi = `http://${location.host}/nre`;
 
 
   constructor(private http: HttpClient) {
@@ -85,7 +85,8 @@ export class CountryService {
     this.countryCodes.push(new CountryModel('1', 'NL', 'NL'));
     this.countryCodes.push(new CountryModel('1', 'SE', 'SE'));
     this.countryCodes.push(new CountryModel('1', 'NO', 'NO'));
-    const result: CountryModel[] = this.countryCodes.filter((countryCode) => countryCode.country_code.toLowerCase().startsWith(query.toLowerCase()));
+    const result: CountryModel[] = this.countryCodes.filter((countryCode) =>
+      countryCode.country_code.toLowerCase().startsWith(query.toLowerCase()));
     return of(result);
 
   }

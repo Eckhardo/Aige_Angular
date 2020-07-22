@@ -23,8 +23,16 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
-  imports: [CdkTableModule, MatTableModule, MatSortModule, MatPaginatorModule, MatGridListModule, MatAutocompleteModule, MatDialogModule, MatLineModule, MatListModule, MatDatepickerModule, MatNativeDateModule, MatMenuModule, MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatSelectModule, MatOptionModule, MatToolbarModule, MatIconModule, MatCardModule, MatProgressSpinnerModule, MatFormFieldModule],
-  exports: [CdkTableModule, MatTableModule, MatSortModule, MatPaginatorModule, MatGridListModule, MatAutocompleteModule, MatDialogModule, MatLineModule, MatListModule, MatDatepickerModule, MatNativeDateModule, MatMenuModule, MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatSelectModule, MatOptionModule, MatToolbarModule, MatIconModule, MatCardModule, MatProgressSpinnerModule, MatFormFieldModule]
+  imports: [CdkTableModule, MatTableModule, MatSortModule, MatPaginatorModule, MatGridListModule,
+    MatAutocompleteModule, MatDialogModule, MatLineModule, MatListModule, MatDatepickerModule,
+    MatNativeDateModule, MatMenuModule, MatButtonModule, MatCheckboxModule, MatInputModule,
+    MatRadioModule, MatSelectModule, MatOptionModule, MatToolbarModule, MatIconModule, MatCardModule,
+    MatProgressSpinnerModule, MatFormFieldModule],
+  exports: [CdkTableModule, MatTableModule, MatSortModule, MatPaginatorModule, MatGridListModule,
+    MatAutocompleteModule, MatDialogModule, MatLineModule, MatListModule, MatDatepickerModule,
+    MatNativeDateModule, MatMenuModule, MatButtonModule, MatCheckboxModule, MatInputModule,
+    MatRadioModule, MatSelectModule, MatOptionModule, MatToolbarModule, MatIconModule, MatCardModule,
+    MatProgressSpinnerModule, MatFormFieldModule]
 })
 
 export class AppMaterialModule {

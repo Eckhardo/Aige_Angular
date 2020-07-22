@@ -7,7 +7,7 @@ import {EntityEnum} from '../enums/app-enum';
 describe('CountryService', () => {
   let countryService: CountryService;
   let httpMock: HttpTestingController;
-  const testData: Array<CountryModel> = [new CountryModel(1, 'GERMANY', 'DE'), new CountryModel(2, 'FRANCE', 'FR')];
+  const testData: Array<CountryModel> = [new CountryModel('1', 'GERMANY', 'DE'), new CountryModel('2', 'FRANCE', 'FR')];
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -15,8 +15,8 @@ describe('CountryService', () => {
       providers: [CountryService]
     });
     // inject the service
-    countryService = TestBed.get(CountryService);
-    httpMock = TestBed.get(HttpTestingController);
+    countryService = TestBed.inject(CountryService);
+    httpMock = TestBed.inject(HttpTestingController);
   });
 
 

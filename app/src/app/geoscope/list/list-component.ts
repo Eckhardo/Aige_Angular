@@ -48,7 +48,8 @@ export class GeoscopeListComponent implements OnInit {
   addRowData(row_obj) {
     console.log('Transmitted  ADD Data' + JSON.stringify(row_obj));
 
-    this.dataSource.push(new GeoScopeModel(row_obj.id, row_obj.country, row_obj.code, row_obj.type, row_obj.name, row_obj.port));
+    this.dataSource.push(new GeoScopeModel(row_obj.id, row_obj.country, row_obj.code,
+      row_obj.type, row_obj.name, row_obj.port));
     console.log('New Add data' + JSON.stringify(this.dataSource));
 
     this.table.renderRows();
@@ -60,7 +61,6 @@ export class GeoscopeListComponent implements OnInit {
 
     this.dataSource = this.dataSource.filter((value, key) => {
       if (value.geoscope_id === row_obj.geoscope_id) {
-        //   value=new  GeoScopeModel(row_obj.geoscope_id, row_obj.country_code, row_obj.location_code, row_obj.geoscope_type, row_obj.location_name, row_obj.is_port);
       }
       return true;
     });
@@ -68,7 +68,7 @@ export class GeoscopeListComponent implements OnInit {
 
   deleteRowData(row_obj) {
     this.dataSource = this.dataSource.filter((value, key) => {
-      return value.geoscope_id != row_obj.id;
+      return value.geoscope_id !== row_obj.id;
     });
   }
 

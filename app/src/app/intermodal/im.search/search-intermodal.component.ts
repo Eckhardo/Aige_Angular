@@ -209,7 +209,8 @@ export class SearchIntermodalComponent {
    *
    */
   private retrievePreferredPorts() {
-    this.masterDataService.filterPreferredPorts(this.formClass.inlandLocation.value, this.formClass.inlandGeoScopeType.value, this.formClass.countryCode.value).subscribe(
+    this.masterDataService.filterPreferredPorts(this.formClass.inlandLocation.value, this.formClass.inlandGeoScopeType.value,
+      this.formClass.countryCode.value).subscribe(
       data => {
         const result: GeoScopeModel[] = this.masterDataService.convertToModel(data);
         if (result.length === 1) {

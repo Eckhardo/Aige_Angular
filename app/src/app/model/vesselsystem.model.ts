@@ -1,7 +1,7 @@
 export class VesselSystemModel {
 
   private _vs_id: number;
-  private _vs_code: string
+  private _vs_code: string;
   private _vs_name: string;
 
   constructor(vs_id: number, vs_code: string, vs_name: string) {

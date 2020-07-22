@@ -105,7 +105,8 @@ describe('SearchImComponent', () => {
   });
 
 
-  it('#MOST complex Test: Fills country_code autocomplete which triggers reactive form observable which triggers service call', async(() => {
+  it('#MOST complex Test: Fills country_code autocomplete which triggers reactive ' +
+    'form observable which triggers service call', async(() => {
     const countryService: CountryService = debugElement.injector.get(CountryService);
     const spyService = spyOn(countryService, 'filterCountryCode').and.returnValue(of(expectedCountries));
 
