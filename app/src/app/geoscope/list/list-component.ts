@@ -16,35 +16,36 @@ export class GeoscopeListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'code', 'action'];
 
   dataSource: Array<GeoScopeModel> = GEOSCOPE_TEST_DATA;
-  @ViewChild(MatTable,{static:true}) table: MatTable<any>;
+  @ViewChild(MatTable, {static: true}) table: MatTable<any>;
 
-  constructor(public dialog: MatDialog, private masterDataService: GeoScopeService) { }
+  constructor(public dialog: MatDialog, private masterDataService: GeoScopeService) {
+  }
 
   ngOnInit(): void {
 
-   console.log( JSON.stringify(this.dataSource));
+    console.log(JSON.stringify(this.dataSource));
   }
- 
 
-  openDialog(action,obj) {
+
+  openDialog(action, obj) {
     obj.action = action;
     const dialogRef = this.dialog.open(DialogBoxComponent, {
       width: '250px',
-      data:obj
+      data: obj
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result.event == 'Add'){
+      if (result.event == 'Add') {
         this.addRowData(result.data);
-      }else if(result.event == 'Update'){
+      } else if (result.event == 'Update') {
         this.updateRowData(result.data);
-      }else if(result.event == 'Delete'){
+      } else if (result.event == 'Delete') {
         this.deleteRowData(result.data);
       }
     });
   }
 
-  addRowData(row_obj){
+  addRowData(row_obj) {
     console.log('Transmitted  ADD Data' + JSON.stringify(row_obj));
 
     this.dataSource.push(new GeoScopeModel(row_obj.id, row_obj.country, row_obj.code, row_obj.type, row_obj.name, row_obj.port));
@@ -57,15 +58,16 @@ export class GeoscopeListComponent implements OnInit {
   updateRowData(row_obj: GeoScopeModel) {
     console.log('Transmitted Data COMPONENT' + JSON.stringify(row_obj));
 
-    this.dataSource = this.dataSource.filter((value,key)=>{
-      if(value.id == row_obj.id){
+    this.dataSource = this.dataSource.filter((value, key) => {
+      if (value.id == row_obj.id) {
         //   value=new  GeoScopeModel(row_obj.id, row_obj.countryCode, row_obj.locationCode, row_obj.geoScopeType, row_obj.name, row_obj.port);
       }
       return true;
     });
   }
-  deleteRowData(row_obj){
-    this.dataSource = this.dataSource.filter((value,key)=>{
+
+  deleteRowData(row_obj) {
+    this.dataSource = this.dataSource.filter((value, key) => {
       return value.id != row_obj.id;
     });
   }

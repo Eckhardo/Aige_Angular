@@ -1,4 +1,12 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 
 import {KeyFigureModel} from '../models/keyfigure.model';
 import {MatSort} from "@angular/material/sort";
@@ -20,8 +28,8 @@ export class ResultIntermodalComponent implements OnChanges, AfterViewInit {
   displayedColumns = ['inland', 'via', 'port', 'transportmode', 'rate', 'eqsize', 'eqgroup', 'preferred'];
   dataSource: any;
 
-  @ViewChild(MatSort, { static: true } as any) sort: MatSort;
-  @ViewChild(MatPaginator, { static: true } as any) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true} as any) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true} as any) paginator: MatPaginator;
 
 
   applyFilter(filterValue: string) {

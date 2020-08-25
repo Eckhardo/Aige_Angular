@@ -19,7 +19,7 @@ export class GeoScopeService {
   prefPorts: Array<GeoScopeModel> = [];
 
   readonly serverApi = 'http://localhost:5000/nre';
- // readonly serverApi = `http://${location.host}/nre`;
+  // readonly serverApi = `http://${location.host}/nre`;
   private slash = '/';
 
   constructor(private http: HttpClient) {
@@ -128,11 +128,11 @@ export class GeoScopeService {
   // dummy methods
 
   findLocationsMock(): Observable<Array<GeoScopeModel>> {
-     return of(this.buildLocations());
+    return of(this.buildLocations());
   }
 
   private buildLocations(geoScope?: GeoScopeModel) {
- let geoScopes : Array<GeoScopeModel> = [];
+    let geoScopes: Array<GeoScopeModel> = [];
     geoScopes.push(new GeoScopeModel('1', 'DE', 'DEHAM', 'L'));
     geoScopes.push(new GeoScopeModel('2', 'DE', 'DEBRV', 'L'));
     geoScopes.push(new GeoScopeModel('3', 'NL', 'NLRTM', 'L'));
@@ -143,11 +143,12 @@ export class GeoScopeService {
     geoScopes.push(new GeoScopeModel('7', 'DE', 'DUSENHAUSEN', 'T'));
     geoScopes.push(new GeoScopeModel('8', 'DE', 'DEDUS', 'L'));
     geoScopes.push(new GeoScopeModel('9', 'DE', 'DEDUI', 'L'));
-   if (geoScope != undefined) {
-     geoScopes.push(geoScope);
-   }
+    if (geoScope != undefined) {
+      geoScopes.push(geoScope);
+    }
     return geoScopes;
   }
+
   saveLocationMock(geoScope: GeoScopeModel) {
 
     console.log('saveLocationMock:' + JSON.stringify(geoScope));
@@ -178,10 +179,8 @@ export class GeoScopeService {
   }
 
 
-
-
   filterVS(query: string): Observable<VesselSystemModel[]> {
-    const vs:Array<VesselSystemModel> = [];
+    const vs: Array<VesselSystemModel> = [];
     return of(vs);
   }
 

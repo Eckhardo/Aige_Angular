@@ -10,7 +10,6 @@ import {GeoScopeService} from '../../services/geoscope.service';
 import {GeoScopeModel} from '../../model/geoscope.model';
 import {CountryModel} from '../../model/country.model';
 import {IntermodalSearchService} from '../services/im.search.service';
-import {KeyFigureModel} from '../models/keyfigure.model';
 import {CountryService} from '../../services/country.service';
 import {IntermodalSearchReactiveForm} from './search-intermodal.component.form';
 
@@ -170,7 +169,7 @@ export class SearchIntermodalComponent {
    */
 
   private onCountryCodeChanges(control: AbstractControl) {
-  this.logit('onCountryCodeChanges for value:' + control.value);
+    this.logit('onCountryCodeChanges for value:' + control.value);
     control.valueChanges
       .pipe(debounceTime<string>(400), distinctUntilChanged(), filter(data => data.toString().length > 0))
       .subscribe(data => this.filterCountries(data));
@@ -188,7 +187,7 @@ export class SearchIntermodalComponent {
           this.formClass.countryCode.patchValue(result[0].code);
           this.filteredCountries = [];
         } else {
-           this.filteredCountries = result;
+          this.filteredCountries = result;
         }
       },
       error: err => console.error('Observer got an error: ' + err),
@@ -276,7 +275,7 @@ export class SearchIntermodalComponent {
   }
 
   private setEndDate(date: Date) {
-    const newDay: number = ( date.getDate() + 14);
+    const newDay: number = (date.getDate() + 14);
     const newDate: Date = new Date();
     newDate.setDate(newDay);
     this.formClass.endDate.patchValue(newDate.toISOString());
@@ -329,7 +328,7 @@ export class SearchIntermodalComponent {
     return length;
   }
 
-  private logit (logInfo:string){
+  private logit(logInfo: string) {
     console.log(logInfo);
   }
 }

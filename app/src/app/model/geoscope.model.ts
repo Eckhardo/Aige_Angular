@@ -13,10 +13,10 @@ export class GeoScopeModel {
 
 
   constructor(location_id: string, countryCode: string, locationCode: string, geoscopeType: string, name: string = '', port: boolean = false) {
-    this._id=location_id;
+    this._id = location_id;
     this._locationCode = locationCode;
-    this._geoScopeType =geoscopeType;
-    this._countryCode =countryCode;
+    this._geoScopeType = geoscopeType;
+    this._countryCode = countryCode;
     this._name = name;
     this._port = port;
   }

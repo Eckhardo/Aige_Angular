@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable, throwError,of} from 'rxjs';
+import {Observable, of, throwError} from 'rxjs';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import {EntityEnum} from '../enums/app-enum';
 import {CountryModel} from '../model/country.model';
@@ -8,7 +8,6 @@ import {catchError} from 'rxjs/operators';
 @Injectable()
 export class CountryService {
   countryCodes: Array<CountryModel> = [];
-
   readonly serverApi = 'http://localhost:5000/nre';
 //  readonly serverApi = `http://${location.host}/nre`;
   private resource = '/';
@@ -26,7 +25,6 @@ export class CountryService {
   }
 
 
-
   filterCountries(query: string): Observable<Array<CountryModel>> {
     console.error('service:filter countries:', query);
     const search_params: HttpParams = new HttpParams().set('country_code', query.toUpperCase());
@@ -34,12 +32,10 @@ export class CountryService {
     let result: Observable<Array<CountryModel>>;
     result = this.http
       .get<Array<CountryModel>>(URI, {params: search_params}).pipe(
-      catchError(this._handleError));
+        catchError(this._handleError));
     console.log('find Countries Result:');
     return result;
   }
-
-
 
 
   private _handleError(error: HttpErrorResponse | any) {
@@ -64,17 +60,17 @@ export class CountryService {
     console.log('CountryService: ' + message);
   }
 
-  filterCountryCode(query: string):Observable<Array<CountryModel>> {
+  filterCountryCode(query: string): Observable<Array<CountryModel>> {
     this.log('filter country code:' + query);
-   this.countryCodes= [];
-      this.countryCodes.push(new CountryModel(1, 'DK', 'DK'));
-      this.countryCodes.push(new CountryModel(1, 'DE', 'DE'));
-      this.countryCodes.push(new CountryModel(1, 'FR', 'FR'));
-      this.countryCodes.push(new CountryModel(1, 'NL', 'NL'));
-      this.countryCodes.push(new CountryModel(1, 'SE', 'SE'));
-      this.countryCodes.push(new CountryModel(1, 'NO', 'NO'));
-     const result: CountryModel[] =this.countryCodes.filter((countryCode) => countryCode.code.toLowerCase().startsWith(query.toLowerCase()));
-     return of(result);
+    this.countryCodes = [];
+    this.countryCodes.push(new CountryModel(1, 'DK', 'DK'));
+    this.countryCodes.push(new CountryModel(1, 'DE', 'DE'));
+    this.countryCodes.push(new CountryModel(1, 'FR', 'FR'));
+    this.countryCodes.push(new CountryModel(1, 'NL', 'NL'));
+    this.countryCodes.push(new CountryModel(1, 'SE', 'SE'));
+    this.countryCodes.push(new CountryModel(1, 'NO', 'NO'));
+    const result: CountryModel[] = this.countryCodes.filter((countryCode) => countryCode.code.toLowerCase().startsWith(query.toLowerCase()));
+    return of(result);
 
   }
 }

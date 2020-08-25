@@ -11,7 +11,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class DialogBoxComponent implements OnInit {
   action: string;
   local_data: any;
-  description:' My Dialog'
+  description: ' My Dialog'
 
   dialogForm: FormGroup;
 
@@ -23,8 +23,8 @@ export class DialogBoxComponent implements OnInit {
     this.local_data = {...data};
     this.action = this.local_data.action;
     this.dialogForm = new FormGroup({
-      id: new FormControl(  this.local_data._id, Validators.required),
-      code: new FormControl(  this.local_data._locationCode, Validators.required),
+      id: new FormControl(this.local_data._id, Validators.required),
+      code: new FormControl(this.local_data._locationCode, Validators.required),
       type: new FormControl(this.local_data._geoScopeType, Validators.required),
       country: new FormControl(this.local_data._countryCode, Validators.required)
 

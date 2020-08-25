@@ -11,7 +11,9 @@ export class LocationsComponent implements OnInit {
   displayedColumns: string[] = ['id', 'country', 'code', 'type', 'name', 'port'];
   data: GeoScopeModel[] = [];
   isLoadingResults = true;
-  constructor(private api: ApiService) { }
+
+  constructor(private api: ApiService) {
+  }
 
   ngOnInit(): void {
     this.api.getLocations()

@@ -1,5 +1,4 @@
-
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule, ROOT_COMPONENTS} from './app-routing.module';
 
@@ -12,7 +11,6 @@ import {MissingRoutingsModule} from './missingRoutes/missing-routes.module';
 import {NewRoutingEngineModule} from './newRoutingEngine/new-routing-engine.module';
 import {SharedModule} from './shared/shared.module';
 import {GeoscopeModule} from "./geoscope/geoscope.module";
-import {DialogBoxComponent} from "./geoscope/dialog-box/dialog-box.component";
 import {LocationsModule} from "./locations/locations.module";
 
 

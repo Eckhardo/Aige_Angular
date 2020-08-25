@@ -39,6 +39,7 @@ export class IntermodalSearchService {
     return this.http.get<Array<KeyFigureModel>>(URI, {params: search_params});
 
   }
+
   getTestKeyFigures(imSearchModel: object): Observable<Array<any>> {
 
     return of(keyfigures);

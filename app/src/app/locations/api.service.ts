@@ -17,19 +17,20 @@ const httpOptionsResponse = {
 
 let main_headers = {}
 const apiUrl = 'http://localhost:5000/nre';
-const  slash = '/';
-const object_type=EntityEnum.GEOSCOPE;
+const slash = '/';
+const object_type = EntityEnum.GEOSCOPE;
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient) {
+  }
 
 
   private getUrl(): string {
-    return  `${apiUrl}${slash}${object_type}${slash}`;
+    return `${apiUrl}${slash}${object_type}${slash}`;
   }
 
 
@@ -48,6 +49,7 @@ export class ApiService {
       catchError(this.handleError<GeoScopeModel>(`getGeoScopeModelById id=${id}`))
     );
   }
+
   addLocation(GeoScopeModel: GeoScopeModel): Observable<GeoScopeModel> {
     return this.http.post<GeoScopeModel>(this.getUrl(), GeoScopeModel, httpOptions).pipe(
       tap((c: GeoScopeModel) => console.log(`added GeoScopeModel w/ id=${c.id}`)),
@@ -71,7 +73,8 @@ export class ApiService {
       catchError(this.handleError<GeoScopeModel>('deleteLocation'))
     );
   }
-  private handleError<T> (operation = 'operation', result?: T) {
+
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
