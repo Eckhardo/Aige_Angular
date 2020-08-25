@@ -52,8 +52,6 @@ export class KeyFigureModel {
   }
 
 
-
-
   get transportMode(): string {
     return this._transportMode;
   }

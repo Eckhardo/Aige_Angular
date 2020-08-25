@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="529075ca-feda-4c00-9c04-56e82d57c7d1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/services/country.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/services/country.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +196,12 @@
       <workItem from="1594375521146" duration="1268000" />
       <workItem from="1594377016571" duration="1133000" />
       <workItem from="1594378381900" duration="1339000" />
-      <workItem from="1595403063640" duration="4036000" />
+      <workItem from="1595403063640" duration="4415000" />
+      <workItem from="1596317486864" duration="164000" />
+      <workItem from="1596734774792" duration="650000" />
+      <workItem from="1597571799612" duration="527000" />
+      <workItem from="1597589125281" duration="642000" />
+      <workItem from="1598101191809" duration="82000" />
     </task>
     <task id="LOCAL-00001" summary="added firefox as karma browser">
       <created>1537695606826</created>
@@ -317,22 +325,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594378022146" />
-    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1595409779583">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1597572326677">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595409779583" />
-    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1595409779581">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597572326677" />
+    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1597572326676">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595409779581" />
-    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1595409779581">
+    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597572326676" />
+    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1597572326676">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595409779581" />
-    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1595409779582">
+    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597572326676" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1597572326676">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595409779582" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597572326676" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1594134491977">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

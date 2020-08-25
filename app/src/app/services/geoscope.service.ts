@@ -11,8 +11,9 @@ import {ContractModel} from '../model/contract.model';
 
 const object_type = EntityEnum.GEOSCOPE;
 const slash = '/';
-// const serverApi = 'http://localhost:3000/prod';
-const serverApi = 'https://14025z5k64.execute-api.eu-central-1.amazonaws.com/dev';
+const serverApi = 'http://localhost:3000/prod';
+
+// const serverApi = 'https://14025z5k64.execute-api.eu-central-1.amazonaws.com/dev';
 /**
  * Created by ekirschning on 28.03.2017.
  */
@@ -21,7 +22,7 @@ const serverApi = 'https://14025z5k64.execute-api.eu-central-1.amazonaws.com/dev
 export class GeoScopeService {
   locations: Array<GeoScopeModel> = [];
   prefPorts: Array<GeoScopeModel> = [];
- readonly serverApi = `http://${location.host}/nre`;
+  readonly serverApi = `http://${location.host}/nre`;
   private slash = '/';
 
   constructor(private http: HttpClient) {

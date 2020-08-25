@@ -17,7 +17,6 @@ export class NewRoutingModel {
   private _errors: string;
 
 
-
   constructor(tt: string, pol: string, polfac: string, ts1: string, ts1fac: string, ts2: string, ts2fac: string, ts3: string, ts3fac: string, pod: string, podfac: string, prof1: string, prof2: string, prof3: string, errors: string) {
     this._tt = tt;
     this._pol = pol;
